@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+    <!--   替换对象工厂里原来的Action，将Action交由Spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<package name="com"  namespace="/com" extends="struts-default">
+	<!-- Spring会根据class="xxx"中的名字去找对应的Bean（Action类） -->
+	 	
+	 	<action name="login" class="userAction" method="login">
+	 	<result name="success">/loginSuccess.jsp</result>
+	 	<result name="fail">/login.jsp</result>
+	 	</action>
+	 	
+	 	<action name="register" class="userAction" method="register">
+	 	<result name="success">/regSuccess.jsp</result>
+	 	<result name="fail">/regFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="deleteUser" class="userAction" method="delete">
+	 	<result name="success">/delSuccess.jsp</result>
+	 	<result name="fail">/delFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="userUpdate" class="userAction" method="update">
+	 	<result name="success">/userInfo.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>
+	 </package>
+</struts>

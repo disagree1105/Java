@@ -23,6 +23,21 @@ a:link, a:visited {
 	text-decoration: none;
 }
 </style>
+<script type="text/javascript" src="js/Calendar.js"></script>
+<script language="javascript">
+	function chk(theForm) {
+		if (theForm.user.username.value == "") {
+			alert("请输入用户名!");
+			theForm.memberLoginName.focus();
+			return (false);
+		}
+		if (theForm.user.password.value == "") {
+			alert("请输入密码!");
+			theForm.memberPassword.focus();
+			return (false);
+		}
+	}
+</script>
 </head>
 
 <body>
@@ -34,27 +49,30 @@ a:link, a:visited {
 		<p>
 			<img src="image/label.jpg" width="1024" height="120">
 		</p>
-	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
-		width="100%" color=#987cb9 SIZE=10>
-	<br>
+		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+			width="100%" color=#987cb9 SIZE=10>
+		<br>
 		<center>
 			<div id="formwrapper">
 				<h3>用户注册</h3>
 				<s:property value="#request.tip" />
-				<p>
 					<s:form action="register" namespace="/com" method="post">
 						<fieldset>
 							<div>
 								<label for="Name">用户名</label>
-								<s:textfield name="user.username" />
+								<s:textfield name="user.username" size="30" maxlength="20" />
 							</div>
-							<br /> <br />
+							<br />
 							<div>
 								<label for="password">密&nbsp&nbsp&nbsp&nbsp码</label>
-								<s:password name="user.password" />
+								<s:password name="user.password" size="30" maxlength="20" />
 								<br />
 							</div>
-							<p />
+							<div>
+								<label for="birthdate">出生年月</label> <input type="text"
+									name="memberBirthday" id="Birthday"
+									onClick="new Calendar().show(this);" readonly="readonly" />
+							</div>
 							<div class="enter">
 								<input type="submit" class="large button blue" value="注册" /> <input
 									type="reset" class="large button yellow" value="重置" />

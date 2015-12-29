@@ -12,6 +12,7 @@
 	<package name="com"  namespace="/com" extends="struts-default">
 	<!-- Spring会根据class="xxx"中的名字去找对应的Bean（Action类） -->
 	 	
+	 <!-- ************************用户action************************ -->
 	 	<action name="login" class="userAction" method="login">
 	 	<result name="success">/loginSuccess.jsp</result>
 	 	<result name="fail">/login.jsp</result>
@@ -30,6 +31,43 @@
 	 	<action name="userUpdate" class="userAction" method="update">
 	 	<result name="success">/userInfo.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>
+	 	
+	 	<!-- ************************机场action************************ -->
+	 	<action name="addAirport" class="airportAction" method="add">
+	 	<result name="success">/addSuccess.jsp</result>
+	 	<result name="fail">/regFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="deleteAirport" class="airportAction" method="delete">
+	 	<result name="success">/delSuccess.jsp</result>
+	 	<result name="fail">/delFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="updateAirport" class="airportAction" method="update">
+	 	<result name="success">/updateSuccess.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="findAirport" class="airportAction" method="find">
+	 	<result name="success">/findAirportResult.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>
+	 	
+	 	<!-- ************************航班action************************ -->
+	 	<action name="addFlight" class="flightAction" method="add">
+	 	<result name="success">/addSuccess.jsp</result>
+	 	<result name="fail">/addFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="deleteFlight" class="flightAction" method="delete">
+	 	<result name="success">/delSuccess.jsp</result>
+	 	<result name="fail">/delFail.jsp</result>
+	 	</action>	 	
+	 	
+	 	<action name="findFlight" class="flightAction" method="find">
+	 	<result name="success">/findFlightResult.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
 	 	</action>
 	 </package>
 </struts>

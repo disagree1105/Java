@@ -5,7 +5,7 @@
 <html>
   <head>
     
-    <title>用户 信息</title>
+    <title>删除航班</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,18 +19,13 @@
   </head>
   
   <body>
-  <center>
-  修改个人信息
-    <s:form action="userUpdate" namespace="/com" method="post">
-    	<s:hidden name="user.userid"
-    		value="%{#session.user.userid}"/>
-    		用户名不能修改<s:textfield name="user.username"
-    		value="%{#session.user.username}" readonly="true"/>
-    		<br>
-    		修改密码<s:textfield name="user.password" 
-    		value="%{#session.user.password}"/>
-    		<s:submit value="修改"/>
-     </s:form>
+     <center>
+      <s:form action="deleteFlight" namespace="/com" method="post">
+    	输入要删除的航班id:<s:textfield name="flight.flightid"/><br/>
+    	<br/>
+
+  		<input type="submit" value="删除"/>
+    </s:form>
     </center>
   </body>
 </html>

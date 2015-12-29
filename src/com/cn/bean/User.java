@@ -1,87 +1,113 @@
 package com.cn.bean;
 
-public class User implements java.io.Serializable{
-			/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-			private Integer id;
-			private String username;
-			private String password;
-			private String type;
-			private String name;
-			private String idcard_number;
-			private String tel;
-			
-			
-			public String getUsername() {
-				return username;
-			}
+import java.util.HashSet;
+import java.util.Set;
 
-			public void setUsername(String username) {
-				this.username = username;
-			}
+/**
+ * User entity. @author MyEclipse Persistence Tools
+ */
 
-			public String getPassword() {
-				return password;
-			}
+public class User implements java.io.Serializable {
 
-			public void setPassword(String password) {
-				this.password = password;
-			}
+	// Fields
 
-			public String getType() {
-				return type;
-			}
+	private Integer userid;
+	private String username;
+	private String password;
+	private String type;
+	private String name;
+	private String idcardNumber;
+	private String tel;
+	private Set orders = new HashSet(0);
 
-			public void setType(String type) {
-				this.type = type;
-			}
+	// Constructors
 
-			public String getName() {
-				return name;
-			}
+	/** default constructor */
+	public User() {
+	}
 
-			public void setName(String name) {
-				this.name = name;
-			}
+	/** minimal constructor */
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
 
-			public String getIdcard_number() {
-				return idcard_number;
-			}
+	/** full constructor */
+	public User(String username, String password, String type, String name,
+			String idcardNumber, String tel, Set orders) {
+		this.username = username;
+		this.password = password;
+		this.type = type;
+		this.name = name;
+		this.idcardNumber = idcardNumber;
+		this.tel = tel;
+		this.orders = orders;
+	}
 
-			public void setIdcard_number(String idcard_number) {
-				this.idcard_number = idcard_number;
-			}
+	// Property accessors
 
-			public String getTel() {
-				return tel;
-			}
+	public Integer getUserid() {
+		return this.userid;
+	}
 
-			public void setTel(String tel) {
-				this.tel = tel;
-			}
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
 
-			
-			public Integer getId() {
-				return id;
-			}
+	public String getUsername() {
+		return this.username;
+	}
 
-			public void setId(Integer id) {
-				this.id = id;
-			}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-			public User(){}
-			
-			public User(String username,String password,String type,String name,String idcard_number,String tel)
-			{
-				this.username=username;
-				this.password=password;
-				this.type=type;
-				this.name=name;
-				this.idcard_number=idcard_number;
-				this.tel=tel;
-				
-			}
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getIdcardNumber() {
+		return this.idcardNumber;
+	}
+
+	public void setIdcardNumber(String idcardNumber) {
+		this.idcardNumber = idcardNumber;
+	}
+
+	public String getTel() {
+		return this.tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public Set getOrders() {
+		return this.orders;
+	}
+
+	public void setOrders(Set orders) {
+		this.orders = orders;
+	}
 
 }

@@ -14,9 +14,10 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 <!-- ************************数据库连接部分************************ -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/sshsy6" />
+		<property name="url" value="jdbc:mysql://localhost:3306/sshsy6?useUnicode=true&amp;characterEncoding=utf-8" />
 		<property name="username" value="root" />
 		<property name="password" value="120805" />
+		
 	</bean>
 <!-- ************************会话工厂部分************************ -->
 	<bean id="sessionFactory"
@@ -29,13 +30,15 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 				</prop>
 				<prop key="hibernate.current_session_context_class">
 					thread
-				</prop>
+				</prop>   
 			</props>
 		</property>
 		<property name="mappingResources">	
 		<list>	
 				<value>com/cn/bean/User.hbm.xml</value>		
-		</list>
+				<value>com/cn/bean/Airport.hbm.xml</value>
+				<value>com/cn/bean/Flight.hbm.xml</value>
+				<value>com/cn/bean/Order.hbm.xml</value></list>
 		</property>
 	</bean>
 
@@ -43,14 +46,37 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	<bean id="baseDao" class="com.cn.dao.impl.BaseHibernateDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>	
+	
 		<bean id="userDao" class="com.cn.dao.impl.UserDaoImpl" parent="baseDao">
 	</bean>	
+	
+		<bean id="airportDao" class="com.cn.dao.impl.AirportDaoImpl" parent="baseDao">
+	</bean>	
+	
+		<bean id="flightDao" class="com.cn.dao.impl.FlightDaoImpl" parent="baseDao">
+	</bean>	
 	<!-- ************************service层************************ -->
-	<bean id="userService" class="com.cn.service.impl.UserServiceBean">
-	<property name="userDao" ref="userDao"></property>
+	<bean id="userService" class="com.cn.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="airportService" class="com.cn.service.impl.AirportServiceImpl">
+		<property name="airportDao" ref="airportDao"></property>
+	</bean>
+	
+	<bean id="flightService" class="com.cn.service.impl.FlightServiceImpl">
+		<property name="flightDao" ref="flightDao"></property>
 	</bean>
 	<!-- ************************action层************************ -->
 	<bean id="userAction" class="com.cn.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"/>
 	</bean>
-</beans>
+	
+	<bean id="airportAction" class="com.cn.action.AirportAction" scope="prototype">
+		<property name="airportService" ref="airportService"/>
+	</bean>
+	
+	<bean id="flightAction" class="com.cn.action.FlightAction" scope="prototype">
+		<property name="flightService" ref="flightService"/>
+	</bean>
+	</beans>

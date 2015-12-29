@@ -1,0 +1,4 @@
+已写：
+用户的:增(register.jsp)删(deleteUser.jsp)查(login.jsp 可以考虑再加一个findUser.jsp)改 (userinfo.jsp)
+机场的:增(addAirport.jsp)删(deleteAirport.jsp)查(findAirport.jsp)改(updateAirport.jsp)
+航班的:增(addFlight.jsp)删(deleteFlight.jsp)查(findFlight.jsp)

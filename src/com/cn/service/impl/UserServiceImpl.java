@@ -14,7 +14,7 @@ import java.util.Map;
 import org.hibernate.Transaction;
 
 
-public class UserServiceBean implements UserService{
+public class UserServiceImpl implements UserService{
 	private Map<String, Object> request,session;
 	private UserDao userDao=null;
 	
@@ -90,5 +90,19 @@ public class UserServiceBean implements UserService{
 			}
 		else 
 			return false;
+	}
+	
+	public boolean list(User user)
+	{
+		ActionContext ctx= ActionContext.getContext();
+		String hql="";
+		List list=userDao.findByHql(hql);
+		if(list.isEmpty())
+			return false;
+		else
+			{
+
+			return true;
+			}
 	}
 	}

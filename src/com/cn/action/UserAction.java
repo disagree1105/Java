@@ -1,13 +1,22 @@
 package com.cn.action;
 
+import java.util.List;
+
 import com.cn.bean.User;
 import com.cn.service.UserService;
 
 public class UserAction {
 	    private User user;
 	    private UserService userService=null;
+	    private List list;
 	    
-	    public void setUser(User user)
+	    public List getList() {
+			return list;
+		}
+		public void setList(List list) {
+			this.list = list;
+		}
+		public void setUser(User user)
 	    {
 	    	this.user=user;
 	    }
@@ -50,4 +59,12 @@ public class UserAction {
 			else
 			return "fail";
 	}
+		public String list()
+		{
+			
+			if(userService.list(user))	
+			return "success";
+			else
+			return "fail";
+		}
 }

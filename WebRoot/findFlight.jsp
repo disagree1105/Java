@@ -4,8 +4,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+
     
-    <title>用户 信息</title>
+    <title>搜索航班</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,18 +20,14 @@
   </head>
   
   <body>
-  <center>
-  修改个人信息
-    <s:form action="userUpdate" namespace="/com" method="post">
-    	<s:hidden name="user.userid"
-    		value="%{#session.user.userid}"/>
-    		用户名不能修改<s:textfield name="user.username"
-    		value="%{#session.user.username}" readonly="true"/>
-    		<br>
-    		修改密码<s:textfield name="user.password" 
-    		value="%{#session.user.password}"/>
-    		<s:submit value="修改"/>
-     </s:form>
+     <center>
+     <s:form action="findFlight" namespace="/com" method="post">
+    	始发站:<s:textfield name="flight.originstation"/><br/>
+    	终点站:<s:textfield name="flight.terminalstation"/><br/>
+    	<br/>
+
+  		<input type="submit" value="查询"/>
+    </s:form>
     </center>
-  </body>
+   </body>
 </html>

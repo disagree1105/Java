@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="css/button.css" />
 <link rel="stylesheet" type="text/css" href="css/DB_gallery.css" />
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/jquery.DB_gallery.js"></script>
 </head>
 <center>
@@ -75,14 +76,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<label for="tel">联系电话</label> <input type="text" name="memberTel"
 								id="tel" value="" size="20"  /> *<br>
 						</div>
-						<!-- 				<div> -->
-						<!-- 					<label for="AgreeToTerms">同意服务条款</label> <input type="checkbox" -->
-						<!-- 						name="AgreeToTerms" id="AgreeToTerms" value="1" /> <a href="#" -->
-						<!-- 						title="您是否同意服务条款">先看看条款？</a> * -->
-						<!-- 				</div> -->
 						<div class="enter">
 							<input name="Submit" type="submit" class="buttom" value="同意协议并预订" />
-							<input name="reset" type="reset" class="buttom" value="重置" />
 						</div>
 						<p>
 							<strong>* 在提交您的注册信息时, 我们认为您已经同意了我们的服务条款.<br> *

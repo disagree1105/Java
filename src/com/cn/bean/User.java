@@ -16,8 +16,9 @@ public class User implements java.io.Serializable {
 	private String password;
 	private String type;
 	private String name;
-	private String idcardNumber;
+	private String idcardnumber;
 	private String tel;
+	private Integer age;
 	private Set orders = new HashSet(0);
 
 	// Constructors
@@ -34,13 +35,14 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String username, String password, String type, String name,
-			String idcardNumber, String tel, Set orders) {
+			String idcardnumber, String tel, Integer age, Set orders) {
 		this.username = username;
 		this.password = password;
 		this.type = type;
 		this.name = name;
-		this.idcardNumber = idcardNumber;
+		this.idcardnumber = idcardnumber;
 		this.tel = tel;
+		this.age = age;
 		this.orders = orders;
 	}
 
@@ -86,12 +88,12 @@ public class User implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public String getIdcardNumber() {
-		return this.idcardNumber;
+	public String getIdcardnumber() {
+		return this.idcardnumber;
 	}
 
-	public void setIdcardNumber(String idcardNumber) {
-		this.idcardNumber = idcardNumber;
+	public void setIdcardnumber(String idcardnumber) {
+		this.idcardnumber = idcardnumber;
 	}
 
 	public String getTel() {
@@ -100,6 +102,14 @@ public class User implements java.io.Serializable {
 
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+
+	public Integer getAge() {
+		return this.age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 
 	public Set getOrders() {

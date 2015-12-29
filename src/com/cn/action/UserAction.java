@@ -1,9 +1,11 @@
 package com.cn.action;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cn.bean.User;
 import com.cn.service.UserService;
+import com.opensymphony.xwork2.ActionContext;
 
 public class UserAction {
 	    private User user;
@@ -59,12 +61,12 @@ public class UserAction {
 			else
 			return "fail";
 	}
-		public String list()
+		public String listAllUsers()
 		{
-			
-			if(userService.list(user))	
-			return "success";
-			else
-			return "fail";
+			Map request = (Map) ActionContext.getContext().get("request");
+			 request.put("list", userService.list());  
+				return "success";
+
 		}
+
 }

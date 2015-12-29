@@ -24,5 +24,8 @@
   	欢迎您，<s:label value="%{#request.user.username}"/>
   	<a href="/SSHSY6/index.jsp">返回主页</a>
     <a href="/SSHSY6/userInfo.jsp">个人中心</a>
+     <s:form action="listAllUsers" namespace="/com" method="post">
+     <s:submit value="查询所有用户"/>
+     </s:form>
   </body>
 </html> 

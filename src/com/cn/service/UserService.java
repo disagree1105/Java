@@ -1,6 +1,8 @@
 
 package com.cn.service;
 
+import java.util.List;
+
 import com.cn.bean.User;
 
 public interface UserService {
@@ -13,5 +15,7 @@ public interface UserService {
 	
 	public boolean update(User user);
 	
-	public boolean list(User user);
+	public List list();
+	
+	
 }

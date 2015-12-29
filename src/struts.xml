@@ -33,6 +33,10 @@
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
 	 	
+	 	<action name="listAllUsers" class="userAction" method="listAllUsers">
+	 	<result name="success">/listAllUsers.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>
 	 	<!-- ************************机场action************************ -->
 	 	<action name="addAirport" class="airportAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>

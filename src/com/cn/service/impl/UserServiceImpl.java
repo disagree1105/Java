@@ -92,17 +92,10 @@ public class UserServiceImpl implements UserService{
 			return false;
 	}
 	
-	public boolean list(User user)
+	public List list()
 	{
-		ActionContext ctx= ActionContext.getContext();
-		String hql="";
+		String hql="from User";
 		List list=userDao.findByHql(hql);
-		if(list.isEmpty())
-			return false;
-		else
-			{
-
-			return true;
-			}
+			return list;
 	}
 	}

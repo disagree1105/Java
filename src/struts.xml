@@ -108,5 +108,11 @@
 	 	<result name="success">/updateSuccess.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
+	 	
+	 	<!-- ************************订单action************************ -->
+	 	<action name="listAllOrders" class="userorderAction" method="listAllUserorders">
+	 	<result name="success">/listAllOrders.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>	 	
 	 </package>
 </struts>

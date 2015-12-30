@@ -1,10 +1,10 @@
 package com.cn.bean;
 
 /**
- * Order entity. @author MyEclipse Persistence Tools
+ * Userorder entity. @author MyEclipse Persistence Tools
  */
 
-public class Order implements java.io.Serializable {
+public class Userorder implements java.io.Serializable {
 
 	// Fields
 
@@ -15,12 +15,11 @@ public class Order implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public Order() {
+	public Userorder() {
 	}
 
 	/** full constructor */
-	public Order(Integer orderid, Flight flight, User user) {
-		this.orderid = orderid;
+	public Userorder(Flight flight, User user) {
 		this.flight = flight;
 		this.user = user;
 	}

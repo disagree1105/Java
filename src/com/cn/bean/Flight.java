@@ -4,116 +4,127 @@ import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
+
 /**
  * Flight entity. @author MyEclipse Persistence Tools
  */
 
-public class Flight implements java.io.Serializable {
+public class Flight  implements java.io.Serializable {
 
-	// Fields
 
-	private Integer flightid;
-	private String originstation;
-	private String terminalstation;
-	private Timestamp terminaltime;
-	private Timestamp origintime;
-	private Integer ticketsum;
-	private Integer ticketleft;
-	private Float price;
-	private Set orders = new HashSet(0);
+    // Fields    
 
-	// Constructors
+     private Integer flightid;
+     private Airport airportByOriginstation;
+     private Airport airportByTerminalstation;
+     private Timestamp origintime;
+     private Timestamp terminaltime;
+     private Integer ticketsum;
+     private Integer ticketleft;
+     private Float price;
+     private Set userorders = new HashSet(0);
 
-	/** default constructor */
-	public Flight() {
-	}
 
-	/** full constructor */
-	public Flight(String originstation, String terminalstation,
-			Timestamp terminaltime, Timestamp origintime, Integer ticketsum,
-			Integer ticketleft, Float price, Set orders) {
-		this.originstation = originstation;
-		this.terminalstation = terminalstation;
-		this.terminaltime = terminaltime;
-		this.origintime = origintime;
-		this.ticketsum = ticketsum;
-		this.ticketleft = ticketleft;
-		this.price = price;
-		this.orders = orders;
-	}
+    // Constructors
 
-	// Property accessors
+    /** default constructor */
+    public Flight() {
+    }
 
-	public Integer getFlightid() {
-		return this.flightid;
-	}
+    
+    /** full constructor */
+    public Flight(Airport airportByOriginstation, Airport airportByTerminalstation, Timestamp origintime, Timestamp terminaltime, Integer ticketsum, Integer ticketleft, Float price, Set userorders) {
+        this.airportByOriginstation = airportByOriginstation;
+        this.airportByTerminalstation = airportByTerminalstation;
+        this.origintime = origintime;
+        this.terminaltime = terminaltime;
+        this.ticketsum = ticketsum;
+        this.ticketleft = ticketleft;
+        this.price = price;
+        this.userorders = userorders;
+    }
 
-	public void setFlightid(Integer flightid) {
-		this.flightid = flightid;
-	}
+   
+    // Property accessors
 
-	public String getOriginstation() {
-		return this.originstation;
-	}
+    public Integer getFlightid() {
+        return this.flightid;
+    }
+    
+    public void setFlightid(Integer flightid) {
+        this.flightid = flightid;
+    }
 
-	public void setOriginstation(String originstation) {
-		this.originstation = originstation;
-	}
+    public Airport getAirportByOriginstation() {
+        return this.airportByOriginstation;
+    }
+    
+    public void setAirportByOriginstation(Airport airportByOriginstation) {
+        this.airportByOriginstation = airportByOriginstation;
+    }
 
-	public String getTerminalstation() {
-		return this.terminalstation;
-	}
+    public Airport getAirportByTerminalstation() {
+        return this.airportByTerminalstation;
+    }
+    
+    public void setAirportByTerminalstation(Airport airportByTerminalstation) {
+        this.airportByTerminalstation = airportByTerminalstation;
+    }
 
-	public void setTerminalstation(String terminalstation) {
-		this.terminalstation = terminalstation;
-	}
+    public Timestamp getOrigintime() {
+        return this.origintime;
+    }
+    
+    public void setOrigintime(Timestamp origintime) {
+        this.origintime = origintime;
+    }
 
-	public Timestamp getTerminaltime() {
-		return this.terminaltime;
-	}
+    public Timestamp getTerminaltime() {
+        return this.terminaltime;
+    }
+    
+    public void setTerminaltime(Timestamp terminaltime) {
+        this.terminaltime = terminaltime;
+    }
 
-	public void setTerminaltime(Timestamp terminaltime) {
-		this.terminaltime = terminaltime;
-	}
+    public Integer getTicketsum() {
+        return this.ticketsum;
+    }
+    
+    public void setTicketsum(Integer ticketsum) {
+        this.ticketsum = ticketsum;
+    }
 
-	public Timestamp getOrigintime() {
-		return this.origintime;
-	}
+    public Integer getTicketleft() {
+        return this.ticketleft;
+    }
+    
+    public void setTicketleft(Integer ticketleft) {
+        this.ticketleft = ticketleft;
+    }
 
-	public void setOrigintime(Timestamp origintime) {
-		this.origintime = origintime;
-	}
+    public Float getPrice() {
+        return this.price;
+    }
+    
+    public void setPrice(Float price) {
+        this.price = price;
+    }
 
-	public Integer getTicketsum() {
-		return this.ticketsum;
-	}
+    public Set getUserorders() {
+        return this.userorders;
+    }
+    
+    public void setUserorders(Set userorders) {
+        this.userorders = userorders;
+    }
+   
 
-	public void setTicketsum(Integer ticketsum) {
-		this.ticketsum = ticketsum;
-	}
 
-	public Integer getTicketleft() {
-		return this.ticketleft;
-	}
 
-	public void setTicketleft(Integer ticketleft) {
-		this.ticketleft = ticketleft;
-	}
 
-	public Float getPrice() {
-		return this.price;
-	}
 
-	public void setPrice(Float price) {
-		this.price = price;
-	}
 
-	public Set getOrders() {
-		return this.orders;
-	}
 
-	public void setOrders(Set orders) {
-		this.orders = orders;
-	}
 
 }

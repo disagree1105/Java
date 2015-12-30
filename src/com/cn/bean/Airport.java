@@ -1,5 +1,8 @@
 package com.cn.bean;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Airport entity. @author MyEclipse Persistence Tools
  */
@@ -10,6 +13,8 @@ public class Airport implements java.io.Serializable {
 
 	private Integer aid;
 	private String portname;
+	private Set flightsForOriginstation = new HashSet(0);
+	private Set flightsForTerminalstation = new HashSet(0);
 
 	// Constructors
 
@@ -17,9 +22,17 @@ public class Airport implements java.io.Serializable {
 	public Airport() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public Airport(String portname) {
 		this.portname = portname;
+	}
+
+	/** full constructor */
+	public Airport(String portname, Set flightsForOriginstation,
+			Set flightsForTerminalstation) {
+		this.portname = portname;
+		this.flightsForOriginstation = flightsForOriginstation;
+		this.flightsForTerminalstation = flightsForTerminalstation;
 	}
 
 	// Property accessors
@@ -38,6 +51,22 @@ public class Airport implements java.io.Serializable {
 
 	public void setPortname(String portname) {
 		this.portname = portname;
+	}
+
+	public Set getFlightsForOriginstation() {
+		return this.flightsForOriginstation;
+	}
+
+	public void setFlightsForOriginstation(Set flightsForOriginstation) {
+		this.flightsForOriginstation = flightsForOriginstation;
+	}
+
+	public Set getFlightsForTerminalstation() {
+		return this.flightsForTerminalstation;
+	}
+
+	public void setFlightsForTerminalstation(Set flightsForTerminalstation) {
+		this.flightsForTerminalstation = flightsForTerminalstation;
 	}
 
 }

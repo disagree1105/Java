@@ -37,11 +37,11 @@
         <property name="sex" type="java.lang.String">
             <column name="sex" length="20" />
         </property>
-        <set name="orders" inverse="true">
+        <set name="userorders" inverse="true">
             <key>
                 <column name="userid" not-null="true" />
             </key>
-            <one-to-many class="com.cn.bean.Order" />
+            <one-to-many class="com.cn.bean.Userorder" />
         </set>
     </class>
 </hibernate-mapping>

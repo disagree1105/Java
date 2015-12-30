@@ -40,7 +40,6 @@ public class AirportServiceImpl implements AirportService{
 	
 	public boolean add(Airport airport)
 	{
-		ActionContext ctx= ActionContext.getContext();
 		if(airportDao.save(airport))
 			return true;
 		else 
@@ -66,7 +65,6 @@ public class AirportServiceImpl implements AirportService{
 	
 	public boolean update(Airport airport)
 	{
-		ActionContext ctx= ActionContext.getContext();
 
 		if(airportDao.update(airport))
 			return true;

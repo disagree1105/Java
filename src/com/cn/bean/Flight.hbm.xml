@@ -10,17 +10,17 @@
             <column name="flightid" />
             <generator class="identity" />
         </id>
-        <property name="originstation" type="java.lang.String">
-            <column name="originstation" length="50" />
-        </property>
-        <property name="terminalstation" type="java.lang.String">
-            <column name="terminalstation" length="50" />
+        <many-to-one name="airportByOriginstation" class="com.cn.bean.Airport" fetch="select">
+            <column name="originstation" />
+        </many-to-one>
+        <many-to-one name="airportByTerminalstation" class="com.cn.bean.Airport" fetch="select">
+            <column name="terminalstation" />
+        </many-to-one>
+        <property name="origintime" type="java.sql.Timestamp">
+            <column name="origintime" length="19" />
         </property>
         <property name="terminaltime" type="java.sql.Timestamp">
             <column name="terminaltime" length="19" />
-        </property>
-        <property name="origintime" type="java.sql.Timestamp">
-            <column name="origintime" length="19" />
         </property>
         <property name="ticketsum" type="java.lang.Integer">
             <column name="ticketsum" />
@@ -31,11 +31,11 @@
         <property name="price" type="java.lang.Float">
             <column name="price" precision="12" scale="0" />
         </property>
-        <set name="orders" inverse="true">
+        <set name="userorders" inverse="true">
             <key>
                 <column name="flightid" not-null="true" />
             </key>
-            <one-to-many class="com.cn.bean.Order" />
+            <one-to-many class="com.cn.bean.Userorder" />
         </set>
     </class>
 </hibernate-mapping>

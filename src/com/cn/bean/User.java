@@ -21,7 +21,7 @@ public class User implements java.io.Serializable {
 	private Integer age;
 	private String birthdate;
 	private String sex;
-	private Set orders = new HashSet(0);
+	private Set userorders = new HashSet(0);
 
 	// Constructors
 
@@ -38,7 +38,7 @@ public class User implements java.io.Serializable {
 	/** full constructor */
 	public User(String username, String password, String type, String name,
 			String idcardnumber, String tel, Integer age, String birthdate,
-			String sex, Set orders) {
+			String sex, Set userorders) {
 		this.username = username;
 		this.password = password;
 		this.type = type;
@@ -48,7 +48,7 @@ public class User implements java.io.Serializable {
 		this.age = age;
 		this.birthdate = birthdate;
 		this.sex = sex;
-		this.orders = orders;
+		this.userorders = userorders;
 	}
 
 	// Property accessors
@@ -133,12 +133,12 @@ public class User implements java.io.Serializable {
 		this.sex = sex;
 	}
 
-	public Set getOrders() {
-		return this.orders;
+	public Set getUserorders() {
+		return this.userorders;
 	}
 
-	public void setOrders(Set orders) {
-		this.orders = orders;
+	public void setUserorders(Set userorders) {
+		this.userorders = userorders;
 	}
 
 }

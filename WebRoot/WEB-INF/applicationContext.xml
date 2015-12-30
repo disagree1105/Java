@@ -38,7 +38,8 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 				<value>com/cn/bean/User.hbm.xml</value>		
 				<value>com/cn/bean/Airport.hbm.xml</value>
 				<value>com/cn/bean/Flight.hbm.xml</value>
-				<value>com/cn/bean/Order.hbm.xml</value></list>
+				<value>com/cn/bean/Userorder.hbm.xml</value>
+		</list>
 		</property>
 	</bean>
 
@@ -55,6 +56,9 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
 		<bean id="flightDao" class="com.cn.dao.impl.FlightDaoImpl" parent="baseDao">
 	</bean>	
+	
+		<bean id="userorderDao" class="com.cn.dao.impl.UserorderDaoImpl" parent="baseDao">
+	</bean>		
 	<!-- ************************service层************************ -->
 	<bean id="userService" class="com.cn.service.impl.UserServiceImpl">
 		<property name="userDao" ref="userDao"></property>
@@ -67,6 +71,10 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	<bean id="flightService" class="com.cn.service.impl.FlightServiceImpl">
 		<property name="flightDao" ref="flightDao"></property>
 	</bean>
+	
+	<bean id="userorderService" class="com.cn.service.impl.UserorderServiceImpl">
+		<property name="userorderDao" ref="userorderDao"></property>
+	</bean>	
 	<!-- ************************action层************************ -->
 	<bean id="userAction" class="com.cn.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"/>
@@ -79,4 +87,8 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	<bean id="flightAction" class="com.cn.action.FlightAction" scope="prototype">
 		<property name="flightService" ref="flightService"/>
 	</bean>
+	
+	<bean id="userorderAction" class="com.cn.action.UserorderAction" scope="prototype">
+		<property name="userorderService" ref="userorderService"/>
+	</bean>	
 	</beans>

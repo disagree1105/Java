@@ -66,7 +66,12 @@ public class UserAction {
 			Map request = (Map) ActionContext.getContext().get("request");
 			 request.put("list", userService.list());  
 				return "success";
-
 		}
-
+		
+		public String updateUserByManager(){
+			if(userService.updateUserByManager(user))	
+			return "success";
+			else
+			return "fail";
+	}
 }

@@ -6,7 +6,7 @@
   <head>
    
     
-    <title>My JSP 'listAllUsers.jsp' starting page</title>
+    <title>用户列表</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -38,7 +38,6 @@
 	</tr>
 	<s:iterator value="#request.list" id="user">
 	<tr>
-	
     <td><s:property value="#user.username"/></td>
     <td><s:property value="#user.password"/></td>
     <td><s:property value="#user.type"/></td>
@@ -46,10 +45,16 @@
     <td><s:property value="#user.idcardnumber"/></td>
     <td><s:property value="#user.tel"/></td>
     <td><s:property value="#user.age"/></td>
-    <td><s:a href="deleteUser.action?user.username=%{#user.username}">删除</s:a></td>
+    <td><s:a href="deleteUser.action?user.username=%{#user.username}">删除</s:a>
+    	/<s:a href="updateUserByManager.action?user.username=%{#user.username}">修改</s:a>
+    </td>
 	 </tr>
     </s:iterator>
     </table>
+    <br>
+    <a href='../addUser.jsp'>
+	<input type='button' value='添加用户'> 
+	</a>
     </s:form>
     </center>
   </body>

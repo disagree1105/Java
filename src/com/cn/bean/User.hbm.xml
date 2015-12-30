@@ -31,6 +31,12 @@
         <property name="age" type="java.lang.Integer">
             <column name="age" />
         </property>
+        <property name="birthdate" type="java.lang.String">
+            <column name="birthdate" length="50" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="20" />
+        </property>
         <set name="orders" inverse="true">
             <key>
                 <column name="userid" not-null="true" />

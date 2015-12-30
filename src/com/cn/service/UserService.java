@@ -15,6 +15,8 @@ public interface UserService {
 	
 	public boolean update(User user);
 	
+	public boolean updateUserByManager(User user);
+	
 	public List list();
 	
 	

@@ -98,4 +98,21 @@ public class UserServiceImpl implements UserService{
 		List list=userDao.findByHql(hql);
 			return list;
 	}
+
+	public boolean updateUserByManager(User user) 
+	{
+		ActionContext ctx= ActionContext.getContext();
+		session=(Map<String, Object>) ctx.getSession();
+		String username=user.getUsername();
+		String hql="from User as user where username='"+ username + "'";
+		List list=userDao.findByHql(hql);
+		if(list.isEmpty())
+			return false;
+		else
+			{
+			user=(User)list.get(0);
+			session.put("user", user);
+			return true;
+			}
 	}
+}

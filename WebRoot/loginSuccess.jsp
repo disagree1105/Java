@@ -25,7 +25,14 @@
   	<a href="/SSHSY6/index.jsp">返回主页</a>
     <a href="/SSHSY6/userInfo.jsp">个人中心</a>
      <s:form action="listAllUsers" namespace="/com" method="post">
-     <s:submit value="查询所有用户"/>
+     <s:submit value="查看所有用户"/>
      </s:form>
+     <s:form action="listAllFlights" namespace="/com" method="post">
+     <s:submit value="查看所有航班"/>    
+     </s:form>    
+     <s:form action="listAllAirports" namespace="/com" method="post">
+     <s:submit value="查看所有机场"/>    
+     </s:form>
+     
   </body>
 </html> 

@@ -73,4 +73,11 @@ public class AirportServiceImpl implements AirportService{
 		else 
 			return false;
 	}
+
+	
+	public List list() {
+		String hql="from Airport";
+		List list=airportDao.findByHql(hql);
+			return list;
+	}
 }

@@ -1,7 +1,10 @@
 package com.cn.action;
 
+import java.util.Map;
+
 import com.cn.bean.Airport;
 import com.cn.service.AirportService;
+import com.opensymphony.xwork2.ActionContext;
 
 public class AirportAction {
 	  	private Airport airport;
@@ -50,4 +53,10 @@ public class AirportAction {
 			else
 			return "fail";
 	}
+		public String listAllAirports(){
+			Map request = (Map) ActionContext.getContext().get("request");
+			 request.put("list", airportService.list());  
+				return "success";
+	}
+		
 }

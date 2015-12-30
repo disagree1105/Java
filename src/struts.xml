@@ -15,7 +15,7 @@
 	 <!-- ************************用户action************************ -->
 	 	<action name="login" class="userAction" method="login">
 	 	<result name="success">/loginSuccess.jsp</result>
-	 	<result name="fail">/login.jsp</result>
+	 	<result name="fail">/loginFail.jsp</result>
 	 	</action>
 	 	
 	 	<action name="register" class="userAction" method="register">
@@ -23,18 +23,28 @@
 	 	<result name="fail">/regFail.jsp</result>
 	 	</action>
 	 	
+	 	<action name="addUser" class="userAction" method="register">
+	 	<result name="success">/addSuccess.jsp</result>
+	 	<result name="fail">/addFail.jsp</result>
+	 	</action>
+	 	
 	 	<action name="deleteUser" class="userAction" method="delete">
 	 	<result name="success">/delSuccess.jsp</result>
 	 	<result name="fail">/delFail.jsp</result>
 	 	</action>
 	 	
-	 	<action name="userUpdate" class="userAction" method="update">
+	 	<action name="updateUser" class="userAction" method="update">
 	 	<result name="success">/userInfo.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
 	 	
 	 	<action name="listAllUsers" class="userAction" method="listAllUsers">
 	 	<result name="success">/listAllUsers.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="updateUserByManager" class="userAction" method="updateUserByManager">
+	 	<result name="success">/updateUser.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
 	 	<!-- ************************机场action************************ -->
@@ -58,6 +68,10 @@
 	 	<result name="fail">/findFail.jsp</result>
 	 	</action>
 	 	
+		<action name="listAllAirports" class="airportAction" method="listAllAirports">
+	 	<result name="success">/listAllAirports.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action> 	
 	 	<!-- ************************航班action************************ -->
 	 	<action name="addFlight" class="flightAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>
@@ -72,6 +86,21 @@
 	 	<action name="findFlight" class="flightAction" method="find">
 	 	<result name="success">/findFlightResult.jsp</result>
 	 	<result name="fail">/findFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="listAllFlights" class="flightAction" method="listAllFlights">
+	 	<result name="success">/listAllFlights.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="updateFlightByManager" class="flightAction" method="updateFlightByManager">
+	 	<result name="success">/updateFlight.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>	 	
+	
+	 	<action name="updateFlight" class="flightAction" method="update">
+	 	<result name="success">/updateSuccess.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
 	 </package>
 </struts>

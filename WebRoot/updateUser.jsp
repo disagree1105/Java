@@ -4,8 +4,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+   
     
-    <title>用户信息</title>
+    <title>修改用户</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,25 +20,20 @@
   </head>
   
   <body>
-  <center>
-  修改个人信息
-    <s:form action="userUpdate" namespace="/com" method="post">
-    	<s:hidden name="user.userid"
-    		value="%{#session.user.userid}"/>
-    		用户名不能修改<s:textfield name="user.username"
-    		value="%{#session.user.username}" readonly="true"/>
-    		<br>
-    		密码:<s:textfield name="user.password" 
-    		value="%{#session.user.password}"/><br>
-    		类型:<s:textfield name="user.type" 
-    		value="%{#session.user.type}"/><br>
-    		姓名:<s:textfield name="user.username" value="%{#session.user.name}"/><br/>
+    <center>
+       <s:form action="updateUser" namespace="/com" method="post">
+       <s:hidden name="user.userid" value="%{#session.user.userid}"/>
+    	用户名:<s:textfield name="user.username" value="%{#session.user.username}"/><br/>
+    	密码:<s:textfield name="user.username" value="%{#session.user.password}"/><br/>
+    	类型:<s:textfield name="user.username" value="%{#session.user.type}"/><br/>
+    	姓名:<s:textfield name="user.username" value="%{#session.user.name}"/><br/>
     	身份证:<s:textfield name="user.username" value="%{#session.user.idcardnumber}"/><br/>
     	手机号:<s:textfield name="user.username" value="%{#session.user.tel}"/><br/>
     	年龄:<s:textfield name="user.username" value="%{#session.user.age}"/><br/>
     	<br/>
-    		<s:submit value="修改"/>
-     </s:form>
+
+  		<input type="submit" value="修改"/>
+    </s:form>
     </center>
   </body>
 </html>

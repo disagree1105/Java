@@ -24,12 +24,12 @@
        <s:form action="updateUser" namespace="/com" method="post">
        <s:hidden name="user.userid" value="%{#session.user.userid}"/>
     	用户名:<s:textfield name="user.username" value="%{#session.user.username}"/><br/>
-    	密码:<s:textfield name="user.username" value="%{#session.user.password}"/><br/>
+    	密码:<s:textfield name="user.password" value="%{#session.user.password}"/><br/>
     	类型:<s:textfield name="user.username" value="%{#session.user.type}"/><br/>
-    	姓名:<s:textfield name="user.username" value="%{#session.user.name}"/><br/>
-    	身份证:<s:textfield name="user.username" value="%{#session.user.idcardnumber}"/><br/>
-    	手机号:<s:textfield name="user.username" value="%{#session.user.tel}"/><br/>
-    	年龄:<s:textfield name="user.username" value="%{#session.user.age}"/><br/>
+    	姓名:<s:textfield name="user.type" value="%{#session.user.name}"/><br/>
+    	身份证:<s:textfield name="user.idcardnumber" value="%{#session.user.idcardnumber}"/><br/>
+    	手机号:<s:textfield name="user.tel" value="%{#session.user.tel}"/><br/>
+    	年龄:<s:textfield name="user.age" value="%{#session.user.age}"/><br/>
     	<br/>
 
   		<input type="submit" value="修改"/>

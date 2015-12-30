@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.cn.bean.Airport;
+import com.cn.bean.Flight;
 import com.cn.bean.User;
 import com.cn.dao.AirportDao;
 import com.cn.service.AirportService;
@@ -49,9 +50,8 @@ public class AirportServiceImpl implements AirportService{
 	public boolean delete(Airport airport)
 	{
 		ActionContext ctx= ActionContext.getContext();
-
-		String portname=airport.getPortname();
-		String hql="from Airport as airport where portname='"+ portname + "'";
+		Integer aid=airport.getAid();
+		String hql="from Airport as airport where aid='"+ aid + "'";
 		List list=airportDao.findByHql(hql);
 		if(list.isEmpty())
 			return false;
@@ -79,5 +79,22 @@ public class AirportServiceImpl implements AirportService{
 		String hql="from Airport";
 		List list=airportDao.findByHql(hql);
 			return list;
+	}
+
+	
+	public boolean updateAirportByManager(Airport airport) {
+		ActionContext ctx= ActionContext.getContext();
+		session=(Map<String, Object>) ctx.getSession();
+		Integer aid=airport.getAid();
+		String hql="from Airport as airport where aid='"+ aid + "'";
+		List list=airportDao.findByHql(hql);
+		if(list.isEmpty())
+			return false;
+		else
+			{
+			airport=(Airport)list.get(0);
+			session.put("airport", airport);
+			return true;
+			}
 	}
 }

@@ -71,7 +71,13 @@
 		<action name="listAllAirports" class="airportAction" method="listAllAirports">
 	 	<result name="success">/listAllAirports.jsp</result>
 	 	<result name="fail">/findFail.jsp</result>
-	 	</action> 	
+	 	</action> 
+	 	
+		<action name="updateAirportByManager" class="airportAction" method="updateAirportByManager">
+	 	<result name="success">/updateAirport.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action> 	 	
+	 		
 	 	<!-- ************************航班action************************ -->
 	 	<action name="addFlight" class="flightAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>

@@ -1,8 +1,10 @@
 package com.cn.action;
 
+import java.util.List;
 import java.util.Map;
 
 import com.cn.bean.Airport;
+import com.cn.bean.Flight;
 import com.cn.service.AirportService;
 import com.opensymphony.xwork2.ActionContext;
 
@@ -58,5 +60,11 @@ public class AirportAction {
 			 request.put("list", airportService.list());  
 				return "success";
 	}
+		public String updateAirportByManager(){
+			if(airportService.updateAirportByManager(airport))	
+				return "success";
+				else
+				return "fail";
 		
+		}
 }

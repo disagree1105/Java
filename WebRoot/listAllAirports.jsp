@@ -22,15 +22,12 @@
     <center>机场列表</center>
     <center>
 	<table border=1> 
-
 	<tr>
-	<th>机场号</th>
 	<th>机场名称</th>
 	<th>操作</th>
 	</tr>
 	<s:iterator value="#request.list" id="airport">
 	<tr>
-    <td><s:property value="#airport.aid"/></td>
     <td><s:property value="#airport.portname"/></td>
     <td><s:a href="deleteAirport.action?airport.aid=%{#airport.aid}">删除</s:a>
     	/<s:a href="updateAirportByManager.action?airport.aid=%{#airport.aid}">修改</s:a>

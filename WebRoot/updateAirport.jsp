@@ -22,7 +22,8 @@
   <body>
     <center>
       <s:form action="updateAirport" namespace="/com" method="post">
-    	机场名称:<s:textfield name="airport.portname"/><br/>
+      <s:hidden name="airport.aid" value="%{#session.airport.aid}"/>
+    	机场名称:<s:textfield name="airport.portname" value="%{#session.airport.portname}"/><br/>
     	<br/>
 
   		<input type="submit" value="修改"/>

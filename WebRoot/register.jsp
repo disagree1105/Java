@@ -56,33 +56,48 @@ a:link, a:visited {
 			<div id="formwrapper">
 				<h3>用户注册</h3>
 				<s:property value="#request.tip" />
-					<s:form action="register" namespace="/com" method="post" onsubmit="return chk(this)">
-						<fieldset>
-							<div>
-								<label for="Name">用户名</label>
-								<s:textfield name="user.username" size="30" maxlength="20" />
-							</div>
-							<br />
-							<div>
-								<label for="password">密&nbsp&nbsp&nbsp&nbsp码</label>
-								<s:password name="user.password" size="30" maxlength="20" />
-								<br />
-							</div>
-							<div>
-								<label for="birthdate">出生年月</label> <s:textfield
-									name="user.birthdate" size="30"
-									onClick="new Calendar().show(this);" readonly="readonly" />
-							</div>
-							<div>
-							<label for="Sex">性 别</label>
-							<s:select name="user.sex" list="{'男','女' }"/>
+				<s:form action="register" namespace="/com" method="post"
+					onsubmit="return chk(this)">
+					<fieldset>
+						<div>
+							<label for="userame">用户名</label>
+							<s:textfield name="user.username" size="30" maxlength="20" />
 						</div>
-							<div class="enter">
-								<input type="submit" class="large button blue" value="注册" /> <input
-									type="reset" class="large button yellow" value="重置" />
-							</div>
-						</fieldset>
-					</s:form>
+						<div>
+							<label for="password">密&nbsp&nbsp&nbsp&nbsp码</label>
+							<s:password name="user.password" size="30" maxlength="20" />
+						</div>
+						<div>
+							<label for="type">用户类型</label>
+							<s:select name="user.type" list="{'注册用户'}" />
+						</div>
+						<div>
+							<label for="birthdate">出生年月</label>
+							<s:textfield name="user.birthdate" size="30"
+								onClick="new Calendar().show(this);" readonly="readonly" />
+						</div>
+						<div>
+							<label for="name">真实姓名</label>
+							<s:textfield name="user.name" size="6" maxlength="6" />
+						</div>
+						<div>
+							<label for="Sex">性 别</label>
+							<s:select name="user.sex" list="{'男','女' }" />
+						</div>
+						<div>
+							<label for="idcardnumber">身份证号</label>
+							<s:textfield name="user.idcardnumber" size="25" minlength="18" maxlength="18" />
+						</div>
+						<div>
+							<label for="tel">手机号码</label>
+							<s:textfield name="user.tel" size="11" minlength="11" maxlength="11" />
+						</div>
+						<div class="enter">
+							<input type="submit" class="large button blue" value="注册" /> <input
+								type="reset" class="large button yellow" value="重置" />
+						</div>
+					</fieldset>
+				</s:form>
 			</div>
 		</center>
 

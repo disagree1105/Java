@@ -3,6 +3,13 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<base href="<%=basePath%>">
 <head>
 
 
@@ -40,43 +47,49 @@ a:link, a:visited {
 		<br>
 		<center>
 			<div id="formwrapper">
-				<h3><font color="#FF0000">修改用户信息(当前身份管理员)</font></h3>
+				<h3>
+					<font color="#FF0000">修改用户信息(当前身份：管理员)</font>
+				</h3>
 				<s:form action="updateUser" namespace="/com" method="post">
 					<s:hidden name="user.userid" value="%{#session.user.userid}" />
 					<fieldset>
 						<div>
-							<label for="userame">用户名</label>
-							<s:textfield name="user.username" size="30" maxlength="20" 
+							<label for="userame">用户名:</label>
+							<s:textfield name="user.username" size="30" maxlength="20"
 								value="%{#session.user.username}" />
 						</div>
 						<div>
-							<label for="password">密码</label>
-							<s:textfield name="user.username" size="30" maxlength="20" 
+							<label for="password">密码:</label>
+							<s:textfield name="user.username" size="30" maxlength="20"
 								value="%{#session.user.password}" />
 						</div>
 						<div>
-							<label for="type">类型</label>
-							<s:textfield name="user.username"  size="30" maxlength="20" value="%{#session.user.type}" />
+							<label for="type">类型:</label>
+							<s:textfield name="user.username" size="30" maxlength="20"
+								value="%{#session.user.type}" />
 						</div>
 						<div>
 							<label for="name">姓名:</label>
-							<s:textfield name="user.username" size="30" maxlength="20" value="%{#session.user.name}" />
+							<s:textfield name="user.username" size="30" maxlength="20"
+								value="%{#session.user.name}" />
 						</div>
 						<div>
 							<label for="idcard">身份证:</label>
-							<s:textfield name="user.username" size="30" maxlength="20" 
+							<s:textfield name="user.username" size="30" maxlength="20"
 								value="%{#session.user.idcardnumber}" />
 						</div>
 						<div>
 							<label for="phonenumber">手机号:</label>
-							<s:textfield name="user.username" size="30" maxlength="20" value="%{#session.user.tel}" />
+							<s:textfield name="user.username" size="30" maxlength="20"
+								value="%{#session.user.tel}" />
 						</div>
 						<div>
 							<label for="age">年龄:</label>
-							<s:textfield name="user.username" size="30" maxlength="20" value="%{#session.user.age}" />
+							<s:textfield name="user.username" size="30" maxlength="20"
+								value="%{#session.user.age}" />
 						</div>
 						<div class="enter">
-							<input type="submit" class="large button blue" value="修改" />
+							<input type="submit" class="large button blue" value="修改并提交" />
 						</div>
 
 					</fieldset>
@@ -85,6 +98,9 @@ a:link, a:visited {
 		</center>
 
 	</center>
+	<a href="index.jsp" class="large button green">返回首页</a>
+	<br />
+	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>

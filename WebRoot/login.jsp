@@ -48,9 +48,9 @@ a:link, a:visited {
 								<label for="Name">用户名</label>
 								<s:textfield name="user.username" size="30" maxlength="20" />
 							</div>
-							<br /> <br />
+							<br />
 							<div>
-								<label for="password">密&nbsp&nbsp&nbsp&nbsp码</label>
+								<label for="password">密码</label>
 								<s:password name="user.password" size="30" maxlength="20" />
 								<br />
 							</div>

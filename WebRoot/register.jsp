@@ -100,10 +100,9 @@ a:link, a:visited {
 				</s:form>
 			</div>
 		</center>
-
-		<p>&nbsp;</p>
-		<a href="index.jsp" class="large button green">返回首页</a>
 	</center>
+		<a href="index.jsp" class="large button green">返回首页</a>
+		<br /><br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>

@@ -34,9 +34,9 @@ a:link, a:visited {
 		<p>
 			<img src="image/label.jpg" width="1024" height="120">
 		</p>
-	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
-		width="100%" color=#987cb9 SIZE=10>
-	<br>
+		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+			width="100%" color=#987cb9 SIZE=10>
+		<br>
 		<center>
 			<div id="formwrapper">
 				<h3>用户登录</h3>
@@ -63,13 +63,11 @@ a:link, a:visited {
 					</s:form>
 			</div>
 		</center>
-
-		<p>&nbsp;</p>
-		<a href="index.jsp" class="large button green">返回首页</a>
+		<a href="index.jsp" class="large button green">返回首页</a> <br /> <br />
 	</center>
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
-	<br>
+	<br />
 	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
 		Reserved</font>
 </body>

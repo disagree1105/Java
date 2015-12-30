@@ -25,15 +25,15 @@ a:link, a:visited {
 </style>
 <script type="text/javascript" src="js/Calendar.js"></script>
 <script language="javascript">
-	function chk(theForm) {
-		if (theForm.user.username.value == "") {
+	function chk(Form) {
+		if (Form.user.username.value == "") {
 			alert("请输入用户名!");
-			theForm.memberLoginName.focus();
+			Form.user.username.focus();
 			return (false);
 		}
-		if (theForm.user.password.value == "") {
+		if (Form.user.password.value == "") {
 			alert("请输入密码!");
-			theForm.memberPassword.focus();
+			Form.user.password.focus();
 			return (false);
 		}
 	}
@@ -56,7 +56,7 @@ a:link, a:visited {
 			<div id="formwrapper">
 				<h3>用户注册</h3>
 				<s:property value="#request.tip" />
-					<s:form action="register" namespace="/com" method="post">
+					<s:form action="register" namespace="/com" method="post" onsubmit="return chk(this)">
 						<fieldset>
 							<div>
 								<label for="Name">用户名</label>
@@ -69,10 +69,14 @@ a:link, a:visited {
 								<br />
 							</div>
 							<div>
-								<label for="birthdate">出生年月</label> <input type="text"
-									name="memberBirthday" id="Birthday"
+								<label for="birthdate">出生年月</label> <s:textfield
+									name="user.birthdate" size="30"
 									onClick="new Calendar().show(this);" readonly="readonly" />
 							</div>
+							<div>
+							<label for="Sex">性 别</label>
+							<s:select name="user.sex" list="{'男','女' }"/>
+						</div>
 							<div class="enter">
 								<input type="submit" class="large button blue" value="注册" /> <input
 									type="reset" class="large button yellow" value="重置" />

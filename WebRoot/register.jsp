@@ -76,8 +76,8 @@ a:link, a:visited {
 						</div>
 						<div>
 							<label for="birthdate">出生年月</label>
-							<s:textfield name="user.birthdate" size="30"
-								onClick="new Calendar().show(this);" readonly="readonly" />
+							<s:textfield name="user.birthdate"
+								onClick="new Calendar().show(this);" readonly="true" value="2016-01-01" />
 						</div>
 						<div>
 							<label for="name">真实姓名</label>

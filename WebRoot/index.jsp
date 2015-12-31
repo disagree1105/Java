@@ -63,7 +63,7 @@
 				</div>
 				<div>
 					<label for="date">出发日期</label> <input type="text" name="date"
-						id="date" onClick="new Calendar().show(this);" readonly="readonly" />
+						id="date" onClick="new Calendar().show(this);" readonly="readonly" value="2016-01-01" />
 				</div>
 				<div>
 					<label for="ticketType">机票种类</label><select name="ticketType">

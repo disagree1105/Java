@@ -19,13 +19,38 @@
   </head>
   
   <body>
+  <center>
+  <s:form action="buyTicket" namespace="/com" method="post">
        查找结果：
-       <br/>
-       始发站: <s:label name= "result" value= "%{#session.flight.originstation}" /><br/>
-       终点站: <s:label name= "result" value= " %{#session.flight.terminalstation}" /><br/>
-       始发时间: <s:label name= "result" value= " %{#session.flight.origintime}" /><br/>
-       到达时间: <s:label name= "result" value= " %{#session.flight.terminaltime}" /><br/>
-      剩余票数: <s:label name= "result" value= " %{#session.flight.ticketleft}" /><br/>
-       票价:<s:label name= "result" value= " %{#session.flight.price}" /><br/>
+   <table border=1> 
+
+	<tr>
+	<th>航班号</th>
+	<th>起点站</th>
+	<th>终点站</th>
+	<th>始发时间</th>
+	<th>到达时间</th>
+	<th>总票数</th>
+	<th>余票数</th>
+	<th>票价</th>
+	<th>操作</th>
+	</tr>
+	<s:iterator value="#request.list" id="flight">
+	<tr>
+    <td><s:property value="#flight.flightid"/></td>
+    <td><s:property value="#flight.originstation"/></td>
+    <td><s:property value="#flight.terminalstation"/></td>
+    <td><s:property value="#flight.origintime"/></td>
+    <td><s:property value="#flight.terminaltime"/></td>
+    <td><s:property value="#flight.ticketsum"/></td>
+    <td><s:property value="#flight.ticketleft"/></td>
+    <td><s:property value="#flight.price"/></td>
+    <td><s:a href="buyTicket.action?flight.flightid=%{#flight.flightid}">预订</s:a>
+    </td>
+	 </tr>
+    </s:iterator>
+    </table>
+       </s:form>
+  </center>
   </body>
 </html>

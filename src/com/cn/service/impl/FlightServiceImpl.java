@@ -1,5 +1,9 @@
 package com.cn.service.impl;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
@@ -18,25 +22,22 @@ public class FlightServiceImpl implements FlightService{
 		this.flightDao = flightDao;
 	}
 	
-	public boolean find(Flight flight)//通过输入起点站、终点站
+	public List find(Flight flight)//通过输入起点站、终点站和出发日期
 	{
-		ActionContext ctx= ActionContext.getContext();
-		session=(Map <String, Object>) ctx.getSession();
 		String originstation=flight.getOriginstation();
 		String terminalstation=flight.getTerminalstation();	
-//		String originstation=origin.toString();
-//		String terminalstation=terminal.toString();
+		Date origintime=flight.getOrigintime();
+		Date origintime1;
+		Calendar calendar = new GregorianCalendar(); 
+	    calendar.setTime(origintime); 
+	    calendar.add(calendar.DATE,1);
+	    origintime1=calendar.getTime();
 		String hql="from Flight as flight where originstation='"+ originstation +"' AND "
-				+ "terminalstation='"+ terminalstation + "'";
+				+ "terminalstation='"+ terminalstation + "' AND origintime >= '"
+				+ origintime +"' AND origintime<= '" + origintime1 +"'";
 		List list=flightDao.findByHql(hql);
-		if(list.isEmpty())
-			return false;
-		else
-		{
-			flight=(Flight)list.get(0);//有问题，不一定就只有一个航班
-			session.put("flight", flight);
-			return true;
-		}
+			return list;
+		
 	}
 	public boolean add(Flight flight)
 	{

@@ -1,5 +1,6 @@
 package com.cn.dao;
 
-public interface UserDao extends BaseHibernateDao{
+import com.cn.bean.User;
 
+public interface UserDao extends BaseHibernateDao{
 }

@@ -1,5 +1,8 @@
 package com.cn.dao;
 
-public interface UserorderDao extends BaseHibernateDao{
+import org.hibernate.Session;
 
+
+public interface UserorderDao extends BaseHibernateDao{
+	public boolean buyTicket(Session session);
 }

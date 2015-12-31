@@ -2,13 +2,6 @@ package com.cn.service.impl;
 
 import java.util.List;
 import java.util.Map;
-
-
-
-
-
-
-
 import com.cn.bean.Userorder;
 import com.cn.dao.UserorderDao;
 import com.cn.service.UserorderService;
@@ -96,4 +89,18 @@ public class UserorderServiceImpl implements UserorderService{
 			return true;
 			}
 	}
+
+	@Override
+	public boolean buyTicket(Userorder userorder) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+//	public boolean buyTicket(Userorder userorder) {
+//		if(userorderDao.buyTicket(userorder))
+//			return true;
+//		else 
+//			return false;
+//	}
 }

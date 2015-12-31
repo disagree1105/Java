@@ -1,6 +1,7 @@
 package com.cn.bean;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Flight entity. @author MyEclipse Persistence Tools
@@ -13,8 +14,8 @@ public class Flight implements java.io.Serializable {
 	private Integer flightid;
 	private String originstation;
 	private String terminalstation;
-	private Timestamp origintime;
-	private Timestamp terminaltime;
+	private Date origintime;
+	private Date terminaltime;
 	private Integer ticketsum;
 	private Integer ticketleft;
 	private Float price;
@@ -64,7 +65,7 @@ public class Flight implements java.io.Serializable {
 		this.terminalstation = terminalstation;
 	}
 
-	public Timestamp getOrigintime() {
+	public Date getOrigintime() {
 		return this.origintime;
 	}
 
@@ -72,7 +73,7 @@ public class Flight implements java.io.Serializable {
 		this.origintime = origintime;
 	}
 
-	public Timestamp getTerminaltime() {
+	public Date getTerminaltime() {
 		return this.terminaltime;
 	}
 

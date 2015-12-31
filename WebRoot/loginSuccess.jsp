@@ -36,6 +36,13 @@
      <s:form action="listAllUserorders" namespace="/com" method="post">
      <s:submit value="查看所有订单"/>    
      </s:form>
+     
+     <s:form action="findFlight" namespace="/com" method="post">
+		始发站:<s:textfield name="flight.originstation"/><br/>
+ 		终点站:<s:textfield name="flight.terminalstation"/><br/>
+ 		出发日期:<s:textfield name="flight.origintime"/><br/>
+     <s:submit value="查询航班"/>
+     </s:form>
           
   </body>
 </html> 

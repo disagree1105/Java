@@ -35,8 +35,11 @@ public class FlightAction {
 	}
 	public String find()
 	{
-		if(flightService.find(flight))
+		Map request = (Map) ActionContext.getContext().get("request");
+		
+		if(flightService.find(flight)!=null)
 		{
+			request.put("list", flightService.find(flight)); 
 			return "success";
 		}
 		return "fail";

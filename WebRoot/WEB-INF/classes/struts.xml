@@ -47,6 +47,7 @@
 	 	<result name="success">/updateUser.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
+	 	 	
 	 	<!-- ************************机场action************************ -->
 	 	<action name="addAirport" class="airportAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>
@@ -133,6 +134,11 @@
 	 	<action name="updateOrder" class="userorderAction" method="update">
 	 	<result name="success">/updateSuccess.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
-	 	</action>		 	 	
+	 	</action>	
+	 	
+	 	<action name="buyTicket" class="userorderAction" method="buyTicket">
+	 	<result name="success">/Success.jsp</result>
+	 	<result name="fail">/Fail.jsp</result>
+	 	</action>		 		 	 	
 	 </package>
 </struts>

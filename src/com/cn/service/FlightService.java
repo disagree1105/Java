@@ -8,7 +8,7 @@ import com.cn.bean.User;
 public interface FlightService {
 	public boolean add(Flight flight);
 
-	public boolean find(Flight flight);
+	public List find(Flight flight);
 	
 	public boolean delete(Flight flight);
 	

@@ -13,6 +13,8 @@ public interface UserorderService {
 	
 	public boolean update(Userorder userorder);
 	
+	public boolean buyTicket(Userorder userorder);
+	
 	public boolean updateUserorderByManager(Userorder userorder);
 	
 	public List<Object> list();

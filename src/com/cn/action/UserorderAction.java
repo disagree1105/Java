@@ -3,6 +3,8 @@ package com.cn.action;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Session;
+
 import com.cn.bean.Userorder;
 import com.cn.service.UserorderService;
 import com.opensymphony.xwork2.ActionContext;
@@ -73,4 +75,12 @@ public class UserorderAction {
 			return "fail";
 	
 	}
+	
+	public String buyTicket(){
+		
+		if(userorderService.buyTicket(userorder))	
+		return "success";
+		else
+		return "fail";
+}
 }

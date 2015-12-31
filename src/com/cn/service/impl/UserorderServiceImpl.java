@@ -93,7 +93,6 @@ public class UserorderServiceImpl implements UserorderService{
 			}
 	}
 
-	@Override
 	public boolean buyTicket(User user,Flight flight) {
 		if(userorderDao.buyTicket(user,flight))
 			return true;

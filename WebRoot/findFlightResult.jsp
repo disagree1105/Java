@@ -37,7 +37,6 @@
 	</tr>
 	<s:iterator value="#request.list" id="flight">
 	<tr>   
-	 <s:hidden name="user.userid" value="%{#session.user.userid}"/>
 	<td><s:property value="#flight.flightid"/></td>
     <td><s:property value="#flight.originstation"/></td>
     <td><s:property value="#flight.terminalstation"/></td>
@@ -46,7 +45,7 @@
     <td><s:property value="#flight.ticketsum"/></td>
     <td><s:property value="#flight.ticketleft"/></td>
     <td><s:property value="#flight.price"/></td>
-    <td><s:a href="buyTicket.action?user.userid=%{#session.user.userid}">预订</s:a>
+    <td><s:a href="buyTicket.action?user.username=%{#session.user.username}&flight.flightid=%{#flight.flightid}">预订</s:a>
     </td>
 	 </tr>
     </s:iterator>

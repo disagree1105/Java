@@ -29,30 +29,23 @@
 <script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/jquery.DB_gallery.js"></script>
 </head>
-
 <body>
 	<div
 		style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
 		<img src="image/bg.png" height="100%" width="100%" />
 	</div>
-
 	<br>
 	<a class="large button blue" href="login.jsp">管理员登录</a>
 	<a class="large button orange" href="login.jsp">用户登录</a>
 	<a class="large button yellow" href="register.jsp">用户注册</a>
 	<br>
-
-
 	<p>
 		<img src="image/head.png" width="1024" height="61">
 	</p>
 	<br>
-
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>
-
-
 	<div style="width:1000px;margin:0 auto;">
 		<div style="width:40%;height:500px;;float:left;">
 			<fieldset>
@@ -95,9 +88,7 @@
 		</div>
 		<div style="width:50%;height:400px;float:right;">
 			<div id="DB_gallery">
-
 				<div class="DB_imgSet">
-
 					<div class="DB_imgWin">
 						<img src="img/img1.jpg" alt="" />
 					</div>
@@ -113,11 +104,8 @@
 					<div class="DB_nextBtn">
 						<img src="galleryImgs/next_off.png" alt="下一页" />
 					</div>
-
 				</div>
-
 				<div class="DB_thumSet">
-
 					<ul class="DB_thumMove">
 
 						<li><a href="galleryImgs/pic1.jpg"><img
@@ -155,7 +143,6 @@
 
 						<li><a href="galleryImgs/pic6.jpg"><img
 								src="galleryImgs/thum6.jpg" alt="" /></a></li>
-
 					</ul>
 
 					<div class="DB_thumLine"></div>
@@ -167,11 +154,7 @@
 					<div class="DB_nextPageBtn">
 						<img src="galleryImgs/next_page.png" alt="下一页" />
 					</div>
-
-
 				</div>
-
-
 			</div>
 		</div>
 		<div style="clear:both;"></div>
@@ -192,12 +175,9 @@
 
 		});
 	</script>
-
-
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>
-
 	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
 		Reserved</font>
 </body>

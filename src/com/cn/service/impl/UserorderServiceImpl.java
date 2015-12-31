@@ -2,6 +2,9 @@ package com.cn.service.impl;
 
 import java.util.List;
 import java.util.Map;
+
+import com.cn.bean.Flight;
+import com.cn.bean.User;
 import com.cn.bean.Userorder;
 import com.cn.dao.UserorderDao;
 import com.cn.service.UserorderService;
@@ -91,16 +94,12 @@ public class UserorderServiceImpl implements UserorderService{
 	}
 
 	@Override
-	public boolean buyTicket(Userorder userorder) {
-		// TODO Auto-generated method stub
+	public boolean buyTicket(User user,Flight flight) {
+		if(userorderDao.buyTicket(user,flight))
+			return true;
+		else
 		return false;
 	}
 
 
-//	public boolean buyTicket(Userorder userorder) {
-//		if(userorderDao.buyTicket(userorder))
-//			return true;
-//		else 
-//			return false;
-//	}
 }

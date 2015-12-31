@@ -2,6 +2,8 @@ package com.cn.service;
 
 import java.util.List;
 
+import com.cn.bean.Flight;
+import com.cn.bean.User;
 import com.cn.bean.Userorder;
 
 public interface UserorderService {
@@ -13,7 +15,7 @@ public interface UserorderService {
 	
 	public boolean update(Userorder userorder);
 	
-	public boolean buyTicket(Userorder userorder);
+	public boolean buyTicket(User user,Flight flight);
 	
 	public boolean updateUserorderByManager(Userorder userorder);
 	

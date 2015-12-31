@@ -1,6 +1,7 @@
 package com.cn.bean;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Userorder entity. @author MyEclipse Persistence Tools
@@ -14,8 +15,8 @@ public class Userorder implements java.io.Serializable {
 	private String username;
 	private String originstation;
 	private String terminalstation;
-	private Timestamp origintime;
-	private Timestamp terminaltime;
+	private Date origintime;
+	private Date terminaltime;
 	private Float price;
 
 	// Constructors
@@ -78,19 +79,19 @@ public class Userorder implements java.io.Serializable {
 		this.terminalstation = terminalstation;
 	}
 
-	public Timestamp getOrigintime() {
+	public Date getOrigintime() {
 		return this.origintime;
 	}
 
-	public void setOrigintime(Timestamp origintime) {
+	public void setOrigintime(Date origintime) {
 		this.origintime = origintime;
 	}
 
-	public Timestamp getTerminaltime() {
+	public Date getTerminaltime() {
 		return this.terminaltime;
 	}
 
-	public void setTerminaltime(Timestamp terminaltime) {
+	public void setTerminaltime(Date terminaltime) {
 		this.terminaltime = terminaltime;
 	}
 

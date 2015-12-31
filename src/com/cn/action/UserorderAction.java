@@ -5,12 +5,31 @@ import java.util.Map;
 
 import org.hibernate.Session;
 
+import com.cn.bean.Flight;
+import com.cn.bean.User;
 import com.cn.bean.Userorder;
 import com.cn.service.UserorderService;
 import com.opensymphony.xwork2.ActionContext;
 
 public class UserorderAction {
   	private Userorder userorder;
+	private User user;
+  	private Flight flight;
+  	
+  	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Flight getFlight() {
+		return flight;
+	}
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
+
     private UserorderService userorderService=null;
     
     public void setUserorder(Userorder userorder)
@@ -78,7 +97,7 @@ public class UserorderAction {
 	
 	public String buyTicket(){
 		
-		if(userorderService.buyTicket(userorder))	
+		if(userorderService.buyTicket(user,flight))	
 		return "success";
 		else
 		return "fail";

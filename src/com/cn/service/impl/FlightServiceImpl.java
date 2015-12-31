@@ -26,15 +26,10 @@ public class FlightServiceImpl implements FlightService{
 	{
 		String originstation=flight.getOriginstation();
 		String terminalstation=flight.getTerminalstation();	
-		Date origintime=flight.getOrigintime();
-		Date origintime1;
-		Calendar calendar = new GregorianCalendar(); 
-	    calendar.setTime(origintime); 
-	    calendar.add(calendar.DATE,1);
-	    origintime1=calendar.getTime();
+		String origintime=flight.getOrigintime();
 		String hql="from Flight as flight where originstation='"+ originstation +"' AND "
-				+ "terminalstation='"+ terminalstation + "' AND origintime >= '"
-				+ origintime +"' AND origintime<= '" + origintime1 +"'";
+				+ "terminalstation='"+ terminalstation + "' AND origintime LIKE '%"
+				+ origintime +"%'"; 
 		List list=flightDao.findByHql(hql);
 			return list;
 		

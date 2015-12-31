@@ -19,11 +19,11 @@
         <property name="terminalstation" type="java.lang.String">
             <column name="terminalstation" length="50" not-null="true" />
         </property>
-        <property name="origintime" type="java.sql.Timestamp">
-            <column name="origintime" length="19" />
+        <property name="origintime" type="java.lang.String">
+            <column name="origintime" length="50" />
         </property>
-        <property name="terminaltime" type="java.sql.Timestamp">
-            <column name="terminaltime" length="19" />
+        <property name="terminaltime" type="java.lang.String">
+            <column name="terminaltime" length="50" />
         </property>
         <property name="price" type="java.lang.Float">
             <column name="price" precision="12" scale="0" />

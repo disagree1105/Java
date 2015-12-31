@@ -48,8 +48,8 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 			userorder.setUsername(user.getUsername());
 			userorder.setOriginstation(flight.getOriginstation());
 			userorder.setTerminalstation(flight.getTerminalstation());
-			userorder.setOrigintime((Timestamp)flight.getOrigintime());
-			userorder.setTerminaltime((Timestamp)flight.getTerminaltime());
+			userorder.setOrigintime(flight.getOrigintime());
+			userorder.setTerminaltime(flight.getTerminaltime());
 			userorder.setPrice(flight.getPrice());
 			System.out.println(user.getUsername());
 			System.out.println(userorder.getUsername());

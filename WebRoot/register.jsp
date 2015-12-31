@@ -54,11 +54,14 @@ a:link, a:visited {
 		<br>
 		<center>
 			<div id="formwrapper">
-				<h3>用户注册</h3>
 				<s:property value="#request.tip" />
 				<s:form action="register" namespace="/com" method="post"
 					onsubmit="return chk(this)">
 					<fieldset>
+						<legend>用户注册</legend>
+						<p>
+							<strong> 标有*的为必选项</strong>
+						</p>
 						<div>
 							<label for="userame">用户名</label>
 							<s:textfield name="user.username" size="30" maxlength="20" />
@@ -86,12 +89,19 @@ a:link, a:visited {
 						</div>
 						<div>
 							<label for="idcardnumber">身份证号</label>
-							<s:textfield name="user.idcardnumber" size="25" minlength="18" maxlength="18" />
+							<s:textfield name="user.idcardnumber" size="25" minlength="18"
+								maxlength="18" />
 						</div>
 						<div>
 							<label for="tel">手机号码</label>
-							<s:textfield name="user.tel" size="11" minlength="11" maxlength="11" />
+							<s:textfield name="user.tel" size="11" minlength="11"
+								maxlength="11" />
 						</div>
+						<p>
+							<strong>* 在提交您的注册信息时, 我们认为您已经同意了我们的服务条款.<br /> 
+							*这些条款可能在未经您同意的时候进行修改.
+							</strong>
+						</p>
 						<div class="enter">
 							<input type="submit" class="large button blue" value="注册" /> <input
 								type="reset" class="large button yellow" value="重置" />
@@ -101,8 +111,9 @@ a:link, a:visited {
 			</div>
 		</center>
 	</center>
-		<a href="index.jsp" class="large button green">返回首页</a>
-		<br /><br />
+	<a href="index.jsp" class="large button green">返回首页</a>
+	<br />
+	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>

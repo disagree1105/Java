@@ -15,5 +15,5 @@ public interface UserorderService {
 	
 	public boolean updateUserorderByManager(Userorder userorder);
 	
-	public List list();
+	public List<Object> list();
 }

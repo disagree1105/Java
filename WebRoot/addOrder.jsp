@@ -21,8 +21,12 @@
   <body>
     <center>
      <s:form action="addOrder" namespace="/com" method="post">
-    	用户id:<s:textfield name="user.userid"/><br/>
-    	航班id:<s:textfield name="flight.flightid"/><br/>
+    	用户名:<s:textfield name="userorder.username"/><br/>
+    	起点站:<s:textfield name="userorder.originstation"/><br/>
+    	终点站:<s:textfield name="userorder.terminalstation"/><br/>
+    	始发时间:<s:textfield name="userorder.origintime"/><br/>
+    	到达时间:<s:textfield name="userorder.terminaltime"/><br/>
+    	票价:<s:textfield name="userorder.price"/><br/>
     	<br/>
 
   		<input type="submit" value="添加"/>

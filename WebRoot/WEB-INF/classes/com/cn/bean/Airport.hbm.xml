@@ -11,19 +11,7 @@
             <generator class="identity" />
         </id>
         <property name="portname" type="java.lang.String">
-            <column name="portname" length="16" not-null="true" unique="true" />
+            <column name="portname" length="16" not-null="true" />
         </property>
-        <set name="flightsForOriginstation" inverse="true">
-            <key>
-                <column name="originstation" />
-            </key>
-            <one-to-many class="com.cn.bean.Flight" />
-        </set>
-        <set name="flightsForTerminalstation" inverse="true">
-            <key>
-                <column name="terminalstation" />
-            </key>
-            <one-to-many class="com.cn.bean.Flight" />
-        </set>
     </class>
 </hibernate-mapping>

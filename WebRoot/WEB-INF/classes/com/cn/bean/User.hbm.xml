@@ -11,10 +11,10 @@
             <generator class="identity" />
         </id>
         <property name="username" type="java.lang.String">
-            <column name="username" length="16" not-null="true" unique="true" />
+            <column name="username" length="16" />
         </property>
         <property name="password" type="java.lang.String">
-            <column name="password" length="16" not-null="true" />
+            <column name="password" length="16" />
         </property>
         <property name="type" type="java.lang.String">
             <column name="type" length="10" />
@@ -37,11 +37,5 @@
         <property name="sex" type="java.lang.String">
             <column name="sex" length="20" />
         </property>
-        <set name="userorders" inverse="true">
-            <key>
-                <column name="userid" not-null="true" />
-            </key>
-            <one-to-many class="com.cn.bean.Userorder" />
-        </set>
     </class>
 </hibernate-mapping>

@@ -110,9 +110,29 @@
 	 	</action>
 	 	
 	 	<!-- ************************订单action************************ -->
-	 	<action name="listAllOrders" class="userorderAction" method="listAllUserorders">
+	 	<action name="listAllUserorders" class="userorderAction" method="listAllUserorders">
 	 	<result name="success">/listAllOrders.jsp</result>
 	 	<result name="fail">/findFail.jsp</result>
 	 	</action>	 	
+	 
+	 	<action name="addOrder" class="userorderAction" method="add">
+	 	<result name="success">/addSuccess.jsp</result>
+	 	<result name="fail">/addFail.jsp</result>
+	 	</action>	 
+	 	
+	 	<action name="deleteOrder" class="userorderAction" method="delete">
+	 	<result name="success">/delSuccess.jsp</result>
+	 	<result name="fail">/delFail.jsp</result>
+	 	</action>	
+
+	 	<action name="updateUserorderByManager" class="userorderAction" method="updateUserorderByManager">
+	 	<result name="success">/updateOrder.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>		 	
+	
+	 	<action name="updateOrder" class="userorderAction" method="update">
+	 	<result name="success">/updateSuccess.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>		 	 	
 	 </package>
 </struts>

@@ -23,16 +23,26 @@
     <center>
 	<table border=1> 
 	<tr>
-	<th>用户id</th>
-	<th>航班id</th>
+	<th>订单号</th>
+	<th>用户名</th>
+	<th>起点站</th>
+	<th>终点站</th>
+	<th>始发时间</th>
+	<th>到达时间</th>
+	<th>票价</th>
 	<th>操作</th>
 	</tr>
 	<s:iterator value="#request.list" id="userorder">
 	<tr>
-    <td><s:property value="#userorder.userid"/></td>
-    <td><s:property value="#userorder.flightid"/></td>
-    <td><s:a href="deleteOrder.action?userorder.orderid=%{#userorder.orderid}">删除</s:a>
-    	/<s:a href="updateOrderByManager.action?userorder.orderid=%{#userorder.orderid}">修改</s:a>
+	 <td><s:property value="#userorder.orderid"/></td> 
+     <td><s:property value="#userorder.username"/></td> 
+     <td><s:property value="#userorder.originstation"/></td>
+     <td><s:property value="#userorder.terminalstation"/></td>
+     <td><s:property value="#userorder.origintime"/></td>
+     <td><s:property value="#userorder.terminaltime"/></td>
+     <td><s:property value="#userorder.price"/></td>
+   	 <td><s:a href="deleteOrder.action?userorder.orderid=%{#userorder.orderid}">删除</s:a>
+    	/<s:a href="updateUserorderByManager.action?userorder.orderid=%{#userorder.orderid}">修改</s:a>
     </td>
 	 </tr>
     </s:iterator>

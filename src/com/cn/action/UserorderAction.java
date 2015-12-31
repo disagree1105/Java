@@ -1,5 +1,6 @@
 package com.cn.action;
 
+import java.util.List;
 import java.util.Map;
 
 import com.cn.bean.Userorder;
@@ -55,9 +56,10 @@ public class UserorderAction {
 }
 	public String listAllUserorders(){
 		Map request = (Map) ActionContext.getContext().get("request");
-		if(userorderService.list()!=null)
+		List<Object> list=userorderService.list();
+		if(list!=null)
 		 {
-			request.put("list", userorderService.list());  
+			request.put("list", list);  
 			return "success";
 		 }
 		else 

@@ -1,5 +1,7 @@
 package com.cn.bean;
 
+import java.sql.Timestamp;
+
 /**
  * Userorder entity. @author MyEclipse Persistence Tools
  */
@@ -9,8 +11,12 @@ public class Userorder implements java.io.Serializable {
 	// Fields
 
 	private Integer orderid;
-	private Flight flight;
-	private User user;
+	private String username;
+	private String originstation;
+	private String terminalstation;
+	private Timestamp origintime;
+	private Timestamp terminaltime;
+	private Float price;
 
 	// Constructors
 
@@ -18,10 +24,24 @@ public class Userorder implements java.io.Serializable {
 	public Userorder() {
 	}
 
+	/** minimal constructor */
+	public Userorder(String username, String originstation,
+			String terminalstation) {
+		this.username = username;
+		this.originstation = originstation;
+		this.terminalstation = terminalstation;
+	}
+
 	/** full constructor */
-	public Userorder(Flight flight, User user) {
-		this.flight = flight;
-		this.user = user;
+	public Userorder(String username, String originstation,
+			String terminalstation, Timestamp origintime,
+			Timestamp terminaltime, Float price) {
+		this.username = username;
+		this.originstation = originstation;
+		this.terminalstation = terminalstation;
+		this.origintime = origintime;
+		this.terminaltime = terminaltime;
+		this.price = price;
 	}
 
 	// Property accessors
@@ -34,20 +54,52 @@ public class Userorder implements java.io.Serializable {
 		this.orderid = orderid;
 	}
 
-	public Flight getFlight() {
-		return this.flight;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setFlight(Flight flight) {
-		this.flight = flight;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public User getUser() {
-		return this.user;
+	public String getOriginstation() {
+		return this.originstation;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setOriginstation(String originstation) {
+		this.originstation = originstation;
+	}
+
+	public String getTerminalstation() {
+		return this.terminalstation;
+	}
+
+	public void setTerminalstation(String terminalstation) {
+		this.terminalstation = terminalstation;
+	}
+
+	public Timestamp getOrigintime() {
+		return this.origintime;
+	}
+
+	public void setOrigintime(Timestamp origintime) {
+		this.origintime = origintime;
+	}
+
+	public Timestamp getTerminaltime() {
+		return this.terminaltime;
+	}
+
+	public void setTerminaltime(Timestamp terminaltime) {
+		this.terminaltime = terminaltime;
+	}
+
+	public Float getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(Float price) {
+		this.price = price;
 	}
 
 }

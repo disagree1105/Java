@@ -22,10 +22,10 @@ public class FlightServiceImpl implements FlightService{
 	{
 		ActionContext ctx= ActionContext.getContext();
 		session=(Map <String, Object>) ctx.getSession();
-		Airport origin=flight.getAirportByOriginstation();
-		Airport terminal=flight.getAirportByTerminalstation();	
-		String originstation=origin.toString();
-		String terminalstation=terminal.toString();
+		String originstation=flight.getOriginstation();
+		String terminalstation=flight.getTerminalstation();	
+//		String originstation=origin.toString();
+//		String terminalstation=terminal.toString();
 		String hql="from Flight as flight where originstation='"+ originstation +"' AND "
 				+ "terminalstation='"+ terminalstation + "'";
 		List list=flightDao.findByHql(hql);

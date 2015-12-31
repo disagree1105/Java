@@ -6,6 +6,9 @@ import java.util.Map;
 
 
 
+
+
+
 import com.cn.bean.Userorder;
 import com.cn.dao.UserorderDao;
 import com.cn.service.UserorderService;
@@ -49,7 +52,7 @@ public class UserorderServiceImpl implements UserorderService{
 	{
 		ActionContext ctx= ActionContext.getContext();
 		Integer userorderid=userorder.getOrderid();
-		String hql="from Userorder as userorder where userorderid='"+ userorderid + "'";
+		String hql="from Userorder as userorder where orderid='"+ userorderid + "'";
 		List list=userorderDao.findByHql(hql);
 		if(list.isEmpty())
 			return false;
@@ -71,9 +74,9 @@ public class UserorderServiceImpl implements UserorderService{
 	}
 
 	
-	public List list() {
+	public List<Object> list() {
 		String hql="from Userorder";
-		List list=userorderDao.findByHql(hql);
+		List<Object> list=userorderDao.findByHql(hql);
 		return list;
 	}
 
@@ -82,8 +85,8 @@ public class UserorderServiceImpl implements UserorderService{
 		ActionContext ctx= ActionContext.getContext();
 		session=(Map<String, Object>) ctx.getSession();
 		Integer userorderid=userorder.getOrderid();
-		String hql="from Userorder as userorder where userorderid='"+ userorderid + "'";
-		List list=userorderDao.findByHql(hql);
+		String hql="from Userorder as userorder where orderid='"+ userorderid + "'";
+		List<?> list=userorderDao.findByHql(hql);
 		if(list.isEmpty())
 			return false;
 		else

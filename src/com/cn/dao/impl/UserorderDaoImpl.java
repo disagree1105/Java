@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
@@ -37,6 +38,12 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 			session.beginTransaction();
 			Query query=session.createQuery(hql);
 			List list=query.list();
+			
+			String sql="update Flight set ticketleft=ticketleft-1 where flightid ='"+flightid+"'";
+			SQLQuery sqlquery = this.getSession().createSQLQuery(sql); 
+			sqlquery.executeUpdate();  
+			
+			
 			session.getTransaction().commit();
 			if(list.isEmpty())
 			{
@@ -52,8 +59,8 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 			userorder.setTerminaltime(flight.getTerminaltime());
 			userorder.setPrice(flight.getPrice());
 			System.out.println(user.getUsername());
-			System.out.println(userorder.getUsername());
 			System.out.println(flight.getFlightid());
+			System.out.println(flight.getTicketleft());
 			getSession().beginTransaction();
 			getSession().save(userorder);
 			getSession().getTransaction().commit();

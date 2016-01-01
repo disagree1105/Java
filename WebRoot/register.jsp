@@ -29,20 +29,20 @@ a:link, a:visited {
 }
 </style>
 <script type="text/javascript" src="js/Calendar.js"></script>
-<script language="javascript">
-	function chk(Form) {
-		if (Form.user.username.value == "") {
-			alert("请输入用户名!");
-			Form.user.username.focus();
-			return (false);
-		}
-		if (Form.user.password.value == "") {
-			alert("请输入密码!");
-			Form.user.password.focus();
-			return (false);
-		}
-	}
-</script>
+<%-- <script language="javascript"> --%>
+<%-- 	function chk(Form) { --%>
+<%-- 		if (Form.user.username.value == "") { --%>
+<%-- 			alert("请输入用户名!"); --%>
+<%-- 			Form.user.username.focus(); --%>
+<%-- 			return (false); --%>
+<%-- 		} --%>
+<%-- 		if (Form.user.password.value == "") { --%>
+<%-- 			alert("请输入密码!"); --%>
+<%-- 			Form.user.password.focus(); --%>
+<%-- 			return (false); --%>
+<%-- 		} --%>
+<%-- 	} --%>
+<%-- </script> --%>
 </head>
 
 <body>

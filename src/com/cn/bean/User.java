@@ -15,9 +15,8 @@ public class User implements java.io.Serializable {
 	private String name;
 	private String idcardnumber;
 	private String tel;
-	private Integer age;
-	private String birthdate;
 	private String sex;
+	private String birthdate;
 
 	// Constructors
 
@@ -27,17 +26,15 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String username, String password, String type, String name,
-			String idcardnumber, String tel, Integer age, String birthdate,
-			String sex) {
+			String idcardnumber, String tel, String sex, String birthdate) {
 		this.username = username;
 		this.password = password;
 		this.type = type;
 		this.name = name;
 		this.idcardnumber = idcardnumber;
 		this.tel = tel;
-		this.age = age;
-		this.birthdate = birthdate;
 		this.sex = sex;
+		this.birthdate = birthdate;
 	}
 
 	// Property accessors
@@ -98,12 +95,12 @@ public class User implements java.io.Serializable {
 		this.tel = tel;
 	}
 
-	public Integer getAge() {
-		return this.age;
+	public String getSex() {
+		return this.sex;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
 	public String getBirthdate() {
@@ -112,14 +109,6 @@ public class User implements java.io.Serializable {
 
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
-	}
-
-	public String getSex() {
-		return this.sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
 	}
 
 }

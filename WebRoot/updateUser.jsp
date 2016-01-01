@@ -29,7 +29,7 @@ a:link, a:visited {
 	text-decoration: none;
 }
 </style>
-
+<script type="text/javascript" src="js/Calendar.js"></script>
 </head>
 
 <body>
@@ -49,43 +49,47 @@ a:link, a:visited {
 				<h3>
 					<font color="#FF0000">修改用户信息</font>
 				</h3>
-				<s:form action="updateUser" namespace="/com" method="post">
-					<s:hidden name="user.userid" value="%{#session.user.userid}" />
+				<s:form action="updateUserDone" namespace="/com" method="post">
+					<s:hidden name="user.userid" value="%{#session.updateuser.userid}" />
 					<fieldset>
 						<div>
 							<label for="userame">用户名:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.username}" />
+							<s:textfield name="user.username" size="30" maxlength="16"
+								value="%{#session.updateuser.username}" />
 						</div>
 						<div>
 							<label for="password">密码:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.password}" />
+							<s:textfield name="user.password" size="30" maxlength="16"
+								value="%{#session.updateuser.password}" />
 						</div>
 						<div>
 							<label for="type">类型:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.type}" />
+							<s:textfield name="user.type" size="30" maxlength="20"
+								value="%{#session.updateuser.type}" />
 						</div>
 						<div>
-							<label for="name">姓名:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.name}" />
+							<label for="name">真实姓名:</label>
+							<s:textfield name="user.name" size="30" maxlength="20"
+								value="%{#session.updateuser.name}" />
+						</div>
+						<div>
+							<label for="Sex">性 别</label>
+							<s:select name="user.sex" list="{'男','女' }" />
 						</div>
 						<div>
 							<label for="idcard">身份证:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.idcardnumber}" />
+							<s:textfield name="user.idcardnumber" size="30" maxlength="20"
+								value="%{#session.updateuser.idcardnumber}" />
 						</div>
 						<div>
 							<label for="phonenumber">手机号:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.tel}" />
+							<s:textfield name="user.tel" size="30" maxlength="20"
+								value="%{#session.updateuser.tel}" />
 						</div>
 						<div>
-							<label for="age">年龄:</label>
-							<s:textfield name="user.username" size="30" maxlength="20"
-								value="%{#session.user.age}" />
+							<label for="age">出生年月:</label>
+							<s:textfield name="user.birthdate" size="30" maxlength="20"
+								onClick="new Calendar().show(this);" value="%{#session.updateuser.birthdate}" />
 						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="修改并提交" />

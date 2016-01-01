@@ -57,9 +57,10 @@
 						<th>密码</th>
 						<th>用户类型</th>
 						<th>姓名</th>
+						<th>性别</th>
 						<th>身份证</th>
 						<th>手机号</th>
-						<th>年龄</th>
+						<th>出生年月</th>
 						<th>操作</th>
 					</tr>
 					<s:iterator value="#request.list" id="user">
@@ -68,9 +69,10 @@
 							<td><s:property value="#user.password" /></td>
 							<td><s:property value="#user.type" /></td>
 							<td><s:property value="#user.name" /></td>
+							<td><s:property value="#user.sex" /></td>
 							<td><s:property value="#user.idcardnumber" /></td>
 							<td><s:property value="#user.tel" /></td>
-							<td><s:property value="#user.age" /></td>
+							<td><s:property value="#user.birthdate" /></td>
 							<td><s:a
 									href="deleteUser.action?user.username=%{#user.username}">删除</s:a>
 								/<s:a

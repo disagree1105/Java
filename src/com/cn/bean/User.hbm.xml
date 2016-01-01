@@ -11,31 +11,28 @@
             <generator class="identity" />
         </id>
         <property name="username" type="java.lang.String">
-            <column name="username" length="16" />
+            <column name="username" length="50" />
         </property>
         <property name="password" type="java.lang.String">
-            <column name="password" length="16" />
+            <column name="password" length="50" />
         </property>
         <property name="type" type="java.lang.String">
-            <column name="type" length="10" />
+            <column name="type" length="50" />
         </property>
         <property name="name" type="java.lang.String">
-            <column name="name" length="20" />
+            <column name="name" length="50" />
         </property>
         <property name="idcardnumber" type="java.lang.String">
-            <column name="idcardnumber" length="30" />
+            <column name="idcardnumber" length="50" />
         </property>
         <property name="tel" type="java.lang.String">
-            <column name="tel" length="30" />
+            <column name="tel" length="50" />
         </property>
-        <property name="age" type="java.lang.Integer">
-            <column name="age" />
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="50" />
         </property>
         <property name="birthdate" type="java.lang.String">
             <column name="birthdate" length="50" />
-        </property>
-        <property name="sex" type="java.lang.String">
-            <column name="sex" length="20" />
         </property>
     </class>
 </hibernate-mapping>

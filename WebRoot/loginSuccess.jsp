@@ -77,7 +77,7 @@ a:link, a:visited {
 									value="%{#request.user.username}" /></font>
 						</h3>
 
-						<a href="<%=basePath%>/userInfo.jsp"><font color="#000000">&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt修改个人资料&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt</font></a>
+						<a href="../userInfo.jsp"><font color="#000000">&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt修改个人资料&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt</font></a>
 						<s:form action="listAllFlightsByUser" namespace="/com"
 							method="post">
 							<input type="submit" class="large button blue" value="查看所有航班" />

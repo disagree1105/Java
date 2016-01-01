@@ -111,8 +111,9 @@ public class UserServiceImpl implements UserService{
 			return false;
 		else
 			{
-			user=(User)list.get(0);
-			session.put("user", user);
+			User updateuser=new User();
+			updateuser=(User)list.get(0);
+			session.put("updateuser", updateuser);
 			return true;
 			}
 	}

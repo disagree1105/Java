@@ -39,7 +39,7 @@
 	 	</action>
 	 	
 	 	<action name="updateUser" class="userAction" method="update">
-	 	<result name="success">/userInfo.jsp</result>
+	 	<result name="success">/updateSuccess.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
 	 	
@@ -52,7 +52,11 @@
 	 	<result name="success">/updateUser.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
 	 	</action>
-	 	 	
+
+	 	<action name="updateUserDone" class="userAction" method="update">
+	 	<result name="success">/updateSuccess.jsp</result>
+	 	<result name="fail">/updateFail.jsp</result>
+	 	</action>	 	 	
 	 	<!-- ************************机场action************************ -->
 	 	<action name="addAirport" class="airportAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>

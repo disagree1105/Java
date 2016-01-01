@@ -70,7 +70,7 @@ a:link, a:visited {
 						</div>
 						  <div>
 							<label for="Sex">性 别</label>
-							<s:select name="user.sex" list="{'男','女' }" selected="%{#session.user.sex}"/>
+							<s:select name="user.sex" list="{'男','女' }" />
 						</div>
 						<div>
 							<label for="idcard">身份证:</label>

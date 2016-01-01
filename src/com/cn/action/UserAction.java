@@ -6,8 +6,9 @@ import java.util.Map;
 import com.cn.bean.User;
 import com.cn.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class UserAction {
+public class UserAction extends ActionSupport{
 	    private User user;
 	    private UserService userService=null;
 	    private List list;
@@ -43,6 +44,8 @@ public class UserAction {
 		}
 		public String login()
 		{
+			if(userService.login(user)=="fail")
+				this.addActionError("用户名或密码错误，请重新输入！");
 			return userService.login(user);
 		}
 		public String delete(){
@@ -70,6 +73,6 @@ public class UserAction {
 			else
 			return "fail";
 		}	
-		
+
 	
 }

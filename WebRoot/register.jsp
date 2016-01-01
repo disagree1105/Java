@@ -1,10 +1,15 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
+<base href="<%=basePath%>">
 <title>用户注册</title>
 
 <meta http-equiv="pragma" content="no-cache">
@@ -55,8 +60,9 @@ a:link, a:visited {
 		<center>
 			<div id="formwrapper">
 				<s:property value="#request.tip" />
+				<s:fielderror/>
 				<s:form action="register" namespace="/com" method="post"
-					onsubmit="return chk(this)">
+					onsubmit="return chk(this)" validate="true">
 					<fieldset>
 						<legend>用户注册</legend>
 						<p>

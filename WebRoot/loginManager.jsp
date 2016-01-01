@@ -73,7 +73,7 @@ a:link, a:visited {
 					<s:property value="#request.tip" />
 					<center>
 						<h3>
-							<font color="#FF0000">欢迎您， <s:label
+							<font color="#FF0000">欢迎您， 管理员<s:label
 									value="%{#request.user.username}" /></font>
 						</h3>
 
@@ -81,18 +81,8 @@ a:link, a:visited {
 						<s:form action="listAllUsers" namespace="/com" method="post">
 							<input type="submit" class="large button yellow" value="查看所有用户" />
 						</s:form>
-						<s:form action="listAllFlights" namespace="/com" method="post">
-							<input type="submit" class="large button blue" value="查看所有航班" />
-						</s:form>
 						<s:form action="listAllAirports" namespace="/com" method="post">
 							<input type="submit" class="large button orange" value="查看所有机场" />
-						</s:form>
-						<s:form action="listAllUserorders" namespace="/com" method="post">
-							<input type="submit" class="large button pink" value="查看所有订单" />
-						</s:form>
-						<s:form action="listMyUserorders" namespace="/com" method="post">
-							<s:hidden name="user.username" value="%{#session.user.username}"/>
-							<input type="submit" class="large button red" value="查看我的订单" />
 						</s:form>
 					</center>
 

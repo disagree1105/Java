@@ -70,7 +70,6 @@ a:link, a:visited {
 			</div>
 			<div style="width:50%;height:300px;float:right;">
 				<div id="formwrapper">
-					<s:property value="#request.tip" />
 					<center>
 						<h3>
 							<font color="#FF0000">欢迎您，注册用户 <s:label

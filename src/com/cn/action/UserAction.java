@@ -43,11 +43,7 @@ public class UserAction {
 		}
 		public String login()
 		{
-			if(userService.login(user))
-			{
-				return "success";
-			}
-			return "fail";
+			return userService.login(user);
 		}
 		public String delete(){
 			if(userService.delete(user))	

@@ -14,7 +14,9 @@
 	 	
 	 <!-- ************************用户action************************ -->
 	 	<action name="login" class="userAction" method="login">
-	 	<result name="success">/loginSuccess.jsp</result>
+	 	<result name="注册用户">/loginSuccess.jsp</result>
+	 	<result name="管理员">/loginManager.jsp</result>
+	 	<result name="机场">/loginAirport.jsp</result>
 	 	<result name="fail">/loginFail.jsp</result>
 	 	</action>
 	 	
@@ -97,6 +99,11 @@
 	 	
 	 	<action name="listAllFlights" class="flightAction" method="listAllFlights">
 	 	<result name="success">/listAllFlights.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="listAllFlightsByUser" class="flightAction" method="listAllFlightsByUser">
+	 	<result name="success">/listAllFlightsByUser.jsp</result>
 	 	<result name="fail">/findFail.jsp</result>
 	 	</action>
 	 	

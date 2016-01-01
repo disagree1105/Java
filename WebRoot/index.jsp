@@ -35,7 +35,7 @@
 		<img src="image/bg.png" height="100%" width="100%" />
 	</div>
 	<br>
-	<a class="large button blue" href="login.jsp">管理员登录</a>
+<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
 	<a class="large button orange" href="login.jsp">用户登录</a>
 	<a class="large button yellow" href="register.jsp">用户注册</a>
 	<br>

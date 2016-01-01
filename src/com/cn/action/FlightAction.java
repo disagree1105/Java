@@ -68,4 +68,11 @@ public class FlightAction {
 			else
 			return "fail";
 		}
+		
+		public String listAllFlightsByUser()
+		{
+			Map request = (Map) ActionContext.getContext().get("request");
+			 request.put("list", flightService.list());  
+				return "success";
+		}
 }

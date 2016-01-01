@@ -9,7 +9,7 @@ public interface UserService {
 	
 	public boolean register(User user);
 
-	public boolean login(User user);
+	public String login(User user);
 	
 	public boolean delete(User user);
 	

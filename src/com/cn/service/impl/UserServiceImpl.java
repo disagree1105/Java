@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public boolean login(User user)
+	public String login(User user)
 	{
 		ActionContext ctx= ActionContext.getContext();
 		session=(Map<String, Object>) ctx.getSession();
@@ -35,14 +35,15 @@ public class UserServiceImpl implements UserService{
 		+ password +"'";
 		List list=userDao.findByHql(hql);
 		if(list.isEmpty())
-			return false;
+			return "fail";
 		else
 			{
 			user=(User)list.get(0);
 			session.put("user", user);
 			request.put("tip","µÇÂ¼³É¹¦£¡");		
 			request.put("user",user);
-			return true;
+			System.out.println(user.getType());
+			return user.getType();
 			}
 	}
 

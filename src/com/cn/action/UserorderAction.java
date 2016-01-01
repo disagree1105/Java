@@ -87,6 +87,18 @@ public class UserorderAction {
 			return "fail";
 		 }
 		
+	public String listMyUserorders(){
+		Map request = (Map) ActionContext.getContext().get("request");
+		List<Object> list=userorderService.listMy(user);
+		if(list!=null)
+		 {
+			request.put("list", list);  
+			return "success";
+		 }
+		else 
+			return "fail";
+		 }
+	
 	public String updateUserorderByManager(){
 		if(userorderService.updateUserorderByManager(userorder))	
 			return "success";

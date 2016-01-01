@@ -20,4 +20,6 @@ public interface UserorderService {
 	public boolean updateUserorderByManager(Userorder userorder);
 	
 	public List<Object> list();
+	
+	public List<Object> listMy(User user);
 }

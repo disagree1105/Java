@@ -100,5 +100,11 @@ public class UserorderServiceImpl implements UserorderService{
 		return false;
 	}
 
+	public List<Object> listMy(User user) {
+		String hql="from Userorder where username ='"+ user.getUsername()+"'";
+		List<Object> list=userorderDao.findByHql(hql);
+		return list;
+	}
+
 
 }

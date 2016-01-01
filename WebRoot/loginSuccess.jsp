@@ -90,6 +90,10 @@ a:link, a:visited {
 						<s:form action="listAllUserorders" namespace="/com" method="post">
 							<input type="submit" class="large button pink" value="查看所有订单" />
 						</s:form>
+						<s:form action="listMyUserorders" namespace="/com" method="post">
+							<s:hidden name="user.username" value="%{#session.user.username}"/>
+							<input type="submit" class="large button red" value="查看我的订单" />
+						</s:form>
 					</center>
 
 				</div>

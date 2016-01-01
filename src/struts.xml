@@ -115,7 +115,12 @@
 	 	<result name="success">/listAllOrders.jsp</result>
 	 	<result name="fail">/findFail.jsp</result>
 	 	</action>	 	
-	 
+
+	 	<action name="listMyUserorders" class="userorderAction" method="listMyUserorders">
+	 	<result name="success">/listMyOrders.jsp</result>
+	 	<result name="fail">/findFail.jsp</result>
+	 	</action>	
+	 		 
 	 	<action name="addOrder" class="userorderAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>
 	 	<result name="fail">/addFail.jsp</result>

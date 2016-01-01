@@ -1,43 +1,102 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<base href="<%=basePath%>">
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    
-    <title>用户信息</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
+<head>
+<title>修改个人信息</title>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<link rel="stylesheet" type="text/css" href="css/reg.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css" />
+<style type="text/css">
+a:link, a:visited {
+	text-decoration: none;
+}
+</style>
+</head>
 
-  </head>
-  
-  <body>
-  <center>
-  修改个人信息
-    <s:form action="userUpdate" namespace="/com" method="post">
-    	<s:hidden name="user.userid"
-    		value="%{#session.user.userid}"/>
-    		用户名不能修改<s:textfield name="user.username"
-    		value="%{#session.user.username}" readonly="true"/>
-    		<br>
-    		密码:<s:textfield name="user.password" 
-    		value="%{#session.user.password}"/><br>
-    		类型:<s:textfield name="user.type" 
-    		value="%{#session.user.type}"/><br>
-    		姓名:<s:textfield name="user.username" value="%{#session.user.name}"/><br/>
-    	身份证:<s:textfield name="user.username" value="%{#session.user.idcardnumber}"/><br/>
-    	手机号:<s:textfield name="user.username" value="%{#session.user.tel}"/><br/>
-    	年龄:<s:textfield name="user.username" value="%{#session.user.age}"/><br/>
-    	<br/>
-    		<s:submit value="修改"/>
-     </s:form>
-    </center>
-  </body>
+<body>
+	<center>
+		<div
+			style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
+			<img src="image/background.jpg" height="100%" width="100%" />
+		</div>
+		<p>
+			<img src="image/label.jpg" width="1024" height="120">
+		</p>
+		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+			width="100%" color=#987cb9 SIZE=10>
+		<br>
+		<center>
+			<div id="formwrapper">
+				<h3>
+					<font color="#FF0000">修改个人信息</font>
+				</h3>
+				<s:form action="updateUser" namespace="/com" method="post">
+					<fieldset>
+						<s:hidden name="user.userid" value="%{#session.user.userid}" />
+						<div>
+							<label for="userame">用户名:</label> <strong><font
+								color="#ff0000"><s:textfield name="user.username"
+										value="%{#session.user.username}" /></font> </strong>
+						</div>
+						<div>
+							<label for="password">密码:</label>
+							<s:textfield name="user.password" size="30" 
+								value="%{#session.user.password}" />
+						</div>
+						<div>
+							<label for="type">类型:</label>
+							<s:textfield name="user.type" size="30" value="%{#session.user.type}" />
+						</div>
+						<div>
+							<label for="name">姓名:</label>
+							<s:textfield name="user.username" size="30" value="%{#session.user.name}" />
+						</div>
+						<div>
+							<label for="idcard">身份证:</label>
+							<s:textfield name="user.username"  size="30"
+								value="%{#session.user.idcardnumber}" />
+						</div>
+						<div>
+							<label for="phonenumber">手机号:</label>
+							<s:textfield name="user.username" size="30" value="%{#session.user.tel}" />
+						</div>
+						<div>
+							<label for="age">年龄:</label>
+							<s:textfield name="user.username" size="30" value="%{#session.user.age}" />
+						</div>
+						<div class="enter">
+							<input type="submit" class="large button green" value="修改并提交" />
+							<a onclick="javascript:history.back(-1);"
+								class="large button blue">返回上一页</a>
+						</div>
+					</fieldset>
+				</s:form>
+			</div>
+		</center>
+	</center>
+	<a href="index.jsp" class="large button orange">返回首页</a>
+	<br />
+	<br />
+	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+		width="100%" color=#987cb9 SIZE=10>
+	<br>
+	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
+		Reserved</font>
+</body>
 </html>

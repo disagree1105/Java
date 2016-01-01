@@ -56,7 +56,7 @@ a:link, a:visited {
  		终点城市:<s:textfield name="flight.terminalstation" />
 						<br />
  		出发日期:<s:textfield name="flight.origintime"
-							onClick="new Calendar().show(this);" readonly="true"
+							onClick="new Calendar(2015,2016).show(this);" readonly="true"
 							value="2016-01-01" />
 						<br />
 						<input type="submit" class="large button blue" value="查询航班" />
@@ -73,7 +73,8 @@ a:link, a:visited {
 					<s:property value="#request.tip" />
 					<center>
 						<h3>
-							<font color="#FF0000">欢迎您， 管理员<s:label
+							<font color="#FF0000">欢迎您， <s:label
+									value="%{#request.user.type}" /> <s:label
 									value="%{#request.user.username}" /></font>
 						</h3>
 
@@ -93,7 +94,7 @@ a:link, a:visited {
 	</center>
 	<br />
 	<a onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
-	<a href="<%=basePath%>/index.jsp" class="large button green">返回首页</a>
+	<a href="<%=basePath%>/index.jsp" class="large button orange">返回首页</a>
 	<br />
 	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"

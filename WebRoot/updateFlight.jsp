@@ -47,7 +47,8 @@ a:link, a:visited {
 		<center>
 			<div id="formwrapper">
 				<h3>
-					<font color="#FF0000">修改航班信息(当前身份：管理员)</font>
+					<font color="#FF0000">修改航班信息(当前身份:<s:label
+									value="%{#session.user.type}" />)</font>
 				</h3>
 				<s:form action="updateFlight" namespace="/com" method="post">
 					<s:hidden name="flight.flightid"
@@ -102,7 +103,7 @@ a:link, a:visited {
 		</center>
 
 	</center>
-	<a href="index.jsp" class="large button green">返回首页</a>
+	<a href="index.jsp" class="large button orange">返回首页</a>
 	<br />
 	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"

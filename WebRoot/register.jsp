@@ -117,7 +117,7 @@ a:link, a:visited {
 			</div>
 		</center>
 	</center>
-	<a href="index.jsp" class="large button green">返回首页</a>
+	<a href="index.jsp" class="large button orange">返回首页</a>
 	<br />
 	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"

@@ -1,8 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -10,6 +7,8 @@
 			+ path + "/";
 %>
 <base href="<%=basePath%>">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
 
 
@@ -48,7 +47,7 @@ a:link, a:visited {
 		<center>
 			<div id="formwrapper">
 				<h3>
-					<font color="#FF0000">修改用户信息(当前身份：管理员)</font>
+					<font color="#FF0000">修改用户信息</font>
 				</h3>
 				<s:form action="updateUser" namespace="/com" method="post">
 					<s:hidden name="user.userid" value="%{#session.user.userid}" />
@@ -89,7 +88,9 @@ a:link, a:visited {
 								value="%{#session.user.age}" />
 						</div>
 						<div class="enter">
-							<input type="submit" class="large button blue" value="修改并提交" />
+							<input type="submit" class="large button green" value="修改并提交" />
+							<a onclick="javascript:history.back(-1);"
+								class="large button blue">返回上一页</a>
 						</div>
 
 					</fieldset>
@@ -98,7 +99,7 @@ a:link, a:visited {
 		</center>
 
 	</center>
-	<a href="index.jsp" class="large button green">返回首页</a>
+	<a href="index.jsp" class="large button orange">返回首页</a>
 	<br />
 	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"

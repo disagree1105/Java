@@ -87,7 +87,7 @@
 	</center>
 	<br />
 	<br />
-	<a href="<%=basePath%>/index.jsp" class="large button red">返回首页</a>
+	<a href="<%=basePath%>/index.jsp" class="large button orange">返回首页</a>
 	<br />
 	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"

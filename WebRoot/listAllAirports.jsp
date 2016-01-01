@@ -60,7 +60,7 @@
 						<tr>
 							<td><s:property value="#airport.portname" /></td>
 							<td><s:a
-									href="eleteAirport.action?airport.aid=%{#airport.aid}">删除</s:a>
+									href="deleteAirport.action?airport.aid=%{#airport.aid}">删除</s:a>
 								/<s:a
 									href="updateAirportByManager.action?airport.aid=%{#airport.aid}">修改</s:a>
 							</td>
@@ -75,7 +75,7 @@
 
 	<br />
 	<br />
-	<a href="<%=basePath%>/index.jsp" class="large button red">返回首页</a>
+	<a href="<%=basePath%>/index.jsp" class="large button orange">返回首页</a>
 	<br />
 	<br />
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"

@@ -38,6 +38,16 @@ public class AirportServiceImpl implements AirportService{
 		}
 	}
 	
+	public boolean check(String portname)
+	{
+		String hql="from Airport as airport where portname='"+ portname +"'";
+		List list=airportDao.findByHql(hql);
+		if(list.isEmpty())
+			return false;
+		else
+			return true;
+	}
+	
 	public boolean add(Airport airport)
 	{
 		if(airportDao.save(airport))

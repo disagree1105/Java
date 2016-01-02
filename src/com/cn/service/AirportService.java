@@ -10,6 +10,8 @@ public interface AirportService {
 
 	public boolean find(Airport airport);
 	
+	public boolean check(String portname);
+	
 	public boolean delete(Airport airport);
 	
 	public boolean update(Airport airport);

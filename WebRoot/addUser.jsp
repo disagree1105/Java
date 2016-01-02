@@ -27,7 +27,10 @@
 a:link, a:visited {
 	text-decoration: none;
 }
+
 </style>
+
+<script type="text/javascript" src="js/Calendar.js"></script>
 </head>
 
 <body>
@@ -49,7 +52,8 @@ a:link, a:visited {
 							value="%{#session.user.type}" />)
 					</font>
 				</h3>
-				<s:form action="addUser" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="addUser" namespace="/com" method="post" validate="true">
 					<fieldset>
 						<div>
 							<label for="userame">用户名:</label>
@@ -60,11 +64,11 @@ a:link, a:visited {
 							<s:textfield name="user.password" size="30" />
 						</div>
 						<div>
-							<label for="type">类型:</label>
-							<s:textfield name="user.type" size="30" />
+							<label for="type">用户类型</label>
+							<s:select name="user.type" list="{'注册用户','机场','管理员'}" />
 						</div>
 						<div>
-							<label for="name">姓名:</label>
+							<label for="name">真实姓名:</label>
 							<s:textfield name="user.name" size="30" />
 						</div>
 						<div>
@@ -76,8 +80,8 @@ a:link, a:visited {
 							<s:textfield name="user.tel" size="30" />
 						</div>
 						<div>
-							<label for="age">年龄:</label>
-							<s:textfield name="user.age" size="30" />
+							<label for="age">出生年月:</label>
+							<s:textfield name="user.birthdate" onClick="new Calendar().show(this);" readonly="true" size="30" />
 						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="添加该用户" />

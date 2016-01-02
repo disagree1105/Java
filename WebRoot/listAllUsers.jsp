@@ -82,7 +82,7 @@
 					</s:iterator>
 				</table>
 				<br>
-				<a href="<%=basePath%>/addUser.jsp" class="large button green">添加用户</a>
+				<a href="../addUser.jsp" class="large button green">添加用户</a>
 				<a onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
 			</s:form>
 		</center>

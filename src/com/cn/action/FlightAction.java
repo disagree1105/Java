@@ -3,14 +3,17 @@ package com.cn.action;
 import java.util.Map;
 
 import com.cn.bean.Flight;
+import com.cn.service.AirportService;
 import com.cn.service.FlightService;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class FlightAction {
+public class FlightAction extends ActionSupport{
 	private Flight flight;
     private FlightService flightService=null;
-    
-    public void setFlight(Flight flight)
+    private AirportService airportService=null;
+
+	public void setFlight(Flight flight)
     {
     	this.flight=flight;
     }
@@ -27,11 +30,31 @@ public class FlightAction {
     {
     	return flightService;
     }
+    public AirportService getAirportService() {
+		return airportService;
+	}
+	public void setAirportService(AirportService airportService) {
+		this.airportService = airportService;
+	}
+	
 	public String add(){
+			if(flight.getTicketleft()>flight.getTicketsum())
+			{
+				this.addActionError("余票数不能大于总票数！");
+				return "fail";
+			}
+			if(!airportService.check(flight.getOriginstation()) || !airportService.check(flight.getTerminalstation()))
+			{
+				this.addActionError("起点站或终点站不在机场范围内！");
+				return "fail";
+			}
 			if(flightService.add(flight))	
-			return "success";
+			{
+
+				return "success";
+			}
 			else
-			return "fail";
+				return "fail";
 	}
 	public String find()
 	{

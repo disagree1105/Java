@@ -61,8 +61,7 @@ a:link, a:visited {
 			<div id="formwrapper">
 				<s:property value="#request.tip" />
 				<s:fielderror/>
-				<s:form action="register" namespace="/com" method="post"
-					onsubmit="return chk(this)" validate="true">
+				<s:form action="register" namespace="/com" method="post" validate="true">
 					<fieldset>
 						<legend>用户注册</legend>
 						<p>

@@ -25,12 +25,12 @@
 	 	<result name="success">/regSuccess.jsp</result>
 	 	<result name="fail">/register.jsp</result>
 	 	<result name="input">/register.jsp</result>
-	 	
 	 	</action>
 	 	
 	 	<action name="addUser" class="userAction" method="register">
 	 	<result name="success">/addSuccess.jsp</result>
 	 	<result name="fail">/addFail.jsp</result>
+	 	<result name="input">/addUser.jsp</result>
 	 	</action>
 	 	
 	 	<action name="deleteUser" class="userAction" method="delete">
@@ -40,7 +40,8 @@
 	 	
 	 	<action name="updateUser" class="userAction" method="update">
 	 	<result name="success">/updateSuccess.jsp</result>
-	 	<result name="fail">/updateFail.jsp</result>
+	 	<result name="fail">/userInfo.jsp</result>
+	 	<result name="input">/userInfo.jsp</result>
 	 	</action>
 	 	
 	 	<action name="listAllUsers" class="userAction" method="listAllUsers">
@@ -56,6 +57,7 @@
 	 	<action name="updateUserDone" class="userAction" method="update">
 	 	<result name="success">/updateSuccess.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
+	 	<result name="input">/updateUser.jsp</result>
 	 	</action>	 	 	
 	 	<!-- ************************机场action************************ -->
 	 	<action name="addAirport" class="airportAction" method="add">
@@ -92,6 +94,7 @@
 	 	<action name="addFlight" class="flightAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>
 	 	<result name="fail">/addFail.jsp</result>
+	 	<result name="input">/addFlight.jsp</result>
 	 	</action>
 	 	
 	 	<action name="deleteFlight" class="flightAction" method="delete">

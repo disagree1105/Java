@@ -49,7 +49,8 @@ a:link, a:visited {
 				<h3>
 					<font color="#FF0000">修改用户信息</font>
 				</h3>
-				<s:form action="updateUserDone" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="updateUserDone" namespace="/com" method="post" validate="true">
 					<s:hidden name="user.userid" value="%{#session.updateuser.userid}" />
 					<fieldset>
 						<div>
@@ -63,9 +64,8 @@ a:link, a:visited {
 								value="%{#session.updateuser.password}" />
 						</div>
 						<div>
-							<label for="type">类型:</label>
-							<s:textfield name="user.type" size="30" maxlength="20"
-								value="%{#session.updateuser.type}" />
+							<label for="type">用户类型</label>
+							<s:select name="user.type" list="{'注册用户','机场','管理员'}" />
 						</div>
 						<div>
 							<label for="name">真实姓名:</label>

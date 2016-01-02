@@ -47,7 +47,8 @@ a:link, a:visited {
 				<h3>
 					<font color="#FF0000">修改个人信息</font>
 				</h3>
-				<s:form action="updateUser" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="updateUser" namespace="/com" method="post" validate="true">
 					<fieldset>
 						<s:hidden name="user.userid" value="%{#session.user.userid}" />
 						<div>
@@ -60,9 +61,9 @@ a:link, a:visited {
 							<s:textfield name="user.password" size="30" 
 								value="%{#session.user.password}" />
 						</div>
-						<div>
-							<label for="type">类型:</label>
-							<s:textfield name="user.type" size="30" value="%{#session.user.type}" />
+							<div>
+							<label for="type">用户类型</label>
+							<s:textfield name="user.type" size="30" readonly="true" value="%{#session.user.type}" />
 						</div>
 						<div>
 							<label for="name">真实姓名:</label>

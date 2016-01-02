@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'Success.jsp' starting page</title>
+    <title>My JSP 'returnTicketSuccess.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -25,17 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-操作成功！
-<c:if test="${session.user.point<2000 && session.user.point>=1000}">
-您的积分大于1000，可享受9.5折优惠！
-</c:if>
-<c:if test="${session.user.point>=2000 && session.user.point<5000}">
-您的积分大于2000，可享受9折优惠！
-</c:if>
-<c:if test="${session.user.point>=5000}">
-您的积分大于5000，可享受8折优惠！
-</c:if>
-<s:form action="listMyUserorders" namespace="/com" method="post">
+   退票成功！感谢您的购买！
+   <s:form action="listMyUserorders" namespace="/com" method="post">
 <s:hidden name="user.username" value="%{#session.user.username}" />
 <input type="submit" class="large button red" value="查看我的订单" />
 </s:form>

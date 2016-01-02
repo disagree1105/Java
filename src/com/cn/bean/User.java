@@ -17,6 +17,7 @@ public class User implements java.io.Serializable {
 	private String tel;
 	private String sex;
 	private String birthdate;
+	private Integer point;
 
 	// Constructors
 
@@ -26,7 +27,8 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String username, String password, String type, String name,
-			String idcardnumber, String tel, String sex, String birthdate) {
+			String idcardnumber, String tel, String sex, String birthdate,
+			Integer point) {
 		this.username = username;
 		this.password = password;
 		this.type = type;
@@ -35,6 +37,7 @@ public class User implements java.io.Serializable {
 		this.tel = tel;
 		this.sex = sex;
 		this.birthdate = birthdate;
+		this.point = point;
 	}
 
 	// Property accessors
@@ -109,6 +112,14 @@ public class User implements java.io.Serializable {
 
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
+	}
+
+	public Integer getPoint() {
+		return this.point;
+	}
+
+	public void setPoint(Integer point) {
+		this.point = point;
 	}
 
 }

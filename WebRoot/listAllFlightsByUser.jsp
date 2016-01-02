@@ -71,7 +71,7 @@
 						<td><s:property value="#flight.ticketsum" /></td>
 						<td><s:property value="#flight.ticketleft" /></td>
 						<td><s:property value="#flight.price" /></td>
-						<td><s:a href="buyTicket.action?user.username=%{#session.user.username}&flight.flightid=%{#flight.flightid}">购票</s:a></td>
+						<td><s:a href="buyTicket.action?user.userid=%{#session.user.userid}&flight.flightid=%{#flight.flightid}">购票</s:a></td>
 					</tr>
 				</s:iterator>
 			</table>

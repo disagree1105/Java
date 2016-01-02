@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
@@ -18,10 +19,22 @@ import com.cn.bean.User;
 import com.cn.bean.Userorder;
 import com.cn.dao.AirportDao;
 import com.cn.dao.FlightDao;
+import com.cn.dao.UserDao;
 import com.cn.dao.UserorderDao;
+import com.cn.service.UserService;
+import com.opensymphony.xwork2.ActionContext;
 
 public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderDao{
 	private SessionFactory sessionFactory;
+	private UserDao userDao=null;
+	
+
+	public UserDao getUserDao() {
+		return userDao;
+	}
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 			
@@ -31,38 +44,63 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 	}
 	public boolean buyTicket(User user, Flight flight) {
 		try {
-			
+			Integer userid=user.getUserid();
 			Integer flightid=flight.getFlightid();
 			String hql="from Flight as flight where flightid='"+ flightid +"'";
 			Session session =getSession();
 			session.beginTransaction();
 			Query query=session.createQuery(hql);
-			List list=query.list();
+			List flightlist=query.list();
 			
 			String sql="update Flight set ticketleft=ticketleft-1 where flightid ='"+flightid+"'";
 			SQLQuery sqlquery = this.getSession().createSQLQuery(sql); 
 			sqlquery.executeUpdate();  
 			
+			hql="from User as user where userid='"+userid+"'";
+			query=session.createQuery(hql);
+			List userlist=query.list();
+			
 			
 			session.getTransaction().commit();
-			if(list.isEmpty())
+			if(flightlist.isEmpty())
 			{
 				System.out.println("flightid is + "+flightid+" list is empty");
 				return false;
 			}
-			flight=(Flight)list.get(0);
+			if(userlist.isEmpty())
+			{
+				System.out.println("userid is + "+userid+" list is empty");
+				return false;
+			}
+			flight=(Flight)flightlist.get(0);
+			user=(User)userlist.get(0);
 			Userorder userorder=new Userorder();
 			userorder.setUsername(user.getUsername());
 			userorder.setOriginstation(flight.getOriginstation());
 			userorder.setTerminalstation(flight.getTerminalstation());
 			userorder.setOrigintime(flight.getOrigintime());
 			userorder.setTerminaltime(flight.getTerminaltime());
-			userorder.setPrice(flight.getPrice());
-			System.out.println(user.getUsername());
-			System.out.println(flight.getFlightid());
-			System.out.println(flight.getTicketleft());
+			
+			if(user.getPoint()>=1000)
+				userorder.setPrice((float)(flight.getPrice()*0.95));
+			if(user.getPoint()>=2000)
+				userorder.setPrice((float)(flight.getPrice()*0.9));
+			if(user.getPoint()>=5000)
+				userorder.setPrice((float)(flight.getPrice()*0.8));
+			
+			user.setPoint(user.getPoint()+(int)(userorder.getPrice()*0.1));	
+//			
+			Map<String, Object> session1;			
+			ActionContext ctx= ActionContext.getContext();
+			session1=(Map<String, Object>) ctx.getSession();
+//			getSession().beginTransaction();
+			userDao.update(user);
+			session1.put("user",user);
+//			getSession().getTransaction().commit();
+			
+			
 			getSession().beginTransaction();
-			getSession().save(userorder);
+			getSession().save(userorder);	
 			getSession().getTransaction().commit();
 			return true;
 		} catch (RuntimeException re) {

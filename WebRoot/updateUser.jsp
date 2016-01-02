@@ -91,6 +91,11 @@ a:link, a:visited {
 							<s:textfield name="user.birthdate" size="30" maxlength="20"
 								onClick="new Calendar().show(this);" value="%{#session.updateuser.birthdate}" />
 						</div>
+							<div>
+							<label for="point">积分:</label>
+							<s:textfield name="user.point" size="30" maxlength="20"
+								value="%{#session.updateuser.point}" />
+						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="修改并提交" />
 							<a onclick="javascript:history.back(-1);"

@@ -95,7 +95,10 @@ public class UserorderServiceImpl implements UserorderService{
 
 	public boolean buyTicket(User user,Flight flight) {
 		if(userorderDao.buyTicket(user,flight))
+		{
+
 			return true;
+		}
 		else
 		return false;
 	}

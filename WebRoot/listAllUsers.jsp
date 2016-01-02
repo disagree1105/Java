@@ -61,6 +61,7 @@
 						<th>身份证</th>
 						<th>手机号</th>
 						<th>出生年月</th>
+						<th>积分</th>
 						<th>操作</th>
 					</tr>
 					<s:iterator value="#request.list" id="user">
@@ -73,6 +74,7 @@
 							<td><s:property value="#user.idcardnumber" /></td>
 							<td><s:property value="#user.tel" /></td>
 							<td><s:property value="#user.birthdate" /></td>
+							<td><s:property value="#user.point" /></td>
 							<td><s:a
 									href="deleteUser.action?user.username=%{#user.username}">删除</s:a>
 								/<s:a

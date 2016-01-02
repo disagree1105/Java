@@ -58,7 +58,8 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 		<bean id="flightDao" class="com.cn.dao.impl.FlightDaoImpl" parent="baseDao">
 	</bean>	
 	
-		<bean id="userorderDao" class="com.cn.dao.impl.UserorderDaoImpl" parent="baseDao">
+	<bean id="userorderDao" class="com.cn.dao.impl.UserorderDaoImpl" parent="baseDao">
+	<property name="userDao" ref="userDao"/>
 	</bean>		
 	<!-- ************************service层************************ -->
 	<bean id="userService" class="com.cn.service.impl.UserServiceImpl">

@@ -79,7 +79,7 @@
 	
 						<c:otherwise >
 						<td>
-						<s:a href="buyTicket.action?user.username=%{#session.user.username}&flight.flightid=%{#flight.flightid}">预订</s:a>
+						<s:a href="buyTicket.action?user.userid=%{#session.user.userid}&flight.flightid=%{#flight.flightid}">预订</s:a>
 						</td>
 						</c:otherwise>
 						</c:choose>

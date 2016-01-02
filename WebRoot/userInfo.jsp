@@ -91,11 +91,6 @@ a:link, a:visited {
 
  							<label for="point">当前积分:</label>
  							<s:textfield name="user.point" size="30" readonly="true" value="%{#session.user.point}" />
- 						</div>
-
-							<label for="point">当前积分:</label>
-							<s:textfield name="user.point" size="30" readonly="true" value="%{#session.user.point}" />
-						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="修改并提交" />
 							<a onclick="javascript:history.back(-1);"

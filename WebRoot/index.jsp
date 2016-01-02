@@ -45,6 +45,7 @@
 	<c:when test="${session.user.username!=null}">
 	   <font color="#FF0000">您好，<s:label value="%{#session.user.type}" /> 
 	<s:label value="%{#session.user.username}" /></font>
+	<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
 	<a class="large button orange" href="logout.jsp">注销</a>
 	</c:when>
 	

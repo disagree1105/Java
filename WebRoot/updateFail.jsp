@@ -12,7 +12,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>error：修改失败</title>
+<title>修改信息失败</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -29,6 +29,51 @@ a:link, a:visited {
 	text-decoration: none;
 }
 </style>
+<style type="text/css">
+.z-msg {
+	background-color: #edf1f8;
+}
+
+.z-msg .z-msg-box {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	padding: 23px 0px 125px 0;
+	width: 980px;
+	height: 364px;
+}
+
+.z-msg .msgbox {
+	position: absolute;
+	right: 185px;
+	top: 145px;
+	width: 300px;
+	text-align: center;
+	line-height: 16px;
+}
+
+.z-msg .msgbox .title {
+	line-height: 30px;
+	text-align: center;
+	font-size: 24px;
+	color: #4d73b1;
+	margin-bottom: 15px;
+}
+
+.z-msg .msgbox .content {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: left;
+}
+
+.z-msg .bg {
+	margin: 0 auto;
+	width: 773px;
+	height: 364px;
+	background: url(image/errorPage.png) no-repeat;
+}
+</style>
 </head>
 
 <body>
@@ -43,23 +88,30 @@ a:link, a:visited {
 		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 			width="100%" color=#987cb9 SIZE=10>
 		<br>
-		<div id="formwrapper">
-			<center>
-				<h3>	
-					<font color="#FF0000"><s:actionerror/>修改信息失败，请检查输入是否正确或者与已有的重复！</font>
-				</h3>
-			</center>
+		<div class="z">
+			<div class="z-msg">
+				<div class="z-msg-box">
+					<div class="bg"></div>
+					<div class="msgbox">
+						<div class="title">
+							<s:actionerror />
+							修改信息失败！
+						</div>
+						<a onclick="javascript:history.back(-1);"
+							class="large button blue">返回上一页</a> <a href="index.jsp"
+							class="large button orange">返回首页</a>
+					</div>
+				</div>
+			</div>
 		</div>
-
 	</center>
-	<a onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
-	<a href="index.jsp" class="large button orange">返回首页</a>
 	<br />
-	<br />
+
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>
 	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
 		Reserved</font>
+
 </body>
 </html>

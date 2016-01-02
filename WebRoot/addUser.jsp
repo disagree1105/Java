@@ -6,11 +6,11 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<base href="<%=basePath%>">
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
+<base href="<%=basePath%>">
 <title>添加用户</title>
 
 <meta http-equiv="pragma" content="no-cache">
@@ -27,7 +27,6 @@
 a:link, a:visited {
 	text-decoration: none;
 }
-
 </style>
 
 <script type="text/javascript" src="js/Calendar.js"></script>
@@ -52,12 +51,13 @@ a:link, a:visited {
 							value="%{#session.user.type}" />)
 					</font>
 				</h3>
-				<s:fielderror/>
-				<s:form action="addUser" namespace="/com" method="post" validate="true">
+				<s:fielderror />
+				<s:form action="addUser" namespace="/com" method="post"
+					validate="true">
 					<fieldset>
 						<div>
 							<label for="userame">用户名:</label>
-							<s:textfield name="user.username" size="30"  />
+							<s:textfield name="user.username" size="30" />
 						</div>
 						<div>
 							<label for="password">密码:</label>
@@ -81,7 +81,8 @@ a:link, a:visited {
 						</div>
 						<div>
 							<label for="age">出生年月:</label>
-							<s:textfield name="user.birthdate" onClick="new Calendar().show(this);" readonly="true" size="30" />
+							<s:textfield name="user.birthdate"
+								onClick="new Calendar().show(this);" readonly="true" size="30" />
 						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="添加该用户" />

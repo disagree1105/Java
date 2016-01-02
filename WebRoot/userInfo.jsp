@@ -6,10 +6,11 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<base href="<%=basePath%>">
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 <title>修改个人信息</title>
 
 <meta http-equiv="pragma" content="no-cache">
@@ -86,6 +87,10 @@ a:link, a:visited {
 							<label for="age">出生年月:</label>
 							<s:textfield name="user.birthdate" size="30" onClick="new Calendar().show(this);" value="%{#session.user.birthdate}" />
 						</div>
+						<div>
+ +							<label for="point">当前积分:</label>
+ +							<s:textfield name="user.point" size="30" readonly="true" value="%{#session.user.point}" />
+ +						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="修改并提交" />
 							<a onclick="javascript:history.back(-1);"

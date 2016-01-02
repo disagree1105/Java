@@ -32,6 +32,6 @@
    session.invalidate();//注销
        %>
 <h3>你好,你已经退出本系统,两秒后跳回首页</h3>
-<h3>如没有跳转,请按<a href="index.jsp">这里</a>
+<h3>如没有跳转,请按<a href="index.jsp">这里</a></h3>
   </body>
 </html>

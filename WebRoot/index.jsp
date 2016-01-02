@@ -1,4 +1,7 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -11,8 +14,8 @@
 <head>
 <base href="<%=basePath%>">
 <!-- <marquee onmouseout="scroll" direction="left" width="660px" height="40px" SCROLLDELAY="440px" >
- 		<font size=6><font color=black>�㽭��ҵ��ѧ���Ż�ӭ����</font></font></marquee> -->
-<title>��ƱԤ��ϵͳ</title>
+ 		<font size=6><font color=black>浙江工业大学社团欢迎您！</font></font></marquee> -->
+<title>机票预订系统</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -35,9 +38,21 @@
 		<img src="image/bg.png" height="100%" width="100%" />
 	</div>
 	<br>
-<!-- 	<a class="large button blue" href="login.jsp">����Ա��¼</a> -->
-	<a class="large button orange" href="login.jsp">�û���¼</a>
-	<a class="large button yellow" href="register.jsp">�û�ע��</a>
+<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
+<!-- 	<c:set var="username" scope="session" value="%{#session.user.name}"/> -->
+
+	<c:choose>
+	<c:when test="${session.user.username!=null}">
+	   <font color="#FF0000">您好，<s:label value="%{#session.user.type}" /> 
+	<s:label value="%{#session.user.username}" /></font>
+	<a class="large button orange" href="logout.jsp">注销</a>
+	</c:when>
+	
+	<c:otherwise >
+	<a class="large button orange" href="login.jsp">用户登录</a>
+	<a class="large button yellow" href="register.jsp">用户注册</a>
+	</c:otherwise>
+	</c:choose>
 	<br>
 	<p>
 		<img src="image/head.png" width="1024" height="61">
@@ -49,43 +64,52 @@
 	<div style="width:1000px;margin:0 auto;">
 		<div style="width:40%;height:500px;;float:left;">
 			<fieldset>
-				<legend>��ƱԤ��</legend>
+				<legend>机票预订</legend>
+				<s:form action="findFlight" namespace="/com" method="post">
 				<p>
-					<strong> ����*��Ϊ��ѡ��</strong>
+					<strong> 标有*的为必选项</strong>
 				</p>
 				<div>
-					<label for="start">������</label> <input type="text" name="startCity"
+					<label for="start">起点城市</label> 
+					<s:textfield name="flight.originstation"
 						id="startCity" value="" size="20" maxlength="30" /> <br>
 				</div>
 				<div>
-					<label for="end">�յ����</label> <input type="text" name="endCity"
+					<label for="end">终点城市</label> 
+					<s:textfield name="flight.terminalstation" 
 						id="endCity" size="20" maxlength="15" /> <br>
 				</div>
 				<div>
-					<label for="date">��������</label> <input type="text" name="date"
-						id="date" onClick="new Calendar().show(this);" readonly="readonly" value="2016-01-01" />
+					<label for="date">出发日期</label>
+					 <s:textfield name="flight.origintime"
+							onClick="new Calendar(2015,2016).show(this);" readonly="true"
+							value="2016-01-01" />
 				</div>
-				<div>
-					<label for="ticketType">��Ʊ����</label><select name="ticketType">
-						<option selected="selected">����Ʊ</option>
-						<option>��ͯƱ</option>
-						<option>Ӥ��Ʊ</option>
-					</select>
-				</div>
-				<div>
-					<label for="tel">��ϵ�绰</label> <input type="text" name="memberTel"
-						id="tel" value="" size="20" /> *<br>
-				</div>
+<!-- 				<div> -->
+<!-- 					<label for="ticketType">机票种类</label><select name="ticketType"> -->
+<!-- 						<option selected="selected">成人票</option> -->
+<!-- 						<option>儿童票</option> -->
+<!-- 						<option>婴儿票</option> -->
+<!-- 					</select> -->
+<!-- 				</div> -->
+<!-- 				<div> -->
+<!-- 					<label for="tel">联系电话</label> <input type="text" name="memberTel" -->
+<!-- 						id="tel" value="" size="20" /> *<br> -->
+<!-- 				</div> -->
 				<div class="enter">
-					<input name="Submit" type="submit" class="buttom" value="ͬ��Э�鲢Ԥ��" />
+					
+					<s:submit class="buttom" value="同意协议并查询" />
 				</div>
+				</s:form>
 				<p>
-					<strong>* ���ύ����ע����Ϣʱ, ������Ϊ���Ѿ�ͬ�������ǵķ�������.<br> *
-						��Щ���������δ����ͬ���ʱ������޸�.
+					<strong>* 在提交您的注册信息时, 我们认为您已经同意了我们的服务条款.<br> *
+						这些条款可能在未经您同意的时候进行修改.
 					</strong>
 				</p>
 			</fieldset>
+			
 		</div>
+		
 		<div style="width:50%;height:400px;float:right;">
 			<div id="DB_gallery">
 				<div class="DB_imgSet">
@@ -98,11 +122,11 @@
 					</div>
 
 					<div class="DB_prevBtn">
-						<img src="galleryImgs/prev_off.png" alt="��һҳ" />
+						<img src="galleryImgs/prev_off.png" alt="上一页" />
 					</div>
 
 					<div class="DB_nextBtn">
-						<img src="galleryImgs/next_off.png" alt="��һҳ" />
+						<img src="galleryImgs/next_off.png" alt="下一页" />
 					</div>
 				</div>
 				<div class="DB_thumSet">
@@ -148,11 +172,11 @@
 					<div class="DB_thumLine"></div>
 
 					<div class="DB_prevPageBtn">
-						<img src="galleryImgs/prev_page.png" alt="��һҳ" />
+						<img src="galleryImgs/prev_page.png" alt="上一页" />
 					</div>
 
 					<div class="DB_nextPageBtn">
-						<img src="galleryImgs/next_page.png" alt="��һҳ" />
+						<img src="galleryImgs/next_page.png" alt="下一页" />
 					</div>
 				</div>
 			</div>
@@ -178,7 +202,7 @@
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>
-	<font color='#929293'>CopyRight &copy; ����粣�������,All Rights
+	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
 		Reserved</font>
 </body>
 </html>

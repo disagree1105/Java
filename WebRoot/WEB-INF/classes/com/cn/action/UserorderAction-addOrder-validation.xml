@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE validators PUBLIC 
+  		"-//Apache Struts//XWork Validator 1.0//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.dtd">
+  		
+<validators>
+    <field name="userorder.username">  
+       <field-validator type="stringlength">
+        <param name="minLength">4</param>
+        <param name="maxLength">15</param>
+        <message>用户名长度必须在
+        ${minLength}-${maxLength}位之间</message>
+        </field-validator>
+            
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>用户名不能为空!</message>
+        </field-validator>
+        
+    </field>
+    
+    <field name="userorder.originstation">   
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>始发站不能为空!</message>
+        </field-validator>
+    </field>
+
+    <field name="userorder.terminalstation">
+        <field-validator type="requiredstring">
+        <param name="trim">true</param>
+            <message>终点站不能为空!</message>
+        </field-validator>
+    </field>    
+    
+    <field name="userorder.origintime">
+        <field-validator type="requiredstring">
+            <message>始发时间不能为空!</message>
+        </field-validator>
+    </field>     
+ 
+     <field name="userorder.terminaltime">
+        <field-validator type="required">
+            <message>到达时间不能为空!</message>
+        </field-validator>
+    </field>
+  
+    
+   <field name="userorder.price">
+        <field-validator type="required">
+        <param name="trim">true</param>
+            <message>票价不能为空!</message>
+        </field-validator>
+    </field>
+</validators>

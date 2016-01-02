@@ -49,7 +49,8 @@ a:link, a:visited {
 							value="%{#session.user.type}" />)
 					</font>
 				</h3>
-				<s:form action="addOrder" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="addOrder" namespace="/com" method="post" validate="true">
 					<fieldset>
 						<div>
 							<label for="username">用户名:</label>

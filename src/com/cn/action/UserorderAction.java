@@ -8,15 +8,24 @@ import org.hibernate.Session;
 import com.cn.bean.Flight;
 import com.cn.bean.User;
 import com.cn.bean.Userorder;
+import com.cn.service.UserService;
 import com.cn.service.UserorderService;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class UserorderAction {
+public class UserorderAction extends ActionSupport{
   	private Userorder userorder;
 	private User user;
   	private Flight flight;
+  	private UserService userService=null;
   	
-  	public User getUser() {
+  	public UserService getUserService() {
+		return userService;
+	}
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
@@ -50,11 +59,16 @@ public class UserorderAction {
     	return userorderService;
     }
 	public String add(){
+		if(!userService.find(user))
+		{
+			this.addActionError("没有此用户！");
+			return "fail";			
+		}
 		
 			if(userorderService.add(userorder))	
 			return "success";
-			else
-			return "fail";
+			else 
+				return "fail";
 	}
 	public String find()
 	{
@@ -109,7 +123,6 @@ public class UserorderAction {
 	}
 	
 	public String buyTicket(){
-		
 		if(userorderService.buyTicket(user,flight))	
 		return "success";
 		else

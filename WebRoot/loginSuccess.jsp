@@ -50,7 +50,8 @@ a:link, a:visited {
 			<div style="width:40%;height:300px;;float:left;">
 				<fieldset>
 					<legend>航班查询</legend>
-					<s:form action="findFlight" namespace="/com" method="post"> 起点城市:
+					<s:form action="findFlight" namespace="/com" method="post">
+					 起点城市:
 					<s:textfield name="flight.originstation" />
 						<br />
  		终点城市:<s:textfield name="flight.terminalstation" />
@@ -73,8 +74,8 @@ a:link, a:visited {
 					<center>
 						<h3>
 							<font color="#FF0000">欢迎您，<s:label
-									value="%{#request.user.type}" /> <s:label
-									value="%{#request.user.username}" /></font>
+									value="%{#session.user.type}" /> <s:label
+									value="%{#session.user.username}" /></font>
 						</h3>
 
 						<a href="../userInfo.jsp"><font color="#000000">&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt修改个人资料&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt</font></a>

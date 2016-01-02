@@ -19,5 +19,7 @@ public interface UserService {
 	
 	public List list();
 	
+	public boolean find(User user);
+	
 	
 }

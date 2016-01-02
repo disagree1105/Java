@@ -142,6 +142,7 @@
 	 	<action name="addOrder" class="userorderAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>
 	 	<result name="fail">/addFail.jsp</result>
+	 	<result name="input">/addOrder.jsp</result>
 	 	</action>	 
 	 	
 	 	<action name="deleteOrder" class="userorderAction" method="delete">

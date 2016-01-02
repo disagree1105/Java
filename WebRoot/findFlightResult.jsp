@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -71,9 +72,18 @@
 						<td><s:property value="#flight.ticketsum" /></td>
 						<td><s:property value="#flight.ticketleft" /></td>
 						<td><s:property value="#flight.price" /></td>
-						<td><s:a
-								href="buyTicket.action?user.username=%{#session.user.username}&flight.flightid=%{#flight.flightid}">预订</s:a>
+						<c:choose>
+						<c:when test="${session.user.username==null}">
+						<td><a href="../logwarn.jsp">预订</a></td>
+						</c:when>
+	
+						<c:otherwise >
+						<td>
+						<s:a href="buyTicket.action?user.username=%{#session.user.username}&flight.flightid=%{#flight.flightid}">预订</s:a>
 						</td>
+						</c:otherwise>
+						</c:choose>
+						
 					</tr>
 				</s:iterator>
 			</table>

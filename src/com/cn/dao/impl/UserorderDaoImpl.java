@@ -96,6 +96,7 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 //			getSession().beginTransaction();
 			userDao.update(user);
 			session1.put("user",user);
+			session1.put("addpoint", (int)(userorder.getPrice()*0.1));
 //			getSession().getTransaction().commit();
 			
 			

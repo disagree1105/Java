@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-操作成功！
+操作成功！感谢您的购买！
 <c:if test="${session.user.point<2000 && session.user.point>=1000}">
 您的积分大于1000，可享受9.5折优惠！
 </c:if>
@@ -35,6 +35,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <c:if test="${session.user.point>=5000}">
 您的积分大于5000，可享受8折优惠！
 </c:if>
+您此次增加了<s:label value="%{#session.addpoint}"/>分的积分,
+您现在拥有<s:label value="%{#session.user.point}"/>分的积分。
 <s:form action="listMyUserorders" namespace="/com" method="post">
 <s:hidden name="user.username" value="%{#session.user.username}" />
 <input type="submit" class="large button red" value="查看我的订单" />

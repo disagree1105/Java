@@ -50,7 +50,8 @@ a:link, a:visited {
 					<font color="#FF0000">修改航班信息(当前身份:<s:label
 									value="%{#session.user.type}" />)</font>
 				</h3>
-				<s:form action="updateFlight" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="updateFlight" namespace="/com" method="post" validate="true">
 					<s:hidden name="flight.flightid"
 						value="%{#session.flight.flightid}" />
 					<fieldset>

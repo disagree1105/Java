@@ -87,6 +87,7 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
 	<bean id="flightAction" class="com.cn.action.FlightAction" scope="prototype">
 		<property name="flightService" ref="flightService"/>
+		<property name="airportService" ref="airportService"/>
 	</bean>
 	
 	<bean id="userorderAction" class="com.cn.action.UserorderAction" scope="prototype">

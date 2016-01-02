@@ -1,15 +1,9 @@
 package com.cn.service.impl;
 
-import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
-import com.cn.bean.Airport;
 import com.cn.bean.Flight;
-import com.cn.bean.User;
 import com.cn.dao.FlightDao;
 import com.cn.service.FlightService;
 import com.opensymphony.xwork2.ActionContext;

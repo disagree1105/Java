@@ -125,6 +125,7 @@
 	 	<action name="updateFlight" class="flightAction" method="update">
 	 	<result name="success">/updateSuccess.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
+	 	<result name="input">/updateFlight.jsp</result>
 	 	</action>
 	 	
 	 	<!-- ************************订单action************************ -->

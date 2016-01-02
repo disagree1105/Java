@@ -45,7 +45,7 @@ a:link, a:visited {
 		<center>
 			<div id="formwrapper">
 				<h3>
-					<font color="#FF0000">添加航班信息(当前身份:<s:label
+					<font color="#FF0000">添加订单信息(当前身份:<s:label
 							value="%{#session.user.type}" />)
 					</font>
 				</h3>

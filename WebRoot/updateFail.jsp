@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -44,8 +45,8 @@ a:link, a:visited {
 		<br>
 		<div id="formwrapper">
 			<center>
-				<h3>
-					<font color="#FF0000">修改信息失败，请检查输入是否正确或者与已有的重复！</font>
+				<h3>	
+					<font color="#FF0000"><s:actionerror/>修改信息失败，请检查输入是否正确或者与已有的重复！</font>
 				</h3>
 			</center>
 		</div>

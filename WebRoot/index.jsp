@@ -13,8 +13,6 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<!-- <marquee onmouseout="scroll" direction="left" width="660px" height="40px" SCROLLDELAY="440px" >
- 		<font size=6><font color=black>浙江工业大学社团欢迎您！</font></font></marquee> -->
 <title>机票预订系统</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -103,7 +101,7 @@
 				</div>
 				</s:form>
 				<p>
-					<strong>* 在提交您的注册信息时, 我们认为您已经同意了我们的服务条款.<br> *
+					<strong>* 在提交您的信息时, 我们认为您已经同意了我们的服务条款.<br> *
 						这些条款可能在未经您同意的时候进行修改.
 					</strong>
 				</p>
@@ -207,5 +205,3 @@
 		Reserved</font>
 </body>
 </html>
-
-//fortest

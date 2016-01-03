@@ -141,20 +141,6 @@ ol {
 	<!-- 	<c:set var="username" scope="session" value="%{#session.user.name}"/> -->
 
 	<c:choose>
-<<<<<<< HEAD
-		<c:when test="${session.user.username!=null}">
-			<font color="#FF0000">您好，<s:label
-					value="%{#session.user.type}" /> <s:label
-					value="%{#session.user.username}" /></font>
-			<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
-			<a class="large button orange" href="logout.jsp">注销</a>
-		</c:when>
-
-		<c:otherwise>
-			<a class="large button orange" href="login.jsp">用户登录</a>
-			<a class="large button yellow" href="register.jsp">用户注册</a>
-		</c:otherwise>
-=======
 	<c:when test="${session.user.username!=null}">
 			<font color="#FF0000">您好，<s:label
 					value="%{#session.user.type}" /> <s:label
@@ -179,7 +165,6 @@ ol {
 			<a class="large button orange" href="login.jsp">用户登录</a>
 			<a class="large button yellow" href="register.jsp">用户注册</a>
 		</c:otherwise>
->>>>>>> a9c1b1c9c6c9d8f5a9099f1a0daa055e6b407dd0
 	</c:choose>
 	<br>
 	<p>

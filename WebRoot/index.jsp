@@ -43,7 +43,19 @@
 	<c:when test="${session.user.username!=null}">
 	   <font color="#FF0000">您好，<s:label value="%{#session.user.type}" /> 
 	<s:label value="%{#session.user.username}" /></font>
+	
+	<c:choose>
+	<c:when test="${session.user.type=='管理员'}">
+	<a class="large button blue" href="loginManager.jsp">个人中心</a>
+	</c:when>
+	<c:when test="${session.user.type=='注册用户'}">
 	<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
+	</c:when>
+	<c:when test="${session.user.type=='机场'}">
+	<a class="large button blue" href="loginAirport.jsp">个人中心</a>
+	</c:when>
+	</c:choose>
+	
 	<a class="large button orange" href="logout.jsp">注销</a>
 	</c:when>
 	

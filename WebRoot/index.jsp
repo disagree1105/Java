@@ -103,12 +103,20 @@ ol {
 <link rel="stylesheet" type="text/css" href="css/reg.css" />
 <link rel="stylesheet" type="text/css" href="css/button.css" />
 <link rel="stylesheet" type="text/css" href="css/DB_gallery.css" />
+<link rel="stylesheet" type="text/css" href="css/fontEffect.css" />
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/jquery.DB_gallery.js"></script>
 <script type="text/javascript" src="js/j.suggest.js"></script>
 <script type="text/javascript" src="js/j.dimensions.js"></script>
 <script type="text/javascript" src="js/aircity.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+			$(".ani-bg").animate({
+				marginTop : "420px"
+			}, 2500);
+	});
+</script>
 <script type="text/javascript">
 	$(function() {
 
@@ -130,16 +138,17 @@ ol {
 </script>
 </head>
 <body>
+
 	<div
 		style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
-<div id="clouds">
-	<div class="cloud x1"></div>
-	<!-- Time for multiple clouds to dance around -->
-	<div class="cloud x2"></div>
-	<div class="cloud x3"></div>
-	<div class="cloud x4"></div>
-	<div class="cloud x5"></div>
-</div>
+		<div id="clouds">
+			<div class="cloud x1"></div>
+			<!-- Time for multiple clouds to dance around -->
+			<div class="cloud x2"></div>
+			<div class="cloud x3"></div>
+			<div class="cloud x4"></div>
+			<div class="cloud x5"></div>
+		</div>
 	</div>
 	<br>
 	<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
@@ -177,15 +186,22 @@ ol {
 		</c:otherwise>
 
 	</c:choose>
-	<br><br>
+	<br>
+	<br>
 
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>
 	<div style="width:1000px;margin:0 auto;">
 		<div style="width:40%;height:480px;;float:left;">
-		<img src="image/label.jpg" width="500" height="200">
-		<br /><br />
+			<!-- <img src="image/frame.png" width="500" height="200"> -->
+			<br /> <br />
+			<div class="logo">
+				<img src="image/frame.png" alt="" class="frame" /> <img
+					src="image/ani-bg.png" alt="" class="ani-bg" /> <br />
+			</div>
+			<br /> <br /> <br /> <br /> <br /> <br /> <br />
+
 			<fieldset>
 				<legend>机票预订</legend>
 				<s:form action="findFlight" namespace="/com" method="post">

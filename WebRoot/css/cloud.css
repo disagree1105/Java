@@ -1,15 +1,6 @@
 
 
 
-#clouds{
-
-	background: #66ccff;
-	background: -webkit-linear-gradient(top, #66ccff 0%, #fff 100%);
-	background: -linear-gradient(top, #66ccff 0%, #fff 100%);
-	background: -moz-linear-gradient(top, #66ccff 0%, #fff 100%);
-}
-
-
 .cloud {
 	width: 200px; height: 60px;
 	background: #fff;

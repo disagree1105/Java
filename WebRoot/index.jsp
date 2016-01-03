@@ -99,7 +99,7 @@ ol {
 	padding: 3px;
 }
 </style>
-
+<link rel="stylesheet" type="text/css" href="css/cloud.css" />
 <link rel="stylesheet" type="text/css" href="css/reg.css" />
 <link rel="stylesheet" type="text/css" href="css/button.css" />
 <link rel="stylesheet" type="text/css" href="css/DB_gallery.css" />
@@ -132,32 +132,39 @@ ol {
 <body>
 	<div
 		style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
-		<img src="image/bg3.jpg" height="100%" width="100%" />
+<div id="clouds">
+	<div class="cloud x1"></div>
+	<!-- Time for multiple clouds to dance around -->
+	<div class="cloud x2"></div>
+	<div class="cloud x3"></div>
+	<div class="cloud x4"></div>
+	<div class="cloud x5"></div>
+</div>
 	</div>
 	<br>
 	<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
 	<!-- 	<c:set var="username" scope="session" value="%{#session.user.name}"/> -->
 
 	<c:choose>
-	<c:when test="${session.user.username!=null}">
+		<c:when test="${session.user.username!=null}">
 			<font color="#FF0000">您好，<s:label
 					value="%{#session.user.type}" /> <s:label
 					value="%{#session.user.username}" /></font>
 
-				<c:if test="${session.user.type=='管理员'}">
-					<a class="large button blue" href="loginManager.jsp">个人中心</a>
-				</c:if>
-				<c:if test="${session.user.type=='注册用户'}">
-					<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
-				</c:if>
-				<c:if test="${session.user.type=='机场'}">
-					<a class="large button blue" href="loginAirport.jsp">个人中心</a>
-				</c:if>
+			<c:if test="${session.user.type=='管理员'}">
+				<a class="large button blue" href="loginManager.jsp">个人中心</a>
+			</c:if>
+			<c:if test="${session.user.type=='注册用户'}">
+				<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
+			</c:if>
+			<c:if test="${session.user.type=='机场'}">
+				<a class="large button blue" href="loginAirport.jsp">个人中心</a>
+			</c:if>
 
 			<a class="large button pink" href="findFlight.jsp">查询余票</a>
 			<a class="large button red" href="pointRule.jsp">积分优惠</a>
 			<a class="large button orange" href="logout.jsp">注销</a>
-			<a class="large button yellow" href="aboutUs.jsp">关于我们</a>			
+			<a class="large button yellow" href="aboutUs.jsp">关于我们</a>
 		</c:when>
 
 		<c:otherwise>
@@ -168,18 +175,17 @@ ol {
 			<a class="large button red" href="pointRule.jsp">积分优惠</a>
 			<a class="large button yellow" href="aboutUs.jsp">关于我们</a>
 		</c:otherwise>
-		
+
 	</c:choose>
-	<br>
-	<p>
-		<img src="image/head.png" width="1024" height="61">
-	</p>
-	<br>
+	<br><br>
+
 	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 		width="100%" color=#987cb9 SIZE=10>
 	<br>
 	<div style="width:1000px;margin:0 auto;">
-		<div style="width:40%;height:500px;;float:left;">
+		<div style="width:40%;height:480px;;float:left;">
+		<img src="image/label.jpg" width="500" height="200">
+		<br /><br />
 			<fieldset>
 				<legend>机票预订</legend>
 				<s:form action="findFlight" namespace="/com" method="post">
@@ -192,13 +198,13 @@ ol {
 						<div id='suggest' class="ac_results"></div>
 						<br>
 					</div>
-					<div  id="box">
+					<div id="box">
 						<label for="end">终点城市</label> <input type="text"
 							name="flight.terminalstation" id="city2" />
 						<div id='suggest2' class="ac_results"></div>
 						<br>
 					</div>
-					<div  id="box">
+					<div id="box">
 						<label for="date">出发日期</label>
 						<s:textfield name="flight.origintime"
 							onClick="new Calendar(2015,2016).show(this);" readonly="true"
@@ -217,7 +223,7 @@ ol {
 					<!-- 				</div> -->
 					<div class="enter">
 
-						<s:submit class="buttom" value="同意协议并查询" />
+						<input type="submit" class="large button blue" value="同意协议并查询" />
 					</div>
 				</s:form>
 				<p>
@@ -229,7 +235,7 @@ ol {
 
 		</div>
 
-		<div style="width:50%;height:400px;float:right;">
+		<div style="width:50%;height:480px;float:right;">
 			<div id="DB_gallery">
 				<div class="DB_imgSet">
 					<div class="DB_imgWin">

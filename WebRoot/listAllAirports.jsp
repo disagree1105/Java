@@ -54,11 +54,13 @@
 				<table class="zebra">
 					<tr>
 						<th>机场名称</th>
+						<th>机场信息</th>
 						<th>操作</th>
 					</tr>
 					<s:iterator value="#request.list" id="airport">
 						<tr>
 							<td><s:property value="#airport.portname" /></td>
+							<td><s:property value="#airport.portinfo" /></td>
 							<td><s:a
 									href="deleteAirport.action?airport.aid=%{#airport.aid}">删除</s:a>
 								/<s:a

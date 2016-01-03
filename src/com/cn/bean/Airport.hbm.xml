@@ -13,5 +13,8 @@
         <property name="portname" type="java.lang.String">
             <column name="portname" length="16" not-null="true" />
         </property>
+        <property name="portinfo" type="java.lang.String">
+            <column name="portinfo" length="65535" />
+        </property>
     </class>
 </hibernate-mapping>

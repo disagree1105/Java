@@ -63,6 +63,7 @@
 	 	<action name="addAirport" class="airportAction" method="add">
 	 	<result name="success">/addSuccess.jsp</result>
 	 	<result name="fail">/regFail.jsp</result>
+	 	<result name="input">/addAirport.jsp</result>
 	 	</action>
 	 	
 	 	<action name="deleteAirport" class="airportAction" method="delete">
@@ -73,6 +74,7 @@
 	 	<action name="updateAirport" class="airportAction" method="update">
 	 	<result name="success">/updateSuccess.jsp</result>
 	 	<result name="fail">/updateFail.jsp</result>
+	 	<result name="input">/updateAirport.jsp</result>
 	 	</action>
 	 	
 	 	<action name="findAirport" class="airportAction" method="find">

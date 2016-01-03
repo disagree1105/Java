@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE validators PUBLIC 
+  		"-//Apache Struts//XWork Validator 1.0//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.dtd">
+  		
+<validators>
+    <field name="airport.portname">
+    
+    <field-validator type="stringlength">
+        <param name="minLength">2</param>
+        <param name="maxLength">10</param>
+        <message>机场名长度必须在
+        ${minLength}-${maxLength}字之间</message>
+        </field-validator>
+        
+        <field-validator type="required">
+            <param name="trim">true</param>
+            <message>机场名不能为空!</message>
+        </field-validator>
+        
+    </field>
+    
+    <field name="airport.portinfo">
+    
+     <field-validator type="stringlength">
+        <param name="minLength">2</param>
+        <param name="maxLength">100</param>
+        <message>机场信息长度必须在
+        ${minLength}-${maxLength}字之间</message>
+        </field-validator>   
+    
+        <field-validator type="required">
+            <param name="trim">true</param>
+            <message>机场信息不能为空!</message>
+        </field-validator>
+    </field>
+
+</validators>

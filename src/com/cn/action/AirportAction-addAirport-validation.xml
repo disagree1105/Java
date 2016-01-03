@@ -13,8 +13,8 @@
         ${minLength}-${maxLength}字之间</message>
         </field-validator>
         
-        <field-validator type="required">
-            <param name="trim">true</param>
+        <field-validator type="requiredstring">
+        <param name="trim">true</param>
             <message>机场名不能为空!</message>
         </field-validator>
         
@@ -29,7 +29,7 @@
         ${minLength}-${maxLength}字之间</message>
         </field-validator>   
     
-        <field-validator type="required">
+        <field-validator type="requiredstring">
             <param name="trim">true</param>
             <message>机场信息不能为空!</message>
         </field-validator>

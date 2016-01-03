@@ -8,6 +8,8 @@ import org.hibernate.Session;
 import com.cn.bean.Flight;
 import com.cn.bean.User;
 import com.cn.bean.Userorder;
+import com.cn.service.AirportService;
+import com.cn.service.FlightService;
 import com.cn.service.UserService;
 import com.cn.service.UserorderService;
 import com.opensymphony.xwork2.ActionContext;
@@ -18,8 +20,16 @@ public class UserorderAction extends ActionSupport{
 	private User user;
   	private Flight flight;
   	private UserService userService=null;
+  	private FlightService flightService=null;
   	
-  	public UserService getUserService() {
+
+	public FlightService getFlightService() {
+		return flightService;
+	}
+	public void setFlightService(FlightService flightService) {
+		this.flightService = flightService;
+	}
+	public UserService getUserService() {
 		return userService;
 	}
 	public void setUserService(UserService userService) {
@@ -64,7 +74,10 @@ public class UserorderAction extends ActionSupport{
 			this.addActionError("没有此用户！");
 			return "fail";			
 		}
-		
+//		if(!flightService.check(userorder.getOriginstation()))
+//		{
+//			return "fail";
+//		}
 			if(userorderService.add(userorder))	
 			return "success";
 			else 

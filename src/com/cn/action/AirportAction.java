@@ -7,9 +7,14 @@ import com.cn.bean.Airport;
 import com.cn.bean.Flight;
 import com.cn.service.AirportService;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class AirportAction {
-	  	private Airport airport;
+public class AirportAction extends ActionSupport{
+	  	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+		private Airport airport;
 	    private AirportService airportService=null;
 	    
 	    public void setAirport(Airport airport)

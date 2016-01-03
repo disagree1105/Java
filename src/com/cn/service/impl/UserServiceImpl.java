@@ -1,6 +1,7 @@
 package com.cn.service.impl;
 
 import com.cn.bean.User;
+import com.cn.bean.Userorder;
 import com.cn.dao.BaseHibernateDao;
 import com.cn.dao.UserDao;
 import com.cn.dao.impl.BaseHibernateDaoImpl;
@@ -100,16 +101,15 @@ public class UserServiceImpl implements UserService{
 			return list;
 	}
 	
-	public boolean find(User user)
+	public boolean find(Userorder order)
 	{
-		String hql="from User where username='"+user.getUsername()+"'";
+		String hql="from User where username='"+order.getUsername()+"'";
 		List list=userDao.findByHql(hql);
 		if(list.isEmpty())
 			return false;
 		else
 			return true;
 	}
-
 	public boolean updateUserByManager(User user) 
 	{
 		ActionContext ctx= ActionContext.getContext();

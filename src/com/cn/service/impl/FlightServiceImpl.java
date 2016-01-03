@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.cn.bean.Flight;
+import com.cn.bean.Userorder;
 import com.cn.dao.FlightDao;
 import com.cn.service.FlightService;
 import com.opensymphony.xwork2.ActionContext;
@@ -29,6 +30,20 @@ public class FlightServiceImpl implements FlightService{
 		
 	}
 	
+	public boolean checkFlight(Userorder order)
+	{
+		String originstation=order.getOriginstation();
+		String terminalstation=order.getTerminalstation();
+		String origintime=order.getOrigintime();
+		String terminaltime=order.getTerminaltime();
+		String hql="from Flight as flight where originstation='"+originstation+
+				"' AND terminalstation='"+terminalstation+"' AND origintime='"+
+				origintime+"' AND terminaltime='"+terminaltime+"'";
+		List list=flightDao.findByHql(hql);
+		if(list.isEmpty())
+		return false;
+		return true;
+	}
 	
 	public boolean add(Flight flight)
 	{

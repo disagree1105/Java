@@ -73,8 +73,8 @@ a:link, a:visited {
 					<center>
 						<h3>
 							<font color="#FF0000">欢迎您，<s:label
-									value="%{#request.user.type}" /> <s:label
-									value="%{#request.user.username}" /></font>
+									value="%{#session.user.type}" /> <s:label
+									value="%{#session.user.username}" /></font>
 						</h3>
 			<a href="../userInfo.jsp"><font color="#000000">&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt修改个人资料&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt&lt</font></a>
 						 <s:form action="listAllFlights" namespace="/com" method="post">

@@ -10,6 +10,7 @@ public class Airport implements java.io.Serializable {
 
 	private Integer aid;
 	private String portname;
+	private String portinfo;
 
 	// Constructors
 
@@ -17,9 +18,15 @@ public class Airport implements java.io.Serializable {
 	public Airport() {
 	}
 
-	/** full constructor */
+	/** minimal constructor */
 	public Airport(String portname) {
 		this.portname = portname;
+	}
+
+	/** full constructor */
+	public Airport(String portname, String portinfo) {
+		this.portname = portname;
+		this.portinfo = portinfo;
 	}
 
 	// Property accessors
@@ -38,6 +45,14 @@ public class Airport implements java.io.Serializable {
 
 	public void setPortname(String portname) {
 		this.portname = portname;
+	}
+
+	public String getPortinfo() {
+		return this.portinfo;
+	}
+
+	public void setPortinfo(String portinfo) {
+		this.portinfo = portinfo;
 	}
 
 }

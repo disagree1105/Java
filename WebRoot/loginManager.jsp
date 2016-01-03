@@ -73,8 +73,8 @@ a:link, a:visited {
 					<center>
 						<h3>
 							<font color="#FF0000">欢迎您， <s:label
-									value="%{#request.user.type}" /> <s:label
-									value="%{#request.user.username}" /></font>
+									value="%{#session.user.type}" /> <s:label
+									value="%{#session.user.username}" /></font>
 						</h3>
 						<s:form action="listAllUsers" namespace="/com" method="post">
 							<input type="submit" class="large button yellow" value="查看所有用户" />

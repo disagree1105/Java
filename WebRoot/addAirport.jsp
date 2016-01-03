@@ -49,11 +49,16 @@ a:link, a:visited {
 							value="%{#session.user.type}" />)
 					</font>
 				</h3>
-				<s:form action="addAirport" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="addAirport" namespace="/com" method="post" validate="true">
 					<fieldset>
 						<div>
 							<label for="airname">机场名称:</label>
 							<s:textfield name="airport.portname" size="30" />
+						</div>
+						  <div>
+							<label for="airporinfo">机场信息:</label>
+							<s:textarea name="airport.portinfo" cols="30" rows="5" ></s:textarea>
 						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="添加该机场" />

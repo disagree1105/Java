@@ -50,13 +50,18 @@ a:link, a:visited {
 					<font color="#FF0000">修改机场信息(当前身份:<s:label
 									value="%{#session.user.type}" />)</font>
 				</h3>
-				<s:form action="updateAirport" namespace="/com" method="post">
+				<s:fielderror/>
+				<s:form action="updateAirport" namespace="/com" method="post" validate="true">
 					<s:hidden name="airport.aid" value="%{#session.airport.aid}" />
 					<fieldset>
 						<div>
 							<label for="airportname">机场名称:</label>
 							<s:textfield name="airport.portname"
 								value="%{#session.airport.portname}" size="30" maxlength="20" />
+						</div>
+						<div>
+							<label for="airporinfo">机场信息:</label>
+							<s:textarea name="airport.portinfo" cols="30" rows="5" value="%{#session.airport.portinfo}"></s:textarea>
 						</div>
 						<div class="enter">
 							<input type="submit" class="large button green" value="修改并提交" />

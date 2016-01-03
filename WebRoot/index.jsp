@@ -141,6 +141,7 @@ ol {
 	<!-- 	<c:set var="username" scope="session" value="%{#session.user.name}"/> -->
 
 	<c:choose>
+<<<<<<< HEAD
 		<c:when test="${session.user.username!=null}">
 			<font color="#FF0000">您好，<s:label
 					value="%{#session.user.type}" /> <s:label
@@ -153,6 +154,32 @@ ol {
 			<a class="large button orange" href="login.jsp">用户登录</a>
 			<a class="large button yellow" href="register.jsp">用户注册</a>
 		</c:otherwise>
+=======
+	<c:when test="${session.user.username!=null}">
+			<font color="#FF0000">您好，<s:label
+					value="%{#session.user.type}" /> <s:label
+					value="%{#session.user.username}" /></font>
+
+			<c:choose>
+				<c:when test="${session.user.type=='管理员'}">
+					<a class="large button blue" href="loginManager.jsp">个人中心</a>
+				</c:when>
+				<c:when test="${session.user.type=='注册用户'}">
+					<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
+				</c:when>
+				<c:when test="${session.user.type=='机场'}">
+					<a class="large button blue" href="loginAirport.jsp">个人中心</a>
+				</c:when>
+			</c:choose>
+
+			<a class="large button orange" href="logout.jsp">注销</a>
+		</c:when>
+
+		<c:otherwise>
+			<a class="large button orange" href="login.jsp">用户登录</a>
+			<a class="large button yellow" href="register.jsp">用户注册</a>
+		</c:otherwise>
+>>>>>>> a9c1b1c9c6c9d8f5a9099f1a0daa055e6b407dd0
 	</c:choose>
 	<br>
 	<p>
@@ -171,14 +198,14 @@ ol {
 						<strong> 标有*的为必选项</strong>
 					</p>
 					<div>
-						<label for="start">起点城市</label>
-						<input type="text" name="flight.originstation" id="arrcity" />
+						<label for="start">起点城市</label> <input type="text"
+							name="flight.originstation" id="arrcity" />
 						<div id='suggest' class="ac_results"></div>
 						<br>
 					</div>
 					<div>
-						<label for="end">终点城市</label>
-						<input type="text" name="flight.terminalstation" id="city2"/>
+						<label for="end">终点城市</label> <input type="text"
+							name="flight.terminalstation" id="city2" />
 						<div id='suggest2' class="ac_results"></div>
 						<br>
 					</div>

@@ -77,9 +77,9 @@
 			<fieldset>
 				<legend>机票预订</legend>
 				<s:form action="findFlight" namespace="/com" method="post">
-				<p>
-					<strong> 标有*的为必选项</strong>
-				</p>
+<!-- 				<p> -->
+<!-- 					<strong> 标有*的为必选项</strong> -->
+<!-- 				</p> -->
 				<div>
 					<label for="start">起点城市</label> 
 					<s:textfield name="flight.originstation"

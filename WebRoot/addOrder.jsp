@@ -21,11 +21,104 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-<link rel="stylesheet" type="text/css" href="css/reg.css" />
-<link rel="stylesheet" type="text/css" href="css/button.css" />
+	
+<script type="text/javascript" src="<%=basePath%>/js/Calendar.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/j.suggest.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/j.dimensions.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/aircity.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	$("#arrcity").suggest(citys,{hot_list:commoncitys,dataContainer:'#arrcity_3word',onSelect:function(){$("#city2").click();},attachObject:'#suggest'});
+	
+	$("#city2").suggest(citys,{hot_list:commoncitys,attachObject:"#suggest2"});
+	
+});
+</script>
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=basePath%>/css/button.css" />
+
 <style type="text/css">
 a:link, a:visited {
 	text-decoration: none;
+}
+</style>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 12px;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 20px 0;
+	font-size: 16px;
+}
+
+ol {
+	padding-left: 20px;
+	line-height: 130%;
+}
+
+#box {
+	text-align: left;
+	margin: 0 auto;
+}
+
+#suggest, #suggest2 {
+	width: 200px;
+}
+
+.gray {
+	color: gray;
+}
+
+.ac_results {
+	background: #fff;
+	border: 1px solid #7f9db9;
+	position: absolute;
+	z-index: 10000;
+	display: none;
+}
+
+.ac_results ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ac_results li a {
+	white-space: nowrap;
+	text-decoration: none;
+	display: block;
+	color: #05a;
+	padding: 1px 3px;
+}
+
+.ac_results li {
+	border: 1px solid #fff;
+}
+
+.ac_over, .ac_results li a:hover {
+	background: #c8e3fc;
+}
+
+.ac_results li a span {
+	float: right;
+}
+
+.ac_result_tip {
+	border-bottom: 1px dashed #666;
+	padding: 3px;
 }
 </style>
 </head>
@@ -56,21 +149,27 @@ a:link, a:visited {
 							<label for="username">用户名:</label>
 							<s:textfield name="userorder.username" size="30" />
 						</div>
-						<div>
-							<label for="start">起点站:</label>
-							<s:textfield name="userorder.originstation" size="30" />
+						<div id="box">
+							<label for="start">起点城市</label> 
+							<input type="text"
+								name="userorder.originstation" id="arrcity" size="30"/>
+							<div id='suggest' class="ac_results"></div>
+							<br>
 						</div>
-						<div>
-							<label for="end">终点站:</label>
-							<s:textfield name="userorder.terminalstation" size="30" />
-						</div>
-						<div>
+							<div id="box">
+							<label for="end">终点城市</label>
+							 <input type="text"
+								name="userorder.terminalstation" id="city2" size="30"/>
+							<div id='suggest2' class="ac_results"></div>
+							<br>
+						</div>	
+						<div>				
 							<label for="starttime">始发时间:</label>
-							<s:textfield name="userorder.origintime" size="30" />
+							<s:textfield name="userorder.origintime" onClick="new Calendar(2015,2016).show(this);" size="30" />
 						</div>
 						<div>
 							<label for="endtime">到达时间:</label>
-							<s:textfield name="userorder.terminaltime" size="30" />
+							<s:textfield name="userorder.terminaltime" onClick="new Calendar(2015,2016).show(this);" size="30" />
 						</div>
 						<div>
 							<label for="price">票价:</label>

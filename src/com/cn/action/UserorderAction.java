@@ -69,15 +69,17 @@ public class UserorderAction extends ActionSupport{
     	return userorderService;
     }
 	public String add(){
-		if(!userService.find(user))
+		if(!userService.find(userorder))
 		{
 			this.addActionError("没有此用户！");
 			return "fail";			
 		}
-//		if(!flightService.check(userorder.getOriginstation()))
-//		{
-//			return "fail";
-//		}
+		if(!flightService.checkFlight(userorder))
+			
+			{
+			this.addActionError("没有此次航班!");
+			return "fail";
+			}
 			if(userorderService.add(userorder))	
 			return "success";
 			else 

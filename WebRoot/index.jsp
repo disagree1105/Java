@@ -132,7 +132,7 @@ ol {
 <body>
 	<div
 		style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
-		<img src="image/bg.png" height="100%" width="100%" />
+		<img src="image/bg3.jpg" height="100%" width="100%" />
 	</div>
 	<br>
 	<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
@@ -144,25 +144,31 @@ ol {
 					value="%{#session.user.type}" /> <s:label
 					value="%{#session.user.username}" /></font>
 
-			<c:choose>
-				<c:when test="${session.user.type=='管理员'}">
+				<c:if test="${session.user.type=='管理员'}">
 					<a class="large button blue" href="loginManager.jsp">个人中心</a>
-				</c:when>
-				<c:when test="${session.user.type=='注册用户'}">
+				</c:if>
+				<c:if test="${session.user.type=='注册用户'}">
 					<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
-				</c:when>
-				<c:when test="${session.user.type=='机场'}">
+				</c:if>
+				<c:if test="${session.user.type=='机场'}">
 					<a class="large button blue" href="loginAirport.jsp">个人中心</a>
-				</c:when>
-			</c:choose>
+				</c:if>
 
+			<a class="large button pink" href="findFlight.jsp">查询余票</a>
+			<a class="large button red" href="pointRule.jsp">积分优惠</a>
 			<a class="large button orange" href="logout.jsp">注销</a>
+			<a class="large button yellow" href="aboutUs.jsp">关于我们</a>			
 		</c:when>
 
 		<c:otherwise>
 			<a class="large button orange" href="login.jsp">用户登录</a>
 			<a class="large button yellow" href="register.jsp">用户注册</a>
+			<a class="large button blue" href="logwarn.jsp">我的订单</a>
+			<a class="large button pink" href="findFlight.jsp">查询余票</a>
+			<a class="large button red" href="pointRule.jsp">积分优惠</a>
+			<a class="large button yellow" href="aboutUs.jsp">关于我们</a>
 		</c:otherwise>
+		
 	</c:choose>
 	<br>
 	<p>

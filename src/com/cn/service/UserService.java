@@ -4,6 +4,7 @@ package com.cn.service;
 import java.util.List;
 
 import com.cn.bean.User;
+import com.cn.bean.Userorder;
 
 public interface UserService {
 	
@@ -19,7 +20,7 @@ public interface UserService {
 	
 	public List list();
 	
-	public boolean find(User user);
+	public boolean find(Userorder order);
 	
 	
 }

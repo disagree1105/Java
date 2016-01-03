@@ -48,10 +48,8 @@ ol {
 }
 
 #box {
-	width: 600px;
 	text-align: left;
 	margin: 0 auto;
-	padding-top: 80px;
 }
 
 #suggest, #suggest2 {
@@ -182,19 +180,19 @@ ol {
 					<p>
 						<strong> 标有*的为必选项</strong>
 					</p>
-					<div>
+					<div id="box">
 						<label for="start">起点城市</label> <input type="text"
 							name="flight.originstation" id="arrcity" />
 						<div id='suggest' class="ac_results"></div>
 						<br>
 					</div>
-					<div>
+					<div  id="box">
 						<label for="end">终点城市</label> <input type="text"
 							name="flight.terminalstation" id="city2" />
 						<div id='suggest2' class="ac_results"></div>
 						<br>
 					</div>
-					<div>
+					<div  id="box">
 						<label for="date">出发日期</label>
 						<s:textfield name="flight.origintime"
 							onClick="new Calendar(2015,2016).show(this);" readonly="true"

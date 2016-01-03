@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
 	String path = request.getContextPath();
@@ -23,12 +23,113 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 12px;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 20px 0;
+	font-size: 16px;
+}
+
+ol {
+	padding-left: 20px;
+	line-height: 130%;
+}
+
+#box {
+	width: 600px;
+	text-align: left;
+	margin: 0 auto;
+	padding-top: 80px;
+}
+
+#suggest, #suggest2 {
+	width: 200px;
+}
+
+.gray {
+	color: gray;
+}
+
+.ac_results {
+	background: #fff;
+	border: 1px solid #7f9db9;
+	position: absolute;
+	z-index: 10000;
+	display: none;
+}
+
+.ac_results ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ac_results li a {
+	white-space: nowrap;
+	text-decoration: none;
+	display: block;
+	color: #05a;
+	padding: 1px 3px;
+}
+
+.ac_results li {
+	border: 1px solid #fff;
+}
+
+.ac_over, .ac_results li a:hover {
+	background: #c8e3fc;
+}
+
+.ac_results li a span {
+	float: right;
+}
+
+.ac_result_tip {
+	border-bottom: 1px dashed #666;
+	padding: 3px;
+}
+</style>
+
 <link rel="stylesheet" type="text/css" href="css/reg.css" />
 <link rel="stylesheet" type="text/css" href="css/button.css" />
 <link rel="stylesheet" type="text/css" href="css/DB_gallery.css" />
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/Calendar.js"></script>
 <script type="text/javascript" src="js/jquery.DB_gallery.js"></script>
+<script type="text/javascript" src="js/j.suggest.js"></script>
+<script type="text/javascript" src="js/j.dimensions.js"></script>
+<script type="text/javascript" src="js/aircity.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$("#arrcity").suggest(citys, {
+			hot_list : commoncitys,
+			dataContainer : '#arrcity_3word',
+			onSelect : function() {
+				$("#city2").click();
+			},
+			attachObject : '#suggest'
+		});
+
+		$("#city2").suggest(citys, {
+			hot_list : commoncitys,
+			attachObject : "#suggest2"
+		});
+
+	});
+</script>
 </head>
 <body>
 	<div
@@ -36,21 +137,22 @@
 		<img src="image/bg.png" height="100%" width="100%" />
 	</div>
 	<br>
-<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
-<!-- 	<c:set var="username" scope="session" value="%{#session.user.name}"/> -->
+	<!-- 	<a class="large button blue" href="login.jsp">管理员登录</a> -->
+	<!-- 	<c:set var="username" scope="session" value="%{#session.user.name}"/> -->
 
 	<c:choose>
-	<c:when test="${session.user.username!=null}">
-	   <font color="#FF0000">您好，<s:label value="%{#session.user.type}" /> 
-	<s:label value="%{#session.user.username}" /></font>
-	<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
-	<a class="large button orange" href="logout.jsp">注销</a>
-	</c:when>
-	
-	<c:otherwise >
-	<a class="large button orange" href="login.jsp">用户登录</a>
-	<a class="large button yellow" href="register.jsp">用户注册</a>
-	</c:otherwise>
+		<c:when test="${session.user.username!=null}">
+			<font color="#FF0000">您好，<s:label
+					value="%{#session.user.type}" /> <s:label
+					value="%{#session.user.username}" /></font>
+			<a class="large button blue" href="loginSuccess.jsp">个人中心</a>
+			<a class="large button orange" href="logout.jsp">注销</a>
+		</c:when>
+
+		<c:otherwise>
+			<a class="large button orange" href="login.jsp">用户登录</a>
+			<a class="large button yellow" href="register.jsp">用户注册</a>
+		</c:otherwise>
 	</c:choose>
 	<br>
 	<p>
@@ -65,40 +167,42 @@
 			<fieldset>
 				<legend>机票预订</legend>
 				<s:form action="findFlight" namespace="/com" method="post">
-				<p>
-					<strong> 标有*的为必选项</strong>
-				</p>
-				<div>
-					<label for="start">起点城市</label> 
-					<s:textfield name="flight.originstation"
-						id="startCity" value="" size="20" maxlength="30" /> <br>
-				</div>
-				<div>
-					<label for="end">终点城市</label> 
-					<s:textfield name="flight.terminalstation" 
-						id="endCity" size="20" maxlength="15" /> <br>
-				</div>
-				<div>
-					<label for="date">出发日期</label>
-					 <s:textfield name="flight.origintime"
+					<p>
+						<strong> 标有*的为必选项</strong>
+					</p>
+					<div>
+						<label for="start">起点城市</label>
+						<input type="text" name="flight.originstation" id="arrcity" />
+						<div id='suggest' class="ac_results"></div>
+						<br>
+					</div>
+					<div>
+						<label for="end">终点城市</label>
+						<input type="text" name="flight.terminalstation" id="city2"/>
+						<div id='suggest2' class="ac_results"></div>
+						<br>
+					</div>
+					<div>
+						<label for="date">出发日期</label>
+						<s:textfield name="flight.origintime"
 							onClick="new Calendar(2015,2016).show(this);" readonly="true"
 							value="2016-01-01" />
-				</div>
-<!-- 				<div> -->
-<!-- 					<label for="ticketType">机票种类</label><select name="ticketType"> -->
-<!-- 						<option selected="selected">成人票</option> -->
-<!-- 						<option>儿童票</option> -->
-<!-- 						<option>婴儿票</option> -->
-<!-- 					</select> -->
-<!-- 				</div> -->
-<!-- 				<div> -->
-<!-- 					<label for="tel">联系电话</label> <input type="text" name="memberTel" -->
-<!-- 						id="tel" value="" size="20" /> *<br> -->
-<!-- 				</div> -->
-				<div class="enter">
-					
-					<s:submit class="buttom" value="同意协议并查询" />
-				</div>
+					</div>
+					<!-- 				<div> -->
+					<!-- 					<label for="ticketType">机票种类</label><select name="ticketType"> -->
+					<!-- 						<option selected="selected">成人票</option> -->
+					<!-- 						<option>儿童票</option> -->
+					<!-- 						<option>婴儿票</option> -->
+					<!-- 					</select> -->
+					<!-- 				</div> -->
+					<!-- 				<div> -->
+					<!-- 					<label for="tel">联系电话</label> <input type="text" name="memberTel" -->
+					<!-- 						id="tel" value="" size="20" /> *<br> -->
+					<!-- 				</div> -->
+					<div class="enter">
+
+						<s:submit class="buttom" value="同意协议并查询" />
+					</div>
 				</s:form>
 				<p>
 					<strong>* 在提交您的信息时, 我们认为您已经同意了我们的服务条款.<br> *
@@ -106,9 +210,9 @@
 					</strong>
 				</p>
 			</fieldset>
-			
+
 		</div>
-		
+
 		<div style="width:50%;height:400px;float:right;">
 			<div id="DB_gallery">
 				<div class="DB_imgSet">

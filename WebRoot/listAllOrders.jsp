@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/Zebra.css" />
+	href="<%=basePath%>/css/table2.css" />
 <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/css/button.css" />
@@ -46,35 +46,38 @@
 				<font color="#ff0000">订单列表</font>
 			</h3>
 		</center>
-		<br />
 		<center>
-			<table class="zebra">
-				<tr>
-					<th>订单号</th>
-					<th>用户名</th>
-					<th>起点站</th>
-					<th>终点站</th>
-					<th>始发时间</th>
-					<th>到达时间</th>
-					<th>票价</th>
-					<th>操作</th>
-				</tr>
-				<s:iterator value="#request.list" id="userorder">
-					<tr>
-						<td><s:property value="#userorder.orderid" /></td>
-						<td><s:property value="#userorder.username" /></td>
-						<td><s:property value="#userorder.originstation" /></td>
-						<td><s:property value="#userorder.terminalstation" /></td>
-						<td><s:property value="#userorder.origintime" /></td>
-						<td><s:property value="#userorder.terminaltime" /></td>
-						<td><s:property value="#userorder.price" /></td>
-						<td><s:a
-								href="deleteOrder.action?userorder.orderid=%{#userorder.orderid}">删除</s:a>
-							/<s:a
-								href="updateUserorderByManager.action?userorder.orderid=%{#userorder.orderid}">修改</s:a>
-						</td>
+			<table>
+				<thead>
+					<tr class="odd">
+						<th scope="row" class="column1">订单号</th>
+						<th scope="row" class="column1">用户名</th>
+						<th scope="row" class="column1">起点站</th>
+						<th scope="row" class="column1">终点站</th>
+						<th scope="row" class="column1">始发时间</th>
+						<th scope="row" class="column1">到达时间</th>
+						<th scope="row" class="column1">票价</th>
+						<th scope="row" class="column1">操作</th>
 					</tr>
-				</s:iterator>
+				</thead>
+				<tbody>
+					<s:iterator value="#request.list" id="userorder">
+						<tr>
+							<td><s:property value="#userorder.orderid" /></td>
+							<td><s:property value="#userorder.username" /></td>
+							<td><s:property value="#userorder.originstation" /></td>
+							<td><s:property value="#userorder.terminalstation" /></td>
+							<td><s:property value="#userorder.origintime" /></td>
+							<td><s:property value="#userorder.terminaltime" /></td>
+							<td><s:property value="#userorder.price" /></td>
+							<td><s:a
+									href="deleteOrder.action?userorder.orderid=%{#userorder.orderid}">删除</s:a>
+								/<s:a
+									href="updateUserorderByManager.action?userorder.orderid=%{#userorder.orderid}">修改</s:a>
+							</td>
+						</tr>
+					</s:iterator>
+				</tbody>
 			</table>
 			<br> <a href="<%=basePath%>/addOrder.jsp"
 				class="large button green"> 添加订单</a> <a

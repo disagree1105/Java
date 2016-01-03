@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/Zebra.css" />
+	href="<%=basePath%>/css/table2.css" />
 <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/css/button.css" />
@@ -41,46 +41,50 @@
 
 		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 			width="100%" color=#987cb9 SIZE=10>
-		<br> <center>
-				<h3>
-					<font color="#ff0000">航班列表</font>
-				</h3>
-			</center>
-			<br />
+		<br>
 		<center>
-			<table class="zebra">
-
-				<tr>
-					<th>航班号</th>
-					<th>起点站</th>
-					<th>终点站</th>
-					<th>始发时间</th>
-					<th>到达时间</th>
-					<th>总票数</th>
-					<th>余票数</th>
-					<th>票价</th>
-					<th>操作</th>
-				</tr>
-				<s:iterator value="#request.list" id="flight">
-					<tr>
-						<td><s:property value="#flight.flightid" /></td>
-						<td><s:property value="#flight.originstation" /></td>
-						<td><s:property value="#flight.terminalstation" /></td>
-						<td><s:property value="#flight.origintime" /></td>
-						<td><s:property value="#flight.terminaltime" /></td>
-						<td><s:property value="#flight.ticketsum" /></td>
-						<td><s:property value="#flight.ticketleft" /></td>
-						<td><s:property value="#flight.price" /></td>
-						<td><s:a
-								href="deleteFlight.action?flight.flightid=%{#flight.flightid}">删除</s:a>
-							/<s:a
-								href="updateFlightByManager.action?flight.flightid=%{#flight.flightid}">修改</s:a>
-						</td>
+			<h3>
+				<font color="#ff0000">航班列表</font>
+			</h3>
+		</center>
+		<center>
+			<table>
+				<thead>
+					<tr class="odd">
+						<th scope="row" class="column1">航班号</th>
+						<th scope="row" class="column1">起点站</th>
+						<th scope="row" class="column1">终点站</th>
+						<th scope="row" class="column1">始发时间</th>
+						<th scope="row" class="column1">到达时间</th>
+						<th scope="row" class="column1">总票数</th>
+						<th scope="row" class="column1">余票数</th>
+						<th scope="row" class="column1">票价</th>
+						<th scope="row" class="column1">操作</th>
 					</tr>
-				</s:iterator>
+				</thead>
+				<tbody>
+					<s:iterator value="#request.list" id="flight">
+						<tr>
+							<td><s:property value="#flight.flightid" /></td>
+							<td><s:property value="#flight.originstation" /></td>
+							<td><s:property value="#flight.terminalstation" /></td>
+							<td><s:property value="#flight.origintime" /></td>
+							<td><s:property value="#flight.terminaltime" /></td>
+							<td><s:property value="#flight.ticketsum" /></td>
+							<td><s:property value="#flight.ticketleft" /></td>
+							<td><s:property value="#flight.price" /></td>
+							<td><s:a
+									href="deleteFlight.action?flight.flightid=%{#flight.flightid}">删除</s:a>
+								/<s:a
+									href="updateFlightByManager.action?flight.flightid=%{#flight.flightid}">修改</s:a>
+							</td>
+						</tr>
+					</s:iterator>
+				</tbody>
 			</table>
-			<br> <a href="<%=basePath%>/addFlight.jsp" class="large button green">添加航班</a>
-			<a onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
+			<br> <a href="<%=basePath%>/addFlight.jsp"
+				class="large button green">添加航班</a> <a
+				onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
 		</center>
 	</center>
 	<br />
@@ -93,5 +97,6 @@
 	<br>
 	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
 		Reserved</font>
+
 </body>
 </html>

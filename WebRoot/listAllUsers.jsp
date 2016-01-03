@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/Zebra.css" />
+	href="<%=basePath%>/css/table2.css" />
 <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/css/button.css" />
@@ -47,23 +47,22 @@
 					<font color="#ff0000">用户列表</font>
 				</h3>
 			</center>
-			<br />
 		<center>
 			<s:form action="deleteUser" namespace="/com" method="post">
-				<table class="zebra">
-
-					<tr>
-						<th>用户名</th>
-						<th>密码</th>
-						<th>用户类型</th>
-						<th>姓名</th>
-						<th>性别</th>
-						<th>身份证</th>
-						<th>手机号</th>
-						<th>出生年月</th>
-						<th>积分</th>
-						<th>操作</th>
-					</tr>
+				<table>
+<thead>
+					<tr class="odd">
+						<th scope="row" class="column1">用户名</th>
+						<th scope="row" class="column1">密码</th>
+						<th scope="row" class="column1">用户类型</th>
+						<th scope="row" class="column1">姓名</th>
+						<th scope="row" class="column1">性别</th>
+						<th scope="row" class="column1">身份证</th>
+						<th scope="row" class="column1">手机号</th>
+						<th scope="row" class="column1">出生年月</th>
+						<th scope="row" class="column1">积分</th>
+						<th scope="row" class="column1">操作</th>
+					</tr></thead><tbody>
 					<s:iterator value="#request.list" id="user">
 						<tr>
 							<td><s:property value="#user.username" /></td>
@@ -81,7 +80,7 @@
 									href="updateUserByManager.action?user.username=%{#user.username}">修改</s:a>
 							</td>
 						</tr>
-					</s:iterator>
+					</s:iterator></tbody>
 				</table>
 				<br>
 				<a href="../addUser.jsp" class="large button green">添加用户</a>

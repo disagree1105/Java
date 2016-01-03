@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/Zebra.css" />
+	href="<%=basePath%>/css/table2.css" />
 <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/css/button.css" />
@@ -46,21 +46,20 @@
 					<font color="#ff0000">航班列表</font>
 				</h3>
 			</center>
-			<br />
 		<center>
-			<table class="zebra">
-
-				<tr>
-					<th>航班号</th>
-					<th>起点站</th>
-					<th>终点站</th>
-					<th>始发时间</th>
-					<th>到达时间</th>
-					<th>总票数</th>
-					<th>余票数</th>
-					<th>票价</th>
-					<th>预订</th>
-				</tr>
+			<table>
+			<thead>
+				<tr class="odd">
+					<th scope="row" class="column1">航班号</th>
+					<th scope="row" class="column1">起点站</th>
+					<th scope="row" class="column1">终点站</th>
+					<th scope="row" class="column1">始发时间</th>
+					<th scope="row" class="column1">到达时间</th>
+					<th scope="row" class="column1">总票数</th>
+					<th scope="row" class="column1">余票数</th>
+					<th scope="row" class="column1">票价</th>
+					<th scope="row" class="column1">预订</th>
+				</tr></thead><tbody>
 				<s:iterator value="#request.list" id="flight">
 					<tr>
 						<td><s:property value="#flight.flightid" /></td>
@@ -73,7 +72,7 @@
 						<td><s:property value="#flight.price" /></td>
 						<td><s:a href="buyTicket.action?user.userid=%{#session.user.userid}&flight.flightid=%{#flight.flightid}">购票</s:a></td>
 					</tr>
-				</s:iterator>
+				</s:iterator></tbody>
 			</table>
 			<br>
 			<a onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>

@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/Zebra.css" />
+	href="<%=basePath%>/css/table2.css" />
 <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/css/button.css" />
@@ -44,19 +44,21 @@
 		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
 			width="100%" color=#987cb9 SIZE=10>
 		<br>
-			<center>
-				<h3>
-					<font color="#ff0000">机场列表</font>
-				</h3>
-			</center>
-			<br />
-			<center>
-				<table class="zebra">
-					<tr>
-						<th>机场名称</th>
-						<th>机场信息</th>
-						<th>操作</th>
+		<center>
+			<h3>
+				<font color="#ff0000">机场列表</font>
+			</h3>
+		</center>
+		<center>
+			<table>
+				<thead>
+					<tr class="odd">
+						<th scope="row" class="column1">名称</th>
+						<th scope="row" class="column1">机场信息</th>
+						<th scope="row" class="column1">操作</th>
 					</tr>
+				</thead>
+				<tbody>
 					<s:iterator value="#request.list" id="airport">
 						<tr>
 							<td><s:property value="#airport.portname" /></td>
@@ -68,11 +70,12 @@
 							</td>
 						</tr>
 					</s:iterator>
-				</table>
-				<br> <a href="<%=basePath%>/addAirport.jsp"
-					class="large button green">添加机场 </a> <a
-					onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
-			</center>
+				</tbody>
+			</table>
+			<br> <a href="<%=basePath%>/addAirport.jsp"
+				class="large button green">添加机场 </a> <a
+				onclick="javascript:history.back(-1);" class="large button blue">返回上一页</a>
+		</center>
 	</center>
 
 	<br />

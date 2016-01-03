@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/Zebra.css" />
+	href="<%=basePath%>/css/table2.css" />
 <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/reg.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=basePath%>/css/button.css" />
@@ -49,43 +49,46 @@
 		</center>
 		<br />
 		<s:form action="buyTicket" namespace="/com" method="post">
-			<table class="zebra">
-
-				<tr>
-					<th>航班号</th>
-					<th>起点站</th>
-					<th>终点站</th>
-					<th>始发时间</th>
-					<th>到达时间</th>
-					<th>总票数</th>
-					<th>余票数</th>
-					<th>票价</th>
-					<th>操作</th>
-				</tr>
-				<s:iterator value="#request.list" id="flight">
-					<tr>
-						<td><s:property value="#flight.flightid" /></td>
-						<td><s:property value="#flight.originstation" /></td>
-						<td><s:property value="#flight.terminalstation" /></td>
-						<td><s:property value="#flight.origintime" /></td>
-						<td><s:property value="#flight.terminaltime" /></td>
-						<td><s:property value="#flight.ticketsum" /></td>
-						<td><s:property value="#flight.ticketleft" /></td>
-						<td><s:property value="#flight.price" /></td>
-						<c:choose>
-						<c:when test="${session.user.username==null}">
-						<td><a href="../logwarn.jsp">预订</a></td>
-						</c:when>
-	
-						<c:otherwise >
-						<td>
-						<s:a href="buyTicket.action?user.userid=%{#session.user.userid}&flight.flightid=%{#flight.flightid}">预订</s:a>
-						</td>
-						</c:otherwise>
-						</c:choose>
-						
+			<table>
+				<thead>
+					<tr class="odd">
+						<th scope="row" class="column1">航班号</th>
+						<th scope="row" class="column1">起点站</th>
+						<th scope="row" class="column1">终点站</th>
+						<th scope="row" class="column1">始发时间</th>
+						<th scope="row" class="column1">到达时间</th>
+						<th scope="row" class="column1">总票数</th>
+						<th scope="row" class="column1">余票数</th>
+						<th scope="row" class="column1">票价</th>
+						<th scope="row" class="column1">操作</th>
 					</tr>
-				</s:iterator>
+				</thead>
+				<tbody>
+					<s:iterator value="#request.list" id="flight">
+						<tr>
+							<td><s:property value="#flight.flightid" /></td>
+							<td><s:property value="#flight.originstation" /></td>
+							<td><s:property value="#flight.terminalstation" /></td>
+							<td><s:property value="#flight.origintime" /></td>
+							<td><s:property value="#flight.terminaltime" /></td>
+							<td><s:property value="#flight.ticketsum" /></td>
+							<td><s:property value="#flight.ticketleft" /></td>
+							<td><s:property value="#flight.price" /></td>
+							<c:choose>
+								<c:when test="${session.user.username==null}">
+									<td><a href="../logwarn.jsp">预订</a></td>
+								</c:when>
+
+								<c:otherwise>
+									<td><s:a
+											href="buyTicket.action?user.userid=%{#session.user.userid}&flight.flightid=%{#flight.flightid}">预订</s:a>
+									</td>
+								</c:otherwise>
+							</c:choose>
+
+						</tr>
+					</s:iterator>
+				</tbody>
 			</table>
 
 		</s:form>

@@ -1,3 +1,10 @@
+#clouds{
+	padding: 100px 0;
+	background: #66ccff;
+	/*background: -webkit-linear-gradient(top, #66ccff 0%, #fff 200%);
+	background: -linear-gradient(top, #66ccff 0%, #fff 200%);
+	background: -moz-linear-gradient(top, #66ccff 0%, #fff 200%);*/
+}
 
 
 

@@ -1,37 +1,123 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>ע��</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
+<head>
+<base href="<%=basePath%>">
+
+<title>操作失败</title>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<link rel="stylesheet" type="text/css" href="css/reg.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css" />
+<style type="text/css">
+a:link, a:visited {
+	text-decoration: none;
+}
+</style>
+<style type="text/css">
+.z-msg {
+	background-color: #edf1f8;
+}
 
-  </head>
-  
-  <body>
-  <%
-   response.setHeader("refresh","2;url=index.jsp");//��ʱ��ת
-   session.invalidate();//ע��
+.z-msg .z-msg-box {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	padding: 23px 0px 125px 0;
+	width: 980px;
+	height: 364px;
+}
+
+.z-msg .msgbox {
+	position: absolute;
+	right: 185px;
+	top: 145px;
+	width: 300px;
+	text-align: center;
+	line-height: 16px;
+}
+
+.z-msg .msgbox .title {
+	line-height: 30px;
+	text-align: center;
+	font-size: 24px;
+	color: #4d73b1;
+	margin-bottom: 15px;
+}
+
+.z-msg .msgbox .content {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: left;
+}
+
+.z-msg .bg {
+	margin: 0 auto;
+	width: 773px;
+	height: 364px;
+	background: url(image/errorPage.png) no-repeat;
+}
+</style>
+</head>
+
+<body>
+	<center>
+		<div
+			style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
+			<img src="image/background.jpg" height="100%" width="100%" />
+		</div>
+		<p>
+			<img src="image/label.jpg" width="1024" height="120">
+		</p>
+		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+			width="100%" color=#987cb9 SIZE=10>
+		<br>
+		<div class="z">
+			<div class="z-msg">
+				<div class="z-msg-box">
+					<div class="bg"></div>
+					<div class="msgbox">
+						<div class="title">
+	   <%
+         response.setHeader("refresh","2;url=index.jsp");//定时跳转
+         session.invalidate();//注销
        %>
-<h3>���,���Ѿ��˳���ϵͳ,�����������ҳ</h3>
-<h3>��û����ת,�밴<a href="index.jsp">����</a></h3>
-  </body>
+<h3>你好,你已经退出本系统,两秒后跳回首页</h3>
+<h3>如没有跳转,请按<a href="index.jsp">这里</a></h3>
+
+
+						</div>
+						<a onclick="javascript:history.back(-1);"
+							class="large button blue">返回上一页</a> <a href="index.jsp"
+							class="large button orange">返回首页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
+	<br />
+
+	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+		width="100%" color=#987cb9 SIZE=10>
+	<br>
+	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
+		Reserved</font>
+
+</body>
 </html>

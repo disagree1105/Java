@@ -19,11 +19,99 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<link rel="stylesheet" type="text/css" href="css/reg.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css" />
+<style type="text/css">
+a:link, a:visited {
+	text-decoration: none;
+}
+</style>
+<style type="text/css">
+.z-msg {
+	background-color: #edf1f8;
+}
 
+.z-msg .z-msg-box {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	padding: 23px 0px 125px 0;
+	width: 980px;
+	height: 364px;
+}
+
+.z-msg .msgbox {
+	position: absolute;
+	right: 185px;
+	top: 145px;
+	width: 300px;
+	text-align: center;
+	line-height: 16px;
+}
+
+.z-msg .msgbox .title {
+	line-height: 30px;
+	text-align: center;
+	font-size: 24px;
+	color: #4d73b1;
+	margin-bottom: 15px;
+}
+
+.z-msg .msgbox .content {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: left;
+}
+
+.z-msg .bg {
+	margin: 0 auto;
+	width: 773px;
+	height: 364px;
+	background: url(image/successPage.png) no-repeat;
+}
+</style>
   </head>
   
   <body>
-      <font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
+	<center>
+		<div
+			style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1">
+			<img src="image/background.jpg" height="100%" width="100%" />
+		</div>
+		<p>
+			<img src="image/label.jpg" width="1024" height="120">
+		</p>
+		<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+			width="100%" color=#987cb9 SIZE=10>
+		<br>
+		<div class="z">
+			<div class="z-msg">
+				<div class="z-msg-box">
+					<div class="bg"></div>
+					<div class="msgbox">
+						<div class="title">
+							
+							CopyRight © 徐明绮，陈霁鹏,All Rights Reserved
+							
+							
+						 </div>
+						 </div>
+						<a onclick="javascript:history.back(-1);"
+							 class="large button blue">返回上一页</a> <a href="index.jsp"
+							  class="large button orange">返回首页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
+	<br />
+
+	<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)"
+		width="100%" color=#987cb9 SIZE=10>
+	<br>
+	<font color='#929293'>CopyRight &copy; 徐明绮，陈霁鹏,All Rights
 		Reserved</font>
+
   </body>
 </html>

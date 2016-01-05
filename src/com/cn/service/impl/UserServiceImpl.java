@@ -110,6 +110,17 @@ public class UserServiceImpl implements UserService{
 		else
 			return true;
 	}
+	
+	public boolean checkReg(User user)
+	{
+		String hql="from User where username='"+user.getUsername()+"'";
+		List list=userDao.findByHql(hql);
+		if(list.isEmpty())
+			return true;
+		else
+			return false;
+	}
+	
 	public boolean updateUserByManager(User user) 
 	{
 		ActionContext ctx= ActionContext.getContext();

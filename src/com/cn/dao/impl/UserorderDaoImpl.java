@@ -43,6 +43,7 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 		this.sessionFactory = sessionFactory;
 	}
 	public boolean buyTicket(User user, Flight flight) {
+
 		try {
 			Integer userid=user.getUserid();
 			Integer flightid=flight.getFlightid();
@@ -51,6 +52,12 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 			session.beginTransaction();
 			Query query=session.createQuery(hql);
 			List flightlist=query.list();
+			flight=(Flight)flightlist.get(0);
+			if(flight.getTicketleft()==0)
+				{
+				session.getTransaction().commit();
+				return false;
+				}
 			
 			String sql="update Flight set ticketleft=ticketleft-1 where flightid ='"+flightid+"'";
 			SQLQuery sqlquery = this.getSession().createSQLQuery(sql); 
@@ -72,7 +79,10 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 				System.out.println("userid is + "+userid+" list is empty");
 				return false;
 			}
-			flight=(Flight)flightlist.get(0);
+			
+			
+
+			
 			user=(User)userlist.get(0);
 			Userorder userorder=new Userorder();
 			userorder.setUsername(user.getUsername());

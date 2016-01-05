@@ -141,6 +141,9 @@ public class UserorderAction extends ActionSupport{
 		if(userorderService.buyTicket(user,flight))	
 		return "success";
 		else
-		return "fail";
+		{
+			this.addActionError("¹ºÂòÊ§°Ü£¡ÓàÆ±Êı²»×ã£¡");
+			return "fail";
+			}
 }
 }

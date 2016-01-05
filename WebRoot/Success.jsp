@@ -11,12 +11,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<SCRIPT language=javascript>
-	function go() {
-		window.history.go(-1);
-	}
-	setTimeout("go()", 10000);
-</SCRIPT>
+
 <base href="<%=basePath%>">
 
 <title>删除成功</title>
@@ -118,7 +113,7 @@ a:link, a:visited {
 							<s:label value="%{#session.addpoint}" />
 							分的积分, 您现在拥有
 							<s:label value="%{#session.user.point}" />
-							分的积分。<br /><font color="ff0000">将在10秒后自动跳转到上一页。</font>
+							分的积分。<br />
 							
 							<s:form action="listMyUserorders" namespace="/com" method="post">
 								<s:hidden name="user.username" value="%{#session.user.username}" />

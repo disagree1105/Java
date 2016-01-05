@@ -95,7 +95,6 @@ a:link, a:visited {
 					<div class="msgbox">
 						<div class="title">
 							<s:actionerror />
-							注册失败！
 						</div>
 						<a onclick="javascript:history.back(-1);"
 							class="large button blue">返回上一页</a> <a href="index.jsp"

@@ -37,6 +37,11 @@ public class UserAction extends ActionSupport{
 	    	return userService;
 	    }
 		public String register(){
+			if(!userService.checkReg(user))
+				{
+				this.addActionError("注册失败！已有相同的用户名注册！");
+				return "fail";
+				}
 				if(userService.register(user))	
 				return "success";
 				else

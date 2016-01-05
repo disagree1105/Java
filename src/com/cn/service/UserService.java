@@ -22,5 +22,5 @@ public interface UserService {
 	
 	public boolean find(Userorder order);
 	
-	
+	public boolean checkReg(User user);
 }

@@ -101,10 +101,10 @@ a:link, a:visited {
 					<div class="msgbox">
 						<div class="title">
 							<s:actionerror />
-							注册成功！将在10s内回到上一页！
+							注册成功！将在10s内进入个人中心！
 						</div>
-						<a onclick="javascript:history.back(-1);"
-							class="large button blue">返回上一页</a> <a href="index.jsp"
+						<a href="loginSuccess.jsp"
+							class="large button blue">进入个人中心</a> <a href="index.jsp"
 							class="large button orange">返回首页</a>
 					</div>
 				</div>

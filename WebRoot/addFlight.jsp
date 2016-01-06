@@ -62,12 +62,12 @@ a:link, a:visited {
 						</div>
 						<br />
 						<div>
-							<label for="startname">始发时间(格式：YYYY-MM-DD HH:MM:SS):</label>
+							<label for="startname">始发时间(格式：YYYY-MM-DD HH:MM):</label>
 							<s:textfield name="flight.origintime" size="30" />
 						</div>
 						<br />
 						<div>
-							<label for="arrivename">到达时间(格式：YYYY-MM-DD HH:MM:SS):</label>
+							<label for="arrivename">到达时间(格式：YYYY-MM-DD HH:MM):</label>
 							<s:textfield name="flight.terminaltime" size="30" />
 						</div>
 						<div>

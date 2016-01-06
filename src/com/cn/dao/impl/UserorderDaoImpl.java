@@ -90,6 +90,8 @@ public class UserorderDaoImpl extends BaseHibernateDaoImpl implements UserorderD
 			userorder.setTerminalstation(flight.getTerminalstation());
 			userorder.setOrigintime(flight.getOrigintime());
 			userorder.setTerminaltime(flight.getTerminaltime());
+			userorder.setPrice(flight.getPrice());
+
 			
 			if(user.getPoint()>=1000)
 				userorder.setPrice((float)(flight.getPrice()*0.95));

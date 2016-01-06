@@ -52,8 +52,10 @@ public class UserServiceImpl implements UserService{
 	{
 		ActionContext ctx= ActionContext.getContext();
 		session=(Map<String, Object>) ctx.getSession();
+		user.setPoint(0);
 		if(userDao.save(user))
 			{
+			
 			session.put("user", user);
 			return true;
 			}
